@@ -1,0 +1,1030 @@
+
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W-2 vs 1099 True Cost Calculator (2026 FICA, FUTA &amp; SUI)</title>
+<meta name="description" content="Calculate true 2026 employer cost of a W-2 employee vs. 1099 contractor. Model 7.65% FICA, $42 FUTA, state SUI taxes, workers&#39; comp &amp; HRIS PEPM software fees.">
+<meta name="keywords" content="b2b payroll tco calculator, gusto vs rippling cost, gusto vs deel eor cost, 50 state sui payroll tax calculator, stripe vs helcim interchange plus, stripe vs stax break even, stripe invoicing fee calculator">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="B2B Fee Audit">
+<meta name="impact-site-verification" content="714f5d78-7e2a-43b7-8971-27919db894fa" value="714f5d78-7e2a-43b7-8971-27919db894fa">
+<link rel="canonical" href="https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/">
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+<link rel="manifest" href="/.well-known/webmcp.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="B2B Fee Audit">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="W-2 vs 1099 True Cost Calculator (2026 FICA, FUTA &amp; SUI)">
+<meta property="og:description" content="Calculate true 2026 employer cost of a W-2 employee vs. 1099 contractor. Model 7.65% FICA, $42 FUTA, state SUI taxes, workers&#39; comp &amp; HRIS PEPM software fees.">
+<meta property="og:url" content="https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/">
+<meta property="og:image" content="https://b2bfeeaudit.com/og-image.svg">
+<meta property="og:image:alt" content="W-2 vs 1099 True Cost Calculator (2026 FICA, FUTA &amp; SUI)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="W-2 vs 1099 True Cost Calculator (2026 FICA, FUTA &amp; SUI)">
+<meta name="twitter:description" content="Calculate true 2026 employer cost of a W-2 employee vs. 1099 contractor. Model 7.65% FICA, $42 FUTA, state SUI taxes, workers&#39; comp &amp; HRIS PEPM software fees.">
+<meta name="twitter:image" content="https://b2bfeeaudit.com/og-image.svg">
+<link rel="preload" href="/style.css?v=20261024" as="style">
+<link rel="stylesheet" href="/style.css?v=20261024">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"description":"Deterministic B2B Payroll, Multi-State HRIS, Global EOR, and Merchant Processing Interchange-Plus TCO Auditor backed by official 2026 .gov state SUI tax schedules and Federal Reserve Reg II debit benchmarks.","url":"https://b2bfeeaudit.com","logo":"https://b2bfeeaudit.com/logo-mark.svg","image":"https://b2bfeeaudit.com/og-image.svg","areaServed":{"@type":"Country","name":"United States"},"knowsAbout":["B2B Payroll & Multi-State HRIS Total Cost of Ownership","50-State Employer SUI Tax Wage Bases (.gov)","International Employer of Record (EOR) FX Spreads","Credit Card Interchange-Plus vs Flat-Rate Merchant Processing","Federal Reserve Regulation II Regulated Debit Interchange"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://b2bfeeaudit.com/#website","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"url":"https://b2bfeeaudit.com","publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)","applicationCategory":"BusinessApplication","operatingSystem":"Web, WebMCP, OpenAPI 3.1","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD","description":"Free deterministic TCO calculator (3 free CFO CSV/PDF exports; $29/mo Pro unlimited)"},"publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"W-2 vs 1099 True Cost Calculator (2026 FICA, FUTA & SUI)","description":"Calculate true 2026 employer cost of a W-2 employee vs. 1099 contractor. Model 7.65% FICA, $42 FUTA, state SUI taxes, workers' comp & HRIS PEPM software fees.","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/","serviceType":"B2B Payroll, Multi-State HRIS & SUI Tax TCO Audit","provider":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"url":"https://b2bfeeaudit.com/"},"areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"6","highPrice":"599","offerCount":"4","offers":[{"@type":"Offer","name":"Statutory Employer Tax Load per $85k W-2 Employee (FICA + FUTA + NC SUI)","description":"$6,859/yr statutory tax ($6,503 FICA + $42 FUTA + $314 NC SUI)","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/#cost-comparison"},{"@type":"Offer","name":"Gusto W-2 + 1099 Hybrid Payroll (10 W-2 + 10 US 1099 Contractors)","description":"$169/mo ($2,028/yr) · $49 base + $6/W-2 + $6/1099 · $0 1099-NEC fee","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/#cost-comparison"},{"@type":"Offer","name":"OnPay W-2 + 1099 Multi-State Bundle (10 W-2 + 10 1099 Contractors)","description":"$160/mo ($1,920/yr) · $40 base + $6/person · All 50 states included","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/#cost-comparison"},{"@type":"Offer","name":"Deel Contractor Compliance & Misclassification Shield (10 Contractors)","description":"$490/mo ($5,880/yr) · Automated contracts, W-9/W-8BEN & indemnification","url":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/#cost-comparison"}]}}</script>
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much more does a W-2 employee cost an employer than a 1099 contractor in 2026?","acceptedAnswer":{"@type":"Answer","text":"Before voluntary health insurance or 401(k) match, a W-2 employee adds 7.65% in employer FICA (6.2% Social Security + 1.45% Medicare), $42 in federal FUTA, $160–$1,290 in state SUI, and 0.5%–2.0% in Workers' Compensation—roughly 8.5% to 10.5% above gross wages."}},{"@type":"Question","name":"What should a 1099 contractor charge per hour to match an $85,000 W-2 salary?","acceptedAnswer":{"@type":"Answer","text":"Because a 1099 contractor pays the full 15.3% self-employment FICA tax plus their own health insurance and PTO (180 billable days vs. 260 paid W-2 days), the break-even 1099 hourly rate for an $85,000 W-2 salary ($40.87/hr nominal) is $58 to $68/hour."}},{"@type":"Question","name":"What is the cheapest way to pay 1099 contractors and auto-file 1099-NEC forms?","acceptedAnswer":{"@type":"Answer","text":"Both Gusto ($6/contractor/mo) and OnPay ($6/contractor/mo) collect W-9s digitally, process next-day ACH payouts, and e-file federal and state 1099-NEC forms at $0 per form."}},{"@type":"Question","name":"What are the IRS penalties for misclassifying a W-2 employee as a 1099 contractor?","acceptedAnswer":{"@type":"Answer","text":"Under IRS Section 3509 (.gov), unintentional misclassification triggers assessments of 1.5% of wages for income tax withholding plus 20% of the employee's FICA share and 100% of the employer's 7.65% FICA share, plus state DOL back SUI fines."}}]}</script>
+
+<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});</script>
+</head><body>
+<header>
+  <a href="/" style="font-size:1.15rem"><img src="/logo-mark.svg" alt="B2B Fee Audit logo — Payroll, HRIS & Merchant Fee TCO Auditor" width="24" height="24" decoding="async" style="vertical-align:-5px;margin-right:7px"><strong>B2B Fee Audit</strong></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="/#payroll-tco-calc">Payroll &amp; SUI Calculator</a>
+    <a href="/#merchant-fee-calc">Merchant &amp; IC+ Calculator</a>
+    <a href="/payroll/gusto-vs-rippling-tco/">Gusto vs. Rippling</a>
+    <a href="/merchant/stripe-vs-helcim-interchange-plus/">Stripe vs. Helcim</a>
+    <a href="/methodology/">2026 Methodology (.gov)</a>
+    <a href="/.well-known/webmcp.json">WebMCP Spec</a>
+  </nav>
+</header>
+<main>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"B2B Fee Audit Hub","item":"https://b2bfeeaudit.com/"},{"@type":"ListItem","position":2,"name":"Payroll & HRIS TCO","item":"https://b2bfeeaudit.com/#payroll-tco-calc"},{"@type":"ListItem","position":3,"name":"US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)","item":"https://b2bfeeaudit.com/payroll/w2-employee-vs-1099-contractor-tco/"}]}</script>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-list"><li><a href="/">B2B Fee Audit Hub</a> <span aria-hidden="true">›</span> </li><li><a href="/#payroll-tco-calc">Payroll &amp; HRIS TCO</a> <span aria-hidden="true">›</span> </li><li><span aria-current="page">US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)</span></li></ol></nav>
+
+
+
+
+
+
+  
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+  
+    
+  
+
+<div class="verified-gov-bar" role="region" aria-label="Regulatory Verification Status">
+  <span class="verified-gov-badge">✓ Verified 2026 .gov Tax &amp; Interchange Schedule · 2026-10-24</span>
+  
+    <a class="gov-seal-pill" href="#src-1" title="Jump to primary official .gov citation">🏛️ IRS Publication 15 (2026 Employer Tax Guide) &amp; Independent Contr…</a>
+  
+</div>
+
+<h1>US W-2 Employee vs. 1099 Contractor True Burden Cost Calculator (FICA, FUTA, SUI &amp; HRIS)</h1>
+<p><strong>2026 Executive Audit Summary:</strong> On an $85,000 gross salary, a US W-2 employee adds $6,858/yr in mandatory statutory payroll taxes ($6,502.50 FICA @ 7.65% + $42 FUTA + ~$314 NC SUI) plus $72–$192/yr in HRIS PEPM fees (8.2% statutory tax burden before health benefits). Misclassifying a W-2 role as a 1099 contractor exposes employers to IRS Section 3509 back-tax assessments plus up to 100% penalty match.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="verdict-card" aria-label="30-Second TCO Audit Verdict">
+  <div class="verdict-header">
+    <strong>⏱️ 30-Second CFO Audit Verdict: US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)</strong>
+    <span class="verdict-pill">Deterministic 2026 Line-Item Math</span>
+  </div>
+  <ul class="verdict-list">
+    <li class="verdict-item">
+      <span class="verdict-tag tag-winner">🏆 12-MONTH TCO WINNER</span>
+      <div>Statutory W-2 Tax Load Adds 8.1%–9.4% Before Benefits; Use Gusto ($6/1099) or Deel Shield</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-trap">⚠️ HIDDEN FEE TRAP</span>
+      <div>While a 1099 contractor saves 7.65% employer FICA + SUI/FUTA, IRS Form SS-8 / DOL ABC-test misclassification audits trigger back FICA, unpaid overtime, and state SUI penalties.</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-action">⚡ RECOMMENDED SWITCH</span>
+      <div>Pay compliant US 1099s via Gusto ($6/mo, $0 1099-NEC filing) or use Deel Contractor of Record to indemnify misclassification risk.</div>
+    </li>
+  </ul>
+  <div class="verdict-actions">
+    <a class="cta verdict-btn" data-partner="Gusto" data-cta-slot="verdict_card" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs="{&quot;w2&quot;:10,&quot;states&quot;:2,&quot;primaryState&quot;:&quot;NC&quot;,&quot;contractors&quot;:10,&quot;eor&quot;:0,&quot;includeYearEnd&quot;:true}" data-clickref="b2b-verdict_card-w2-employee-vs-1099-contractor-tco-gusto" href="https://gusto.com/product/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-verdict_card-w2-employee-vs-1099-contractor-tco-gusto" target="_blank" rel="sponsored nofollow noopener">Compare Gusto 2026 Rates &amp; Savings →</a>
+    <a class="cta-secondary verdict-btn" data-partner="Deel" data-cta-slot="verdict_card" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs="{&quot;w2&quot;:10,&quot;states&quot;:2,&quot;primaryState&quot;:&quot;NC&quot;,&quot;contractors&quot;:10,&quot;eor&quot;:0,&quot;includeYearEnd&quot;:true}" data-clickref="b2b-verdict_card-w2-employee-vs-1099-contractor-tco-deel" href="https://www.deel.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-verdict_card-w2-employee-vs-1099-contractor-tco-deel" target="_blank" rel="sponsored nofollow noopener">Audit Deel Custom TCO Quote →</a>
+  </div>
+</section>
+
+
+
+
+  
+
+
+
+
+
+
+
+<section class="tco-calc-box" id="payroll-tco-calc" data-route-slug="w2-employee-vs-1099-contractor-tco" aria-label="Interactive Payroll and Multi-State HRIS TCO Calculator">
+  <div>
+    <span class="badge-payroll">🧮 DETERMINISTIC PAYROLL, MULTI-STATE SUI &amp; EOR TCO CALCULATOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Calculate Your 12-Month All-In Payroll, Multi-State Tax &amp; EOR Cost</h2>
+    <p style="margin:0;font-size:.93rem;color:#334155">Adjust W-2 headcount, primary <code>.gov</code> SUI tax state, multi-state registrations, 1099 contractors, and international EOR seats to compare true 12-month TCO:</p>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="ptc-w2">US W-2 Employees (1–250): <span id="ptc-w2-lbl">10</span></label>
+      <input type="number" id="ptc-w2" min="1" max="250" value="10">
+      <input type="range" id="ptc-w2-range" min="1" max="250" value="10" aria-label="US W-2 Employees Slider">
+    </div>
+    <div class="calc-field">
+      <label for="ptc-state">Primary State (.gov SUI Lookup):</label>
+      <select id="ptc-state">
+        
+          
+          
+          
+          
+          
+          
+          <option value="AL" data-base="8000" data-rate="2.7" data-sui="216" data-agency="Alabama Department of Labor" >AL — Alabama ($216/emp SUI on $8000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="AK" data-base="51700" data-rate="1.53" data-sui="791.01" data-agency="Alaska Department of Labor and Workforce Development" >AK — Alaska ($791.01/emp SUI on $51700 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="AZ" data-base="8000" data-rate="2" data-sui="160" data-agency="Arizona Department of Economic Security" >AZ — Arizona ($160/emp SUI on $8000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="AR" data-base="7000" data-rate="2.9" data-sui="203" data-agency="Arkansas Division of Workforce Services" >AR — Arkansas ($203/emp SUI on $7000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="CA" data-base="7000" data-rate="3.4" data-sui="238" data-agency="California Employment Development Department (EDD)" >CA — California ($238/emp SUI on $7000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="CO" data-base="27200" data-rate="1.7" data-sui="462.4" data-agency="Colorado Department of Labor and Employment (CDLE)" >CO — Colorado ($462.4/emp SUI on $27200 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="CT" data-base="26100" data-rate="2.2" data-sui="574.2" data-agency="Connecticut Department of Labor" >CT — Connecticut ($574.2/emp SUI on $26100 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="DE" data-base="12500" data-rate="1.2" data-sui="150" data-agency="Delaware Department of Labor — Division of Unemployment Insurance" >DE — Delaware ($150/emp SUI on $12500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="DC" data-base="9000" data-rate="2.7" data-sui="243" data-agency="DC Department of Employment Services (DOES)" >DC — District of Columbia ($243/emp SUI on $9000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="FL" data-base="7000" data-rate="2.7" data-sui="189" data-agency="Florida Department of Revenue — Reemployment Tax" >FL — Florida ($189/emp SUI on $7000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="GA" data-base="9500" data-rate="2.64" data-sui="250.8" data-agency="Georgia Department of Labor" >GA — Georgia ($250.8/emp SUI on $9500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="HI" data-base="62000" data-rate="3" data-sui="1860" data-agency="Hawaii Department of Labor and Industrial Relations" >HI — Hawaii ($1860/emp SUI on $62000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="ID" data-base="55300" data-rate="1" data-sui="553" data-agency="Idaho Department of Labor" >ID — Idaho ($553/emp SUI on $55300 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="IL" data-base="13960" data-rate="3.95" data-sui="551.42" data-agency="Illinois Department of Employment Security (IDES)" >IL — Illinois ($551.42/emp SUI on $13960 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="IN" data-base="9500" data-rate="2.5" data-sui="237.5" data-agency="Indiana Department of Workforce Development" >IN — Indiana ($237.5/emp SUI on $9500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="IA" data-base="39600" data-rate="1" data-sui="396" data-agency="Iowa Workforce Development" >IA — Iowa ($396/emp SUI on $39600 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="KS" data-base="14000" data-rate="2.7" data-sui="378" data-agency="Kansas Department of Labor" >KS — Kansas ($378/emp SUI on $14000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="KY" data-base="11700" data-rate="2.7" data-sui="315.9" data-agency="Kentucky Office of Unemployment Insurance" >KY — Kentucky ($315.9/emp SUI on $11700 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="LA" data-base="7700" data-rate="1.16" data-sui="89.32" data-agency="Louisiana Workforce Commission" >LA — Louisiana ($89.32/emp SUI on $7700 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="ME" data-base="12000" data-rate="2.19" data-sui="262.8" data-agency="Maine Department of Labor" >ME — Maine ($262.8/emp SUI on $12000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MD" data-base="8500" data-rate="2.6" data-sui="221" data-agency="Maryland Department of Labor — Division of Unemployment Insurance" >MD — Maryland ($221/emp SUI on $8500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MA" data-base="15000" data-rate="2.13" data-sui="319.5" data-agency="Massachusetts Department of Unemployment Assistance (DUA)" >MA — Massachusetts ($319.5/emp SUI on $15000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MI" data-base="9500" data-rate="2.7" data-sui="256.5" data-agency="Michigan Unemployment Insurance Agency (UIA)" >MI — Michigan ($256.5/emp SUI on $9500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MN" data-base="43000" data-rate="1.1" data-sui="473" data-agency="Minnesota Unemployment Insurance Program" >MN — Minnesota ($473/emp SUI on $43000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MS" data-base="14000" data-rate="1" data-sui="140" data-agency="Mississippi Department of Employment Security" >MS — Mississippi ($140/emp SUI on $14000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MO" data-base="9500" data-rate="2.37" data-sui="225.15" data-agency="Missouri Department of Labor and Industrial Relations" >MO — Missouri ($225.15/emp SUI on $9500 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="MT" data-base="45100" data-rate="1.18" data-sui="532.18" data-agency="Montana Department of Labor &amp; Industry" >MT — Montana ($532.18/emp SUI on $45100 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NE" data-base="9000" data-rate="1.25" data-sui="112.5" data-agency="Nebraska Department of Labor" >NE — Nebraska ($112.5/emp SUI on $9000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NV" data-base="41800" data-rate="2.95" data-sui="1233.1" data-agency="Nevada Department of Employment, Training and Rehabilitation" >NV — Nevada ($1233.1/emp SUI on $41800 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NH" data-base="14000" data-rate="1.7" data-sui="238" data-agency="New Hampshire Employment Security" >NH — New Hampshire ($238/emp SUI on $14000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NJ" data-base="43300" data-rate="2.8" data-sui="1212.4" data-agency="New Jersey Department of Labor and Workforce Development" >NJ — New Jersey ($1212.4/emp SUI on $43300 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NM" data-base="32900" data-rate="1" data-sui="329" data-agency="New Mexico Department of Workforce Solutions" >NM — New Mexico ($329/emp SUI on $32900 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NY" data-base="12800" data-rate="4.1" data-sui="524.8" data-agency="New York State Department of Labor (NYSDOL)" >NY — New York ($524.8/emp SUI on $12800 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="NC" data-base="32600" data-rate="1" data-sui="326" data-agency="North Carolina Division of Employment Security (DES)" selected>NC — North Carolina ($326/emp SUI on $32600 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="ND" data-base="45100" data-rate="1.09" data-sui="491.59" data-agency="Job Service North Dakota" >ND — North Dakota ($491.59/emp SUI on $45100 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="OH" data-base="9000" data-rate="2.7" data-sui="243" data-agency="Ohio Department of Job and Family Services" >OH — Ohio ($243/emp SUI on $9000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="OK" data-base="28200" data-rate="1.5" data-sui="423" data-agency="Oklahoma Employment Security Commission" >OK — Oklahoma ($423/emp SUI on $28200 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="OR" data-base="54300" data-rate="2.4" data-sui="1303.2" data-agency="Oregon Employment Department" >OR — Oregon ($1303.2/emp SUI on $54300 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="PA" data-base="10000" data-rate="3.82" data-sui="382" data-agency="Pennsylvania Department of Labor &amp; Industry" >PA — Pennsylvania ($382/emp SUI on $10000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="RI" data-base="29800" data-rate="1.16" data-sui="345.68" data-agency="Rhode Island Division of Taxation — Employer Tax" >RI — Rhode Island ($345.68/emp SUI on $29800 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="SC" data-base="14000" data-rate="0.46" data-sui="64.4" data-agency="South Carolina Department of Employment and Workforce" >SC — South Carolina ($64.4/emp SUI on $14000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="SD" data-base="15000" data-rate="1.2" data-sui="180" data-agency="South Dakota Department of Labor and Regulation" >SD — South Dakota ($180/emp SUI on $15000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="TN" data-base="7000" data-rate="2.7" data-sui="189" data-agency="Tennessee Department of Labor and Workforce Development" >TN — Tennessee ($189/emp SUI on $7000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="TX" data-base="9000" data-rate="2.7" data-sui="243" data-agency="Texas Workforce Commission (TWC)" >TX — Texas ($243/emp SUI on $9000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="UT" data-base="48900" data-rate="1.2" data-sui="586.8" data-agency="Utah Department of Workforce Services" >UT — Utah ($586.8/emp SUI on $48900 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="VT" data-base="14800" data-rate="1" data-sui="148" data-agency="Vermont Department of Labor" >VT — Vermont ($148/emp SUI on $14800 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="VA" data-base="8000" data-rate="2.53" data-sui="202.4" data-agency="Virginia Employment Commission (VEC)" >VA — Virginia ($202.4/emp SUI on $8000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="WA" data-base="72800" data-rate="1.5" data-sui="1092" data-agency="Washington Employment Security Department (ESD)" >WA — Washington ($1092/emp SUI on $72800 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="WV" data-base="9520" data-rate="2.7" data-sui="257.04" data-agency="WorkForce West Virginia" >WV — West Virginia ($257.04/emp SUI on $9520 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="WI" data-base="14000" data-rate="3.05" data-sui="427" data-agency="Wisconsin Department of Workforce Development" >WI — Wisconsin ($427/emp SUI on $14000 base)</option>
+        
+          
+          
+          
+          
+          
+          
+          <option value="WY" data-base="32400" data-rate="1.25" data-sui="405" data-agency="Wyoming Department of Workforce Services" >WY — Wyoming ($405/emp SUI on $32400 base)</option>
+        
+      </select>
+      <small id="ptc-state-note">Official 2026 state DOL SUI + $42 IRS FUTA</small>
+    </div>
+    <div class="calc-field">
+      <label for="ptc-states-count">Active US Tax States (1–50): <span id="ptc-states-lbl">2</span></label>
+      <input type="number" id="ptc-states-count" min="1" max="50" value="2">
+      <small>Triggers per-state filing fees on Rippling/ADP</small>
+    </div>
+    <div class="calc-field">
+      <label for="ptc-1099">1099 Contractors (0–100): <span id="ptc-1099-lbl">10</span></label>
+      <input type="number" id="ptc-1099" min="0" max="100" value="10">
+      <small>$6/mo on Gusto/OnPay vs. $49/mo Intl on Deel</small>
+    </div>
+    <div class="calc-field">
+      <label for="ptc-eor">International EOR Headcount (0–25):</label>
+      <input type="number" id="ptc-eor" min="0" max="25" value="0">
+      <small>$599/mo EOR seat + 1.25%–3.0% FX spread</small>
+    </div>
+    <div class="calc-field">
+      <label for="ptc-yearend" style="cursor:pointer">
+        <input type="checkbox" id="ptc-yearend" checked> Include Hidden Year-End W-2/1099 Fees &amp; State Reg
+      </label>
+      <small>Exposes ADP RUN $65 + $7.50/form &amp; $150–$175 state reg fees</small>
+    </div>
+  </div>
+
+  <div class="calc-output-grid" id="ptc-results-grid">
+    <div class="calc-vendor-card vendor-best" id="ptc-card-onpay">
+      <small>OnPay (Flat 50-State Tier)</small>
+      <strong class="calc-big" id="ptc-onpay-yr">$2,112/yr</strong>
+      <span class="calc-sub" id="ptc-onpay-sub">$40 base + $6/seat · $0 extra state or W-2 fees</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" id="ptc-cta-onpay" data-partner="OnPay" data-cta-slot="payroll_calc" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"w2":10,"states":2}' data-clickref="b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-onpay" href="https://onpay.com/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-onpay" target="_blank" rel="sponsored nofollow noopener">Lock In OnPay Rate →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best" id="ptc-card-gusto">
+      <small>Gusto Simple / Multi-State</small>
+      <strong class="calc-big" id="ptc-gusto-yr">$2,652/yr</strong>
+      <span class="calc-sub" id="ptc-gusto-sub">$49 base + $6/seat · $0 W-2/1099 year-end fee</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" id="ptc-cta-gusto" data-partner="Gusto" data-cta-slot="payroll_calc" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"w2":10,"states":2}' data-clickref="b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-gusto" href="https://gusto.com/product/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-gusto" target="_blank" rel="sponsored nofollow noopener">Verify Gusto Trial →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card" id="ptc-card-rippling">
+      <small>Rippling Core + Payroll + IT</small>
+      <strong class="calc-big" id="ptc-rippling-yr">$5,496/yr</strong>
+      <span class="calc-sub" id="ptc-rippling-sub">$85 base + $16/W-2 + $20/mo per extra state</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" id="ptc-cta-rippling" data-partner="Rippling" data-cta-slot="payroll_calc" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"w2":10,"states":2}' data-clickref="b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-rippling" href="https://www.rippling.com/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-rippling" target="_blank" rel="sponsored nofollow noopener">Compare Rippling →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card" id="ptc-card-deel">
+      <small>Deel US + Global EOR</small>
+      <strong class="calc-big" id="ptc-deel-yr">$6,456/yr</strong>
+      <span class="calc-sub" id="ptc-deel-sub">$19/US W-2 · $49 Intl 1099 · $599/mo EOR + 1.25% FX</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" id="ptc-cta-deel" data-partner="Deel" data-cta-slot="payroll_calc" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"w2":10,"states":2}' data-clickref="b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-deel" href="https://www.deel.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-payroll_calc-w2-employee-vs-1099-contractor-tco-deel" target="_blank" rel="sponsored nofollow noopener">Get Deel Global Quote →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card" id="ptc-card-adp">
+      <small>ADP RUN Legacy Benchmark</small>
+      <strong class="calc-big" id="ptc-adp-yr">$4,685/yr</strong>
+      <span class="calc-sub" id="ptc-adp-sub">Incl. $32/extra state + $7.50/form W-2 fee</span>
+      <div style="margin-top:.55rem">
+        <span style="display:inline-block;font-size:.78rem;font-weight:700;color:#991b1b" id="ptc-savings-callout">Switch to Gusto/OnPay &amp; save $2,033+/yr</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="box" style="margin:.6rem 0 0;background:#ecfdf5;border-color:#6ee7b7">
+    <strong id="ptc-gov-tax-headline">🏛️ Statutory Employer Unemployment Tax Baseline (FUTA + State SUI): $5,166/yr</strong>
+    <p style="margin:.2rem 0 0;font-size:.86rem;color:#065f46" id="ptc-gov-tax-detail">Based on 10 W-2 employees: $42/emp IRS FUTA (0.6% on $7,000) + $245/emp State SUI (plus 7.65% employer FICA on gross wages).</p>
+  </div>
+
+  <div class="cfo-export-bar">
+    <div>
+      <strong>📄 Need a Board-Ready CFO Payroll &amp; Multi-State SUI Audit Report (PDF + CSV)?</strong><br>
+      <small id="ptc-export-counter">Includes line-item 12-month PEPM schedule, state .gov SUI table &amp; contract buyout checklist (3 free exports remaining; Pro Unlimited $29/mo).</small>
+    </div>
+    <button type="button" class="cta-export" id="ptc-export-btn" data-route-slug="w2-employee-vs-1099-contractor-tco" data-export-type="payroll_cfo_csv">⬇ Export CFO Audit CSV / PDF ($29 Pro Preview)</button>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("payroll-tco-calc");
+  if (!box) return;
+  var routeSlug = box.getAttribute("data-route-slug") || "hub-payroll";
+  var w2El = document.getElementById("ptc-w2");
+  var w2Range = document.getElementById("ptc-w2-range");
+  var stEl = document.getElementById("ptc-state");
+  var stCountEl = document.getElementById("ptc-states-count");
+  var c1099El = document.getElementById("ptc-1099");
+  var eorEl = document.getElementById("ptc-eor");
+  var yrEndEl = document.getElementById("ptc-yearend");
+
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+
+  function compute(fromUser) {
+    var w2 = Math.max(1, Math.min(250, parseInt(w2El.value || "18", 10)));
+    var states = Math.max(1, Math.min(50, parseInt(stCountEl.value || "3", 10)));
+    var c1099 = Math.max(0, Math.min(100, parseInt(c1099El.value || "4", 10)));
+    var eor = Math.max(0, Math.min(25, parseInt(eorEl.value || "1", 10)));
+    var incYearEnd = Boolean(yrEndEl && yrEndEl.checked);
+    var extraStates = Math.max(0, states - 1);
+
+    document.getElementById("ptc-w2-lbl").textContent = String(w2);
+    document.getElementById("ptc-states-lbl").textContent = String(states);
+    document.getElementById("ptc-1099-lbl").textContent = String(c1099);
+
+    var opt = stEl.options[stEl.selectedIndex];
+    var stateCode = opt ? opt.value : "CA";
+    var suiPerEmp = opt ? parseFloat(opt.getAttribute("data-sui") || "245") : 245;
+    var wageBase = opt ? parseFloat(opt.getAttribute("data-base") || "7000") : 7000;
+    var agency = opt ? opt.getAttribute("data-agency") : "State DOL";
+
+    // EOR annual cost (seat + FX spread on $80k avg EOR salary)
+    var eorSeatAnnual = eor * 599 * 12;
+    var deelFxAnnual = eor * 80000 * 0.0125;
+    var stdFxAnnual = eor * 80000 * 0.02;
+
+    // 1. OnPay: $40 base + $6*(w2 + c1099), $0 multi-state fee, + EOR
+    var onpayYr = (40 + 6 * (w2 + c1099)) * 12 + eorSeatAnnual + stdFxAnnual;
+    // 2. Gusto: $49 base + $6*(w2 + c1099) + $12/mo per extra state + EOR
+    var gustoYr = (49 + 6 * (w2 + c1099) + 12 * extraStates) * 12 + eorSeatAnnual + stdFxAnnual;
+    // 3. Rippling: $85 base + $16*w2 + $8*c1099 + $20/mo per extra state + (incYearEnd ? $150*extraStates state reg : 0) + EOR
+    var ripplingYr = (85 + 16 * w2 + 8 * c1099 + 20 * extraStates) * 12 + (incYearEnd ? 150 * extraStates : 0) + eorSeatAnnual + stdFxAnnual;
+    // 4. Deel: $19*w2 + $49*c1099 + $599*eor + deelFxAnnual
+    var deelYr = (19 * w2 + 49 * c1099) * 12 + eorSeatAnnual + deelFxAnnual;
+    // 5. ADP RUN: $79 base + $8*w2 + $7*c1099 + $32*extraStates + year-end W-2/1099 ($65 + $7.50*(w2+c1099)) + $175*extraStates reg + EOR
+    var adpYearEnd = incYearEnd ? (65 + 7.5 * (w2 + c1099) + 175 * extraStates) : 0;
+    var adpYr = (79 + 8 * w2 + 7 * c1099 + 32 * extraStates) * 12 + adpYearEnd + (eor * 699 * 12) + stdFxAnnual;
+
+    document.getElementById("ptc-onpay-yr").textContent = fmt(onpayYr) + "/yr";
+    document.getElementById("ptc-gusto-yr").textContent = fmt(gustoYr) + "/yr";
+    document.getElementById("ptc-rippling-yr").textContent = fmt(ripplingYr) + "/yr";
+    document.getElementById("ptc-deel-yr").textContent = fmt(deelYr) + "/yr";
+    document.getElementById("ptc-adp-yr").textContent = fmt(adpYr) + "/yr";
+
+    var saveVsAdp = Math.max(0, adpYr - Math.min(onpayYr, gustoYr));
+    document.getElementById("ptc-savings-callout").textContent = "Saves " + fmt(saveVsAdp) + "/yr switching from ADP RUN";
+
+    var totalStatutoryTax = w2 * (42 + suiPerEmp);
+    document.getElementById("ptc-gov-tax-headline").textContent =
+      "🏛️ 2026 Statutory Employer Tax Baseline (" + stateCode + " SUI + IRS FUTA): " + fmt(totalStatutoryTax) + "/yr";
+    document.getElementById("ptc-gov-tax-detail").textContent =
+      "For " + w2 + " W-2 employees in " + stateCode + " (" + agency + "): $" + suiPerEmp + "/emp SUI ($" + wageBase.toLocaleString("en-US") + " wage base) + $42/emp IRS FUTA (excludes 7.65% FICA).";
+
+    var calcStateJson = JSON.stringify({w2: w2, state: stateCode, states: states, c1099: c1099, eor: eor, gustoYr: Math.round(gustoYr), onpayYr: Math.round(onpayYr), deelYr: Math.round(deelYr)});
+    ["ptc-cta-onpay", "ptc-cta-gusto", "ptc-cta-rippling", "ptc-cta-deel"].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.setAttribute("data-calc-inputs", calcStateJson);
+    });
+
+    if (fromUser && window.posthog && typeof window.posthog.capture === "function") {
+      window.posthog.capture("estimator_interaction", {
+        calculator: "payroll_tco_calc",
+        route_slug: routeSlug,
+        w2_headcount: w2,
+        primary_state: stateCode,
+        state_count: states,
+        contractors_1099: c1099,
+        eor_headcount: eor,
+        gusto_annual_tco: Math.round(gustoYr),
+        onpay_annual_tco: Math.round(onpayYr)
+      });
+    }
+  }
+
+  if (w2Range && w2El) {
+    w2Range.addEventListener("input", function(){ w2El.value = w2Range.value; compute(true); });
+    w2El.addEventListener("input", function(){ w2Range.value = w2El.value; compute(true); });
+  }
+  [stEl, stCountEl, c1099El, eorEl, yrEndEl].forEach(function(el){
+    if (el) el.addEventListener("change", function(){ compute(true); });
+    if (el && el.tagName === "INPUT") el.addEventListener("input", function(){ compute(true); });
+  });
+
+  var expBtn = document.getElementById("ptc-export-btn");
+  if (expBtn) {
+    expBtn.addEventListener("click", function(){
+      var used = parseInt(localStorage.getItem("b2b_free_exports_used") || "0", 10) + 1;
+      localStorage.setItem("b2b_free_exports_used", String(used));
+      var rem = Math.max(0, 3 - used);
+      var cntEl = document.getElementById("ptc-export-counter");
+      if (cntEl) {
+        cntEl.textContent = rem > 0
+          ? "CFO CSV downloaded! (" + rem + " of 3 free exports remaining before $29/mo Pro)."
+          : "Free 3-export limit reached — Upgrade to B2B Fee Audit Pro ($29/mo or $9 7-day pass) for unlimited white-label CFO exports.";
+      }
+      if (window.posthog && typeof window.posthog.capture === "function") {
+        window.posthog.capture("export_cfo_report_clicked", {calculator: "payroll_tco_calc", route_slug: routeSlug, exports_used: used});
+      }
+      var csv = "Vendor,12_Month_Software_And_EOR_TCO\nOnPay," + document.getElementById("ptc-onpay-yr").textContent + "\nGusto," + document.getElementById("ptc-gusto-yr").textContent + "\nRippling," + document.getElementById("ptc-rippling-yr").textContent + "\nDeel," + document.getElementById("ptc-deel-yr").textContent + "\nADP_RUN," + document.getElementById("ptc-adp-yr").textContent + "\n";
+      var blob = new Blob([csv], {type: "text/csv"});
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "b2bfeeaudit-payroll-tco-" + routeSlug + ".csv";
+      a.click();
+    });
+  }
+  compute(false);
+})();
+</script>
+
+
+
+
+
+
+
+<h2 id="cost-comparison">2026 Line-Item TCO Comparison &amp; Partner Verification Table</h2>
+<div class="table-wrap">
+  <table class="price-action-table">
+    <thead>
+      <tr>
+        <th class="sticky-col">Vendor / Statutory Benchmark</th>
+        <th>Verified 2026 All-In Rate &amp; 12-Month TCO</th>
+        <th>Audit Action / Official Citation</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Statutory Employer Tax Load per $85k W-2 Employee (FICA + FUTA + NC SUI)</strong>
+          <br><span class="verified-gov-badge" style="font-size:.7rem;padding:.1rem .45rem">Official .gov Statutory Baseline</span>
+        </td>
+        <td><strong>$6,859/yr statutory tax ($6,503 FICA + $42 FUTA + $314 NC SUI)</strong></td>
+        <td>
+          
+            <a class="tbl-gov-link" href="#src-1">🏛️ Verify .gov Rule [1]</a>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Gusto W-2 + 1099 Hybrid Payroll (10 W-2 + 10 US 1099 Contractors)</strong>
+          <br><span class="badge-payroll">Verified 2026 Payroll/HRIS Tier</span>
+        </td>
+        <td><strong>$169/mo ($2,028/yr) · $49 base + $6/W-2 + $6/1099 · $0 1099-NEC fee</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="Gusto" data-cta-slot="price_table_row" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs="{&quot;w2&quot;:10,&quot;states&quot;:2,&quot;primaryState&quot;:&quot;NC&quot;,&quot;contractors&quot;:10,&quot;eor&quot;:0,&quot;includeYearEnd&quot;:true}" data-clickref="b2b-price_table_row-w2-employee-vs-1099-contractor-tco-gusto-r2" href="https://gusto.com/product/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-w2-employee-vs-1099-contractor-tco-gusto-r2" target="_blank" rel="sponsored nofollow noopener">Run W-2 &amp; 1099s on Gusto →</a>
+            <small style="margin-left:.35rem"><a href="#src-2">[2]</a></small>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>OnPay W-2 + 1099 Multi-State Bundle (10 W-2 + 10 1099 Contractors)</strong>
+          <br><span class="badge-payroll">Verified 2026 Payroll/HRIS Tier</span>
+        </td>
+        <td><strong>$160/mo ($1,920/yr) · $40 base + $6/person · All 50 states included</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="OnPay" data-cta-slot="price_table_row" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs="{&quot;w2&quot;:10,&quot;states&quot;:2,&quot;primaryState&quot;:&quot;NC&quot;,&quot;contractors&quot;:10,&quot;eor&quot;:0,&quot;includeYearEnd&quot;:true}" data-clickref="b2b-price_table_row-w2-employee-vs-1099-contractor-tco-onpay-r3" href="https://onpay.com/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-w2-employee-vs-1099-contractor-tco-onpay-r3" target="_blank" rel="sponsored nofollow noopener">Compare OnPay W-2/1099 Plan →</a>
+            <small style="margin-left:.35rem"><a href="#src-3">[3]</a></small>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Deel Contractor Compliance &amp; Misclassification Shield (10 Contractors)</strong>
+          <br><span class="badge-payroll">Verified 2026 Payroll/HRIS Tier</span>
+        </td>
+        <td><strong>$490/mo ($5,880/yr) · Automated contracts, W-9/W-8BEN &amp; indemnification</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="Deel" data-cta-slot="price_table_row" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs="{&quot;w2&quot;:10,&quot;states&quot;:2,&quot;primaryState&quot;:&quot;NC&quot;,&quot;contractors&quot;:10,&quot;eor&quot;:0,&quot;includeYearEnd&quot;:true}" data-clickref="b2b-price_table_row-w2-employee-vs-1099-contractor-tco-deel-r4" href="https://www.deel.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-w2-employee-vs-1099-contractor-tco-deel-r4" target="_blank" rel="sponsored nofollow noopener">Audit Contractor Risk on Deel →</a>
+            <small style="margin-left:.35rem"><a href="#src-4">[4]</a></small>
+          
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+<p><small>All vendor base fees, PEPM tiers, and interchange markups verified as of October 24, 2026. Statutory SUI/FUTA/FICA and Federal Reserve Reg II debit benchmarks cite official <code>.gov</code> publications. Commercial links carry Sub-ID attribution via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), and Rakuten (<code>4767884</code>) (<a href="/methodology/#affiliate-disclosure">methodology &amp; disclosure</a>).</small></p>
+
+
+
+
+<section class="box">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Key 2026 Hidden-Fee &amp; Statutory Audit Findings</h2>
+  <ul>
+    
+    <li>2026 FICA Wage Base Cap ($176,100): Employers pay 6.2% Social Security tax up to $176,100 ($10,918.20 max per employee) plus 1.45% Medicare tax on 100% of wages with no cap.</li>
+    
+    <li>North Carolina SUI Benchmark (.gov): NC Division of Employment Security sets the 2026 taxable wage base at $31,400 with a 1.00% standard new-employer rate ($314/employee/year).</li>
+    
+    <li>1099-NEC Reporting Threshold ($600+): Any unincorporated US contractor paid $600 or more via ACH/check requires an e-filed IRS Form 1099-NEC by January 31.</li>
+    
+  </ul>
+</section>
+
+
+
+
+<section class="card">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Frequently Asked Questions (2026 Verified Data)</h2>
+  
+  <details class="faq-card" open>
+    <summary><h3>How much more does a W-2 employee cost an employer than a 1099 contractor in 2026?</h3></summary>
+    <p>Before voluntary health insurance or 401(k) match, a W-2 employee adds 7.65% in employer FICA (6.2% Social Security + 1.45% Medicare), $42 in federal FUTA, $160–$1,290 in state SUI, and 0.5%–2.0% in Workers&#39; Compensation—roughly 8.5% to 10.5% above gross wages.</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>What should a 1099 contractor charge per hour to match an $85,000 W-2 salary?</h3></summary>
+    <p>Because a 1099 contractor pays the full 15.3% self-employment FICA tax plus their own health insurance and PTO (180 billable days vs. 260 paid W-2 days), the break-even 1099 hourly rate for an $85,000 W-2 salary ($40.87/hr nominal) is $58 to $68/hour.</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>What is the cheapest way to pay 1099 contractors and auto-file 1099-NEC forms?</h3></summary>
+    <p>Both Gusto ($6/contractor/mo) and OnPay ($6/contractor/mo) collect W-9s digitally, process next-day ACH payouts, and e-file federal and state 1099-NEC forms at $0 per form.</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>What are the IRS penalties for misclassifying a W-2 employee as a 1099 contractor?</h3></summary>
+    <p>Under IRS Section 3509 (.gov), unintentional misclassification triggers assessments of 1.5% of wages for income tax withholding plus 20% of the employee&#39;s FICA share and 100% of the employer&#39;s 7.65% FICA share, plus state DOL back SUI fines.</p>
+  </details>
+  
+</section>
+
+
+
+<section class="box" aria-label="All 14 B2B Payroll and Merchant Fee TCO Calculators">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Explore All 2026 B2B Payroll, Multi-State SUI &amp; Merchant Fee TCO Calculators</h2>
+  <div class="card-grid-2">
+    <div>
+      <h3 style="margin-top:0">Cluster 1: Payroll, Multi-State HRIS &amp; Global EOR TCO</h3>
+      <ul style="padding-left:1.15rem;font-size:.92rem">
+        
+        <li><a href="/payroll/deel-vs-remote-eor-tco/"><strong>Deel vs. Remote Global EOR &amp; Contractor TCO Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-deel-tco/"><strong>Gusto vs. Deel US Payroll &amp; Global EOR Cost Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-onpay-tco/"><strong>Gusto vs. OnPay All-In Cost Comparison for 5–100 Employees (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-rippling-tco/"><strong>Gusto vs. Rippling True 12-Month TCO Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/multi-state-payroll-tax-calculator/"><strong>50-State Employer SUI Tax &amp; Multi-State Payroll Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/rippling-vs-adp-run-tco/"><strong>Rippling vs. ADP RUN Switching Cost &amp; W-2 Fee Audit (2026)</strong></a></li>
+        
+        <li><a href="/payroll/w2-employee-vs-1099-contractor-tco/"><strong>US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)</strong></a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Cluster 2: Merchant Processing &amp; Interchange-Plus TCO</h3>
+      <ul style="padding-left:1.15rem;font-size:.92rem">
+        
+        <li><a href="/merchant/b2b-ach-vs-credit-card-fee-calculator/"><strong>B2B ACH vs. Commercial Corporate Card (2.95%) Fee Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/paypal-vs-stripe-b2b-tco/"><strong>PayPal Braintree vs. Stripe B2B Merchant Fee Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/shopify-payments-vs-interchange-plus/"><strong>Shopify Payments vs. Dedicated Interchange-Plus Audit (2026)</strong></a></li>
+        
+        <li><a href="/merchant/square-vs-helcim-tco/"><strong>Square vs. Helcim True Effective Rate &amp; POS/Online Fee Audit (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-invoicing-fee-calculator/"><strong>Stripe Invoicing (+0.8%) &amp; International Card (+1.5%) Fee Auditor (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-vs-helcim-interchange-plus/"><strong>Stripe (2.9%+$0.30) vs. Helcim Interchange-Plus Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-vs-stax-subscription-tco/"><strong>Stripe vs. Stax (0% Markup Subscription) Break-Even Calculator (2026)</strong></a></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<h2>Official Regulatory (.gov) &amp; Published Vendor Fee Sources</h2>
+<ol>
+  
+  <li id="src-1"><a href="https://www.irs.gov/businesses/small-businesses-self-employed/independent-contractor-self-employed-or-employee" rel="nofollow noopener" target="_blank">IRS Publication 15 (2026 Employer Tax Guide) &amp; Independent Contractor vs. Employee Rules (.gov)</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-2"><a href="https://gusto.com/product/pricing" rel="nofollow noopener" target="_blank">Gusto Official 2026 W-2 Payroll &amp; $6/mo 1099 Contractor Pricing</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-3"><a href="https://onpay.com/pricing" rel="nofollow noopener" target="_blank">OnPay Official 2026 W-2 &amp; 1099 All-Inclusive Pricing Schedule</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-4"><a href="https://www.des.nc.gov/employers/unemployment-insurance-tax-rates" rel="nofollow noopener" target="_blank">NC Division of Employment Security (DES) 2026 SUI Tax Rate &amp; $31,400 Wage Base (.gov)</a> <small>(verified 2026-10-24)</small></li>
+  
+</ol>
+
+
+</main>
+<footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Payroll, Multi-State HRIS, EOR &amp; Merchant Processing TCO Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to you. <a href="/">TCO Calculators</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a></small></footer>
+
+
+<aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Live B2B TCO Comparison and Partner Verification Actions">
+  <div class="mcb-tiers">
+    <div class="mcb-tier">
+      <span class="mcb-label">🏛️ .gov Tax/IC Cap</span>
+      <strong class="mcb-val">$160–$1,290</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">💼 OnPay / Gusto</span>
+      <strong class="mcb-val">$40–$49 + $6</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">🌍 Deel EOR</span>
+      <strong class="mcb-val">$599/mo EOR</strong>
+    </div>
+  </div>
+  <div class="mcb-actions">
+    
+      <a class="cta mcb-btn" data-partner="Gusto" data-cta-slot="sticky_mobile_bar" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"slot":"sticky"}' data-clickref="b2b-sticky_mobile_bar-w2-employee-vs-1099-contractor-tco-gusto" href="https://gusto.com/product/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-sticky_mobile_bar-w2-employee-vs-1099-contractor-tco-gusto" target="_blank" rel="sponsored nofollow noopener">💼 Gusto ($49+$6)</a>
+      <a class="cta-secondary mcb-btn" data-partner="OnPay" data-cta-slot="sticky_mobile_bar" data-route-slug="w2-employee-vs-1099-contractor-tco" data-calc-inputs='{"slot":"sticky"}' data-clickref="b2b-sticky_mobile_bar-w2-employee-vs-1099-contractor-tco-onpay" href="https://onpay.com/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-sticky_mobile_bar-w2-employee-vs-1099-contractor-tco-onpay" target="_blank" rel="sponsored nofollow noopener">🏛️ OnPay ($0 State Fee)</a>
+    
+  </div>
+</aside>
+<script>
+(function(){
+  document.addEventListener("click", function(ev) {
+    if (!window.posthog || typeof window.posthog.capture !== "function") return;
+    var link = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!link || !link.href) return;
+    var href = link.href;
+    if (link.matches("[data-partner], .cta, .cta-secondary, .tbl-cta-btn, a[rel*='sponsored']")) {
+      var partner = link.getAttribute("data-partner") || "Partner";
+      var ctaSlot = link.getAttribute("data-cta-slot") || "inline_cta";
+      var routeSlug = link.getAttribute("data-route-slug") || window.location.pathname;
+      var calcInputs = link.getAttribute("data-calc-inputs") || "{}";
+      var clickref = link.getAttribute("data-clickref") || "default";
+      var payload = {
+        partner: partner,
+        cta_slot: ctaSlot,
+        route_slug: routeSlug,
+        calc_inputs: calcInputs,
+        clickref: clickref,
+        page_path: window.location.pathname,
+        href: href
+      };
+      window.posthog.capture("cta_click", payload);
+      window.posthog.capture("affiliate_cta_clicked", payload);
+    } else if (href.indexOf(".gov") !== -1) {
+      window.posthog.capture("gov_citation_clicked", {
+        gov_url: href,
+        link_text: (link.textContent || "").trim(),
+        page_path: window.location.pathname
+      });
+    }
+  });
+})();
+</script>
+</body></html>

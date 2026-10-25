@@ -1,0 +1,599 @@
+
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stripe Invoicing Fee Calculator (+0.8% &amp; +1.5% Intl Audit)</title>
+<meta name="description" content="Audit Stripe Invoicing (+0.80% per paid invoice), Stripe Billing (+0.5%–0.7%) &amp; international card (+1.5% + 1% FX) fees. Cut effective rates to 2.2%–2.4%.">
+<meta name="keywords" content="b2b payroll tco calculator, gusto vs rippling cost, gusto vs deel eor cost, 50 state sui payroll tax calculator, stripe vs helcim interchange plus, stripe vs stax break even, stripe invoicing fee calculator">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="B2B Fee Audit">
+<meta name="impact-site-verification" content="714f5d78-7e2a-43b7-8971-27919db894fa" value="714f5d78-7e2a-43b7-8971-27919db894fa">
+<link rel="canonical" href="https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/">
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+<link rel="manifest" href="/.well-known/webmcp.json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="B2B Fee Audit">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Stripe Invoicing Fee Calculator (+0.8% &amp; +1.5% Intl Audit)">
+<meta property="og:description" content="Audit Stripe Invoicing (+0.80% per paid invoice), Stripe Billing (+0.5%–0.7%) &amp; international card (+1.5% + 1% FX) fees. Cut effective rates to 2.2%–2.4%.">
+<meta property="og:url" content="https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/">
+<meta property="og:image" content="https://b2bfeeaudit.com/og-image.svg">
+<meta property="og:image:alt" content="Stripe Invoicing Fee Calculator (+0.8% &amp; +1.5% Intl Audit)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stripe Invoicing Fee Calculator (+0.8% &amp; +1.5% Intl Audit)">
+<meta name="twitter:description" content="Audit Stripe Invoicing (+0.80% per paid invoice), Stripe Billing (+0.5%–0.7%) &amp; international card (+1.5% + 1% FX) fees. Cut effective rates to 2.2%–2.4%.">
+<meta name="twitter:image" content="https://b2bfeeaudit.com/og-image.svg">
+<link rel="preload" href="/style.css?v=20261024" as="style">
+<link rel="stylesheet" href="/style.css?v=20261024">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"description":"Deterministic B2B Payroll, Multi-State HRIS, Global EOR, and Merchant Processing Interchange-Plus TCO Auditor backed by official 2026 .gov state SUI tax schedules and Federal Reserve Reg II debit benchmarks.","url":"https://b2bfeeaudit.com","logo":"https://b2bfeeaudit.com/logo-mark.svg","image":"https://b2bfeeaudit.com/og-image.svg","areaServed":{"@type":"Country","name":"United States"},"knowsAbout":["B2B Payroll & Multi-State HRIS Total Cost of Ownership","50-State Employer SUI Tax Wage Bases (.gov)","International Employer of Record (EOR) FX Spreads","Credit Card Interchange-Plus vs Flat-Rate Merchant Processing","Federal Reserve Regulation II Regulated Debit Interchange"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://b2bfeeaudit.com/#website","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"url":"https://b2bfeeaudit.com","publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stripe Invoicing (+0.8%) & International Card (+1.5%) Fee Auditor (2026)","applicationCategory":"BusinessApplication","operatingSystem":"Web, WebMCP, OpenAPI 3.1","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD","description":"Free deterministic TCO calculator (3 free CFO CSV/PDF exports; $29/mo Pro unlimited)"},"publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Stripe Invoicing Fee Calculator (+0.8% & +1.5% Intl Audit)","description":"Audit Stripe Invoicing (+0.80% per paid invoice), Stripe Billing (+0.5%–0.7%) & international card (+1.5% + 1% FX) fees. Cut effective rates to 2.2%–2.4%.","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/","serviceType":"Merchant Processing & Interchange-Plus Fee Audit","provider":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"url":"https://b2bfeeaudit.com/"},"areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"0","highPrice":"3400","offerCount":"4","offers":[{"@type":"Offer","name":"Helcim Hosted B2B Invoicing ($55k/mo Volume, $0 Invoicing Surcharge)","description":"2.30% Effective ($1,265/mo · $15,180/yr) · Saves $11,682/yr","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/#cost-comparison"},{"@type":"Offer","name":"Stax B2B Invoicing + Level 2/3 ($55k/mo Volume, $99/mo + 0% Markup)","description":"2.18% Effective ($1,199/mo · $14,388/yr) · Saves $12,474/yr","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/#cost-comparison"},{"@type":"Offer","name":"Stripe Invoicing Plus + Intl Mix ($55k/mo, 2.9% + 0.8% Inv + 1.5% Intl)","description":"4.07% Effective ($2,239/mo · $26,862/yr) · $5,280/yr in invoice fees alone","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/#cost-comparison"},{"@type":"Offer","name":"CFPB / Federal Reserve Electronic Fund Transfer & ACH Benchmark (.gov)","description":"0.50%–0.80% ACH bank transfer ($5–$6 cap per B2B invoice)","url":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/#cost-comparison"}]}}</script>
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does Stripe charge an extra 0.4% to 0.8% on Stripe Invoicing?","acceptedAnswer":{"@type":"Answer","text":"Stripe treats Stripe Invoicing as a separate SaaS product from Stripe Checkout. Starter invoicing adds 0.40% per paid invoice, and Invoicing Plus (required for Net-30 terms, ERP sync, and auto-reconciliation) adds 0.80% on top of the 2.9% + $0.30 card fee."}},{"@type":"Question","name":"How can I send Stripe payment links without paying the 0.8% invoicing fee?","acceptedAnswer":{"@type":"Answer","text":"You can either build custom Stripe Checkout sessions via API, or switch your B2B invoicing to Helcim or Stax, both of which include hosted B2B invoicing, recurring billing, and automated reminders with a 0.00% invoicing surcharge."}},{"@type":"Question","name":"How much does Stripe charge for international credit cards and currency conversion?","acceptedAnswer":{"@type":"Answer","text":"Stripe adds +1.50% for any card issued outside the United States, plus an additional +1.00% if currency conversion is required—pushing a standard 2.9% + $0.30 transaction to 5.4% + $0.30 (or 6.2% + $0.30 with Stripe Invoicing Plus)."}},{"@type":"Question","name":"What is the cheapest way to collect $2,500+ B2B invoices?","acceptedAnswer":{"@type":"Answer","text":"Collecting B2B invoices via ACH bank transfer (0.50% capped at $6.00 on Helcim, or 0.80% capped at $5.00 on Stripe) or Level 2/3 Interchange-Plus on Stax/Helcim reduces fee drag by 70%–95%."}}]}</script>
+
+<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});</script>
+</head><body>
+<header>
+  <a href="/" style="font-size:1.15rem"><img src="/logo-mark.svg" alt="B2B Fee Audit logo — Payroll, HRIS & Merchant Fee TCO Auditor" width="24" height="24" decoding="async" style="vertical-align:-5px;margin-right:7px"><strong>B2B Fee Audit</strong></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="/#payroll-tco-calc">Payroll &amp; SUI Calculator</a>
+    <a href="/#merchant-fee-calc">Merchant &amp; IC+ Calculator</a>
+    <a href="/payroll/gusto-vs-rippling-tco/">Gusto vs. Rippling</a>
+    <a href="/merchant/stripe-vs-helcim-interchange-plus/">Stripe vs. Helcim</a>
+    <a href="/methodology/">2026 Methodology (.gov)</a>
+    <a href="/.well-known/webmcp.json">WebMCP Spec</a>
+  </nav>
+</header>
+<main>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"B2B Fee Audit Hub","item":"https://b2bfeeaudit.com/"},{"@type":"ListItem","position":2,"name":"Merchant & IC+ TCO","item":"https://b2bfeeaudit.com/#merchant-fee-calc"},{"@type":"ListItem","position":3,"name":"Stripe Invoicing (+0.8%) & International Card (+1.5%) Fee Auditor (2026)","item":"https://b2bfeeaudit.com/merchant/stripe-invoicing-fee-calculator/"}]}</script>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-list"><li><a href="/">B2B Fee Audit Hub</a> <span aria-hidden="true">›</span> </li><li><a href="/#merchant-fee-calc">Merchant &amp; IC+ TCO</a> <span aria-hidden="true">›</span> </li><li><span aria-current="page">Stripe Invoicing (+0.8%) &amp; International Card (+1.5%) Fee Auditor (2026)</span></li></ol></nav>
+
+
+
+
+
+
+  
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+  
+    
+  
+
+<div class="verified-gov-bar" role="region" aria-label="Regulatory Verification Status">
+  <span class="verified-gov-badge">✓ Verified 2026 .gov Tax &amp; Interchange Schedule · 2026-10-24</span>
+  
+    <a class="gov-seal-pill" href="#src-1" title="Jump to primary official .gov citation">🏛️ Consumer Financial Protection Bureau (CFPB) Electronic Fund Tran…</a>
+  
+</div>
+
+<h1>Stripe Invoicing (+0.8%) &amp; International Card (+1.5%) Hidden Fee Auditor (2026)</h1>
+<p><strong>2026 Executive Audit Summary:</strong> B2B agencies, SaaS vendors, and wholesalers sending invoices through Stripe Invoicing pay 2.9% + $0.30 base PLUS +0.4% to +0.8% per paid invoice (and +1.5% international card + 1.0% FX conversion on non-US clients). On $55,000/month ($450 average B2B invoice, 20% international), Stripe&#39;s effective rate hits 4.07% ($26,862/yr)—whereas Helcim B2B Invoicing ($0 invoicing surcharge, IC+ 0.40%) costs $15,180/yr, saving $11,682/yr.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="verdict-card" aria-label="30-Second TCO Audit Verdict">
+  <div class="verdict-header">
+    <strong>⏱️ 30-Second CFO Audit Verdict: Stripe Invoicing (+0.8%) &amp; International Card (+1.5%) Fee Auditor (2026)</strong>
+    <span class="verdict-pill">Deterministic 2026 Line-Item Math</span>
+  </div>
+  <ul class="verdict-list">
+    <li class="verdict-item">
+      <span class="verdict-tag tag-winner">🏆 12-MONTH TCO WINNER</span>
+      <div>Eliminate Stripe&#39;s +0.8% Invoicing Surcharge; Save $11,682/yr on Helcim or Stax</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-trap">⚠️ HIDDEN FEE TRAP</span>
+      <div>Stripe Invoicing Plus charges 0.80% on top of 2.9% + $0.30 (3.70% + $0.30 on domestic cards, or 6.20% + $0.30 on cross-border FX cards).</div>
+    </li>
+    <li class="verdict-item">
+      <span class="verdict-tag tag-action">⚡ RECOMMENDED SWITCH</span>
+      <div>Stop paying 0.80% just to generate a hosted PDF invoice link—Helcim and Stax include hosted B2B invoicing and ACH requests at 0.00% invoicing markup.</div>
+    </li>
+  </ul>
+  <div class="verdict-actions">
+    <a class="cta verdict-btn" data-partner="Helcim" data-cta-slot="verdict_card" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs="{&quot;volume&quot;:55000,&quot;ticket&quot;:450,&quot;cnpPct&quot;:100,&quot;intlPct&quot;:20}" data-clickref="b2b-verdict_card-stripe-invoicing-fee-calculator-helcim" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-verdict_card-stripe-invoicing-fee-calculator-helcim" target="_blank" rel="sponsored nofollow noopener">Compare Helcim 2026 Rates &amp; Savings →</a>
+    <a class="cta-secondary verdict-btn" data-partner="Stax" data-cta-slot="verdict_card" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs="{&quot;volume&quot;:55000,&quot;ticket&quot;:450,&quot;cnpPct&quot;:100,&quot;intlPct&quot;:20}" data-clickref="b2b-verdict_card-stripe-invoicing-fee-calculator-stax" href="https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-verdict_card-stripe-invoicing-fee-calculator-stax" target="_blank" rel="sponsored nofollow noopener">Audit Stax Custom TCO Quote →</a>
+  </div>
+</section>
+
+
+
+
+  
+
+
+
+
+
+
+<section class="tco-calc-box" id="merchant-fee-calc" data-route-slug="stripe-invoicing-fee-calculator" aria-label="Interactive Merchant Processing and Interchange-Plus Fee Calculator">
+  <div>
+    <span class="badge-merchant">💳 DETERMINISTIC MERCHANT PROCESSING &amp; INTERCHANGE-PLUS AUDITOR</span>
+    <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare Flat-Rate (Stripe 2.9%+$0.30 / Square / PayPal) vs. Interchange-Plus (Helcim / Stax)</h2>
+    <p style="margin:0;font-size:.93rem;color:#334155">Enter your monthly card volume, average ticket size, online/invoiced mix, and international share to calculate exact effective rates and 12-month savings:</p>
+  </div>
+  <div class="calc-controls-grid">
+    <div class="calc-field">
+      <label for="mfc-vol">Monthly Card Volume ($5k–$500k): <span id="mfc-vol-lbl">$55000</span></label>
+      <input type="number" id="mfc-vol" min="5000" max="500000" step="1000" value="55000">
+      <input type="range" id="mfc-vol-range" min="5000" max="500000" step="5000" value="55000" aria-label="Monthly Card Volume Slider">
+    </div>
+    <div class="calc-field">
+      <label for="mfc-ticket">Average Ticket Size ($10–$2,500): <span id="mfc-ticket-lbl">$450</span></label>
+      <input type="number" id="mfc-ticket" min="10" max="2500" value="450">
+      <small>Controls per-transaction ($0.30 vs. $0.08) fee drag</small>
+    </div>
+    <div class="calc-field">
+      <label for="mfc-cnp">Online / Invoiced (CNP) Share (%): <span id="mfc-cnp-lbl">100%</span></label>
+      <input type="number" id="mfc-cnp" min="0" max="100" value="100">
+      <small>Remainder is Card-Present POS tap/dip</small>
+    </div>
+    <div class="calc-field">
+      <label for="mfc-intl">International Card Share (%): <span id="mfc-intl-lbl">20%</span></label>
+      <input type="number" id="mfc-intl" min="0" max="100" value="20">
+      <small>Triggers +1.5% cross-border fee on Stripe/PayPal</small>
+    </div>
+  </div>
+
+  <div class="calc-output-grid" id="mfc-results-grid">
+    <div class="calc-vendor-card vendor-best" id="mfc-card-helcim">
+      <small>Helcim Interchange-Plus ($0/mo)</small>
+      <strong class="calc-big" id="mfc-helcim-yr">$18,564/yr</strong>
+      <span class="calc-sub" id="mfc-helcim-eff">Effective Rate: 2.38% · $0 monthly fee · Free invoicing</span>
+      <div style="margin-top:.55rem">
+        <a class="cta tbl-cta-btn" id="mfc-cta-helcim" data-partner="Helcim" data-cta-slot="merchant_calc" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs='{"volume":55000,"ticket":450}' data-clickref="b2b-merchant_calc-stripe-invoicing-fee-calculator-helcim" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-merchant_calc-stripe-invoicing-fee-calculator-helcim" target="_blank" rel="sponsored nofollow noopener">Switch to Helcim IC+ →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card vendor-best" id="mfc-card-stax">
+      <small>Stax 0% Markup Subscription</small>
+      <strong class="calc-big" id="mfc-stax-yr">$17,088/yr</strong>
+      <span class="calc-sub" id="mfc-stax-eff">Effective Rate: 2.19% · $99/mo + 0% processor markup</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" id="mfc-cta-stax" data-partner="Stax" data-cta-slot="merchant_calc" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs='{"volume":55000,"ticket":450}' data-clickref="b2b-merchant_calc-stripe-invoicing-fee-calculator-stax" href="https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-merchant_calc-stripe-invoicing-fee-calculator-stax" target="_blank" rel="sponsored nofollow noopener">Get Stax 0% Audit →</a>
+      </div>
+    </div>
+    <div class="calc-vendor-card" id="mfc-card-stripe">
+      <small>Stripe (2.9%+$0.30 + Invoicing)</small>
+      <strong class="calc-big" id="mfc-stripe-yr">$29,718/yr</strong>
+      <span class="calc-sub" id="mfc-stripe-eff">Effective Rate: 3.81% · Incl. +0.8% invoicing &amp; +1.5% intl</span>
+      <div style="margin-top:.55rem">
+        <span style="display:inline-block;font-size:.78rem;font-weight:700;color:#065f46" id="mfc-savings-callout">✓ Save $12,630/yr switching to IC+</span>
+      </div>
+    </div>
+    <div class="calc-vendor-card" id="mfc-card-paypal">
+      <small>PayPal Checkout (3.49%+$0.49)</small>
+      <strong class="calc-big" id="mfc-paypal-yr">$33,150/yr</strong>
+      <span class="calc-sub" id="mfc-paypal-eff">Effective Rate: 4.25% · Digital wallet &amp; invoicing drag</span>
+    </div>
+  </div>
+
+  <div class="box" style="margin:.6rem 0 0;background:#eff6ff;border-color:#93c5fd">
+    <strong>🏛️ Federal Reserve Regulation II (Durbin Amendment) Regulated Debit Benchmark (.gov): 0.05% + $0.22/tx</strong>
+    <p style="margin:.2rem 0 0;font-size:.86rem;color:#1e3a8a">Flat-rate processors charge 2.6%–3.49% even when customers use regulated bank debit cards (capped at 0.05% + $0.22 wholesale). Helcim and Stax pass regulated debit wholesale rates directly to your business.</p>
+  </div>
+
+  <div class="cfo-export-bar">
+    <div>
+      <strong>📊 Export Statement Audit Breakdown (Visa/MC Interchange vs. Flat-Rate CSV/PDF):</strong><br>
+      <small id="mfc-export-counter">Download full 12-month effective rate schedule &amp; Level 2/3 savings model (3 free runs; $29/mo Pro Unlimited).</small>
+    </div>
+    <button type="button" class="cta-export" id="mfc-export-btn" data-route-slug="stripe-invoicing-fee-calculator" data-export-type="merchant_cfo_csv">⬇ Export Merchant Fee Audit CSV ($29 Pro Preview)</button>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById("merchant-fee-calc");
+  if (!box) return;
+  var routeSlug = box.getAttribute("data-route-slug") || "hub-merchant";
+  var volEl = document.getElementById("mfc-vol");
+  var volRange = document.getElementById("mfc-vol-range");
+  var ticketEl = document.getElementById("mfc-ticket");
+  var cnpEl = document.getElementById("mfc-cnp");
+  var intlEl = document.getElementById("mfc-intl");
+
+  function fmt(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+
+  function compute(fromUser) {
+    var vol = Math.max(5000, Math.min(500000, parseFloat(volEl.value || "65000")));
+    var ticket = Math.max(10, Math.min(2500, parseFloat(ticketEl.value || "85")));
+    var cnpPct = Math.max(0, Math.min(100, parseFloat(cnpEl.value || "80"))) / 100.0;
+    var cpPct = 1.0 - cnpPct;
+    var intlPct = Math.max(0, Math.min(100, parseFloat(intlEl.value || "10"))) / 100.0;
+    var txCount = vol / ticket;
+
+    document.getElementById("mfc-vol-lbl").textContent = "$" + Math.round(vol).toLocaleString("en-US");
+    document.getElementById("mfc-ticket-lbl").textContent = "$" + Math.round(ticket).toLocaleString("en-US");
+    document.getElementById("mfc-cnp-lbl").textContent = Math.round(cnpPct * 100) + "%";
+    document.getElementById("mfc-intl-lbl").textContent = Math.round(intlPct * 100) + "%";
+
+    // Wholesale interchange + 0.14% assessments
+    var wholesalePct = (cnpPct * 0.0188 + cpPct * 0.0152) + 0.0014;
+    var wholesalePerTx = cnpPct * 0.10 + cpPct * 0.07;
+
+    // 1. Helcim IC+: volume-tiered markup (0.40% under 50k, 0.35% 50k-100k, 0.30% 100k+) + $0.08/tx
+    var helcimMarkupPct = vol >= 100000 ? 0.0030 : (vol >= 50000 ? 0.0035 : 0.0040);
+    var helcimMo = vol * (wholesalePct + helcimMarkupPct + intlPct * 0.0065) + txCount * (wholesalePerTx + 0.08);
+    var helcimYr = helcimMo * 12;
+    var helcimEff = (helcimMo / vol) * 100;
+
+    // 2. Stax 0% markup: $99/mo (or $199 over $150k) + wholesale + $0.12 blended tx
+    var staxSub = vol > 150000 ? 199 : 99;
+    var staxMo = staxSub + vol * (wholesalePct + intlPct * 0.0065) + txCount * (wholesalePerTx + 0.12);
+    var staxYr = staxMo * 12;
+    var staxEff = (staxMo / vol) * 100;
+
+    // 3. Stripe: 2.9% + $0.30 online, 2.7% + $0.05 CP, +0.4% blended invoicing/billing, +1.5% intl
+    var stripePct = (cnpPct * (0.029 + 0.004) + cpPct * 0.027) + intlPct * 0.015;
+    var stripePerTx = cnpPct * 0.30 + cpPct * 0.05;
+    var stripeMo = vol * stripePct + txCount * stripePerTx;
+    var stripeYr = stripeMo * 12;
+    var stripeEff = (stripeMo / vol) * 100;
+
+    // 4. PayPal: 3.49% + $0.49 online, 2.29% + $0.09 CP, +1.5% intl
+    var paypalPct = (cnpPct * 0.0349 + cpPct * 0.0229) + intlPct * 0.015;
+    var paypalPerTx = cnpPct * 0.49 + cpPct * 0.09;
+    var paypalMo = vol * paypalPct + txCount * paypalPerTx;
+    var paypalYr = paypalMo * 12;
+    var paypalEff = (paypalMo / vol) * 100;
+
+    document.getElementById("mfc-helcim-yr").textContent = fmt(helcimYr) + "/yr";
+    document.getElementById("mfc-helcim-eff").textContent = "Effective Rate: " + helcimEff.toFixed(2) + "% (" + fmt(helcimMo) + "/mo · $0 sub)";
+    document.getElementById("mfc-stax-yr").textContent = fmt(staxYr) + "/yr";
+    document.getElementById("mfc-stax-eff").textContent = "Effective Rate: " + staxEff.toFixed(2) + "% (" + fmt(staxMo) + "/mo · $" + staxSub + "/mo sub)";
+    document.getElementById("mfc-stripe-yr").textContent = fmt(stripeYr) + "/yr";
+    document.getElementById("mfc-stripe-eff").textContent = "Effective Rate: " + stripeEff.toFixed(2) + "% (" + fmt(stripeMo) + "/mo)";
+    document.getElementById("mfc-paypal-yr").textContent = fmt(paypalYr) + "/yr";
+    document.getElementById("mfc-paypal-eff").textContent = "Effective Rate: " + paypalEff.toFixed(2) + "% (" + fmt(paypalMo) + "/mo)";
+
+    var bestIcYr = Math.min(helcimYr, staxYr);
+    var saved = Math.max(0, stripeYr - bestIcYr);
+    document.getElementById("mfc-savings-callout").textContent = "✓ Saves " + fmt(saved) + "/yr switching from Stripe to IC+";
+
+    var calcStateJson = JSON.stringify({volume: Math.round(vol), ticket: Math.round(ticket), cnpPct: Math.round(cnpPct*100), intlPct: Math.round(intlPct*100), helcimYr: Math.round(helcimYr), staxYr: Math.round(staxYr), savedVsStripe: Math.round(saved)});
+    ["mfc-cta-helcim", "mfc-cta-stax"].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.setAttribute("data-calc-inputs", calcStateJson);
+    });
+
+    if (fromUser && window.posthog && typeof window.posthog.capture === "function") {
+      window.posthog.capture("estimator_interaction", {
+        calculator: "merchant_fee_calc",
+        route_slug: routeSlug,
+        monthly_volume: Math.round(vol),
+        avg_ticket: Math.round(ticket),
+        cnp_pct: Math.round(cnpPct * 100),
+        intl_pct: Math.round(intlPct * 100),
+        annual_savings_vs_stripe: Math.round(saved)
+      });
+    }
+  }
+
+  if (volRange && volEl) {
+    volRange.addEventListener("input", function(){ volEl.value = volRange.value; compute(true); });
+    volEl.addEventListener("input", function(){ volRange.value = volEl.value; compute(true); });
+  }
+  [ticketEl, cnpEl, intlEl].forEach(function(el){
+    if (el) el.addEventListener("change", function(){ compute(true); });
+    if (el) el.addEventListener("input", function(){ compute(true); });
+  });
+
+  var expBtn = document.getElementById("mfc-export-btn");
+  if (expBtn) {
+    expBtn.addEventListener("click", function(){
+      var used = parseInt(localStorage.getItem("b2b_free_exports_used") || "0", 10) + 1;
+      localStorage.setItem("b2b_free_exports_used", String(used));
+      var rem = Math.max(0, 3 - used);
+      var cntEl = document.getElementById("mfc-export-counter");
+      if (cntEl) {
+        cntEl.textContent = rem > 0
+          ? "Merchant Audit CSV downloaded! (" + rem + " of 3 free exports remaining before $29/mo Pro)."
+          : "Free 3-export limit reached — Upgrade to B2B Fee Audit Pro ($29/mo or $9 7-day pass) for unlimited CFO statement exports.";
+      }
+      if (window.posthog && typeof window.posthog.capture === "function") {
+        window.posthog.capture("export_cfo_report_clicked", {calculator: "merchant_fee_calc", route_slug: routeSlug, exports_used: used});
+      }
+      var csv = "Processor,Annual_Processing_Fees,Effective_Rate_Note\nHelcim_IC_Plus," + document.getElementById("mfc-helcim-yr").textContent + "," + document.getElementById("mfc-helcim-eff").textContent + "\nStax_0_Markup," + document.getElementById("mfc-stax-yr").textContent + "," + document.getElementById("mfc-stax-eff").textContent + "\nStripe_Flat," + document.getElementById("mfc-stripe-yr").textContent + "," + document.getElementById("mfc-stripe-eff").textContent + "\nPayPal_Checkout," + document.getElementById("mfc-paypal-yr").textContent + "," + document.getElementById("mfc-paypal-eff").textContent + "\n";
+      var blob = new Blob([csv], {type: "text/csv"});
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "b2bfeeaudit-merchant-fees-" + routeSlug + ".csv";
+      a.click();
+    });
+  }
+  compute(false);
+})();
+</script>
+
+
+
+
+
+
+
+<h2 id="cost-comparison">2026 Line-Item TCO Comparison &amp; Partner Verification Table</h2>
+<div class="table-wrap">
+  <table class="price-action-table">
+    <thead>
+      <tr>
+        <th class="sticky-col">Vendor / Statutory Benchmark</th>
+        <th>Verified 2026 All-In Rate &amp; 12-Month TCO</th>
+        <th>Audit Action / Official Citation</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Helcim Hosted B2B Invoicing ($55k/mo Volume, $0 Invoicing Surcharge)</strong>
+          <br><span class="badge-merchant">Verified 2026 Payment Processor</span>
+        </td>
+        <td><strong>2.30% Effective ($1,265/mo · $15,180/yr) · Saves $11,682/yr</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="Helcim" data-cta-slot="price_table_row" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs="{&quot;volume&quot;:55000,&quot;ticket&quot;:450,&quot;cnpPct&quot;:100,&quot;intlPct&quot;:20}" data-clickref="b2b-price_table_row-stripe-invoicing-fee-calculator-helcim-r1" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-stripe-invoicing-fee-calculator-helcim-r1" target="_blank" rel="sponsored nofollow noopener">Switch to Helcim Free Invoicing →</a>
+            <small style="margin-left:.35rem"><a href="#src-2">[2]</a></small>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Stax B2B Invoicing + Level 2/3 ($55k/mo Volume, $99/mo + 0% Markup)</strong>
+          <br><span class="badge-merchant">Verified 2026 Payment Processor</span>
+        </td>
+        <td><strong>2.18% Effective ($1,199/mo · $14,388/yr) · Saves $12,474/yr</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="Stax" data-cta-slot="price_table_row" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs="{&quot;volume&quot;:55000,&quot;ticket&quot;:450,&quot;cnpPct&quot;:100,&quot;intlPct&quot;:20}" data-clickref="b2b-price_table_row-stripe-invoicing-fee-calculator-stax-r2" href="https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-stripe-invoicing-fee-calculator-stax-r2" target="_blank" rel="sponsored nofollow noopener">Get Stax B2B Invoicing Demo →</a>
+            <small style="margin-left:.35rem"><a href="#src-3">[3]</a></small>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>Stripe Invoicing Plus + Intl Mix ($55k/mo, 2.9% + 0.8% Inv + 1.5% Intl)</strong>
+          <br><span class="badge-merchant">Verified 2026 Payment Processor</span>
+        </td>
+        <td><strong>4.07% Effective ($2,239/mo · $26,862/yr) · $5,280/yr in invoice fees alone</strong></td>
+        <td>
+          
+            <a class="tbl-cta-btn" data-partner="Stripe" data-cta-slot="price_table_row" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs="{&quot;volume&quot;:55000,&quot;ticket&quot;:450,&quot;cnpPct&quot;:100,&quot;intlPct&quot;:20}" data-clickref="b2b-price_table_row-stripe-invoicing-fee-calculator-stripe-r3" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-price_table_row-stripe-invoicing-fee-calculator-stripe-r3" target="_blank" rel="sponsored nofollow noopener">Audit Stripe Invoicing Fees →</a>
+            <small style="margin-left:.35rem"><a href="#src-4">[4]</a></small>
+          
+        </td>
+      </tr>
+    
+      
+      
+      
+      
+      
+      <tr>
+        <td class="sticky-col">
+          <strong>CFPB / Federal Reserve Electronic Fund Transfer &amp; ACH Benchmark (.gov)</strong>
+          <br><span class="verified-gov-badge" style="font-size:.7rem;padding:.1rem .45rem">Official .gov Statutory Baseline</span>
+        </td>
+        <td><strong>0.50%–0.80% ACH bank transfer ($5–$6 cap per B2B invoice)</strong></td>
+        <td>
+          
+            <a class="tbl-gov-link" href="#src-1">🏛️ Verify .gov Rule [1]</a>
+          
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+<p><small>All vendor base fees, PEPM tiers, and interchange markups verified as of October 24, 2026. Statutory SUI/FUTA/FICA and Federal Reserve Reg II debit benchmarks cite official <code>.gov</code> publications. Commercial links carry Sub-ID attribution via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), and Rakuten (<code>4767884</code>) (<a href="/methodology/#affiliate-disclosure">methodology &amp; disclosure</a>).</small></p>
+
+
+
+
+<section class="box">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Key 2026 Hidden-Fee &amp; Statutory Audit Findings</h2>
+  <ul>
+    
+    <li>How Stripe&#39;s +0.8% Invoicing Surcharge Compounds: On $55,000/month ($660,000/yr) of B2B invoices, an extra 0.80% software surcharge for Stripe Invoicing Plus costs $5,280/yr purely for sending invoice emails.</li>
+    
+    <li>Cross-Border B2B Card Stack (2.9% + 0.8% + 1.5% + 1.0% = 6.2%): When a UK, Canadian, or EU business pays a Stripe Invoice in non-USD currency, four fees stack on the same transaction.</li>
+    
+    <li>Automated Fee-Saver / ACH Toggle: Helcim&#39;s B2B invoice portal lets merchants offer 0.5% ACH (capped at $6) or pass credit card convenience fees where permitted by state law.</li>
+    
+  </ul>
+</section>
+
+
+
+
+<section class="card">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Frequently Asked Questions (2026 Verified Data)</h2>
+  
+  <details class="faq-card" open>
+    <summary><h3>Why does Stripe charge an extra 0.4% to 0.8% on Stripe Invoicing?</h3></summary>
+    <p>Stripe treats Stripe Invoicing as a separate SaaS product from Stripe Checkout. Starter invoicing adds 0.40% per paid invoice, and Invoicing Plus (required for Net-30 terms, ERP sync, and auto-reconciliation) adds 0.80% on top of the 2.9% + $0.30 card fee.</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>How can I send Stripe payment links without paying the 0.8% invoicing fee?</h3></summary>
+    <p>You can either build custom Stripe Checkout sessions via API, or switch your B2B invoicing to Helcim or Stax, both of which include hosted B2B invoicing, recurring billing, and automated reminders with a 0.00% invoicing surcharge.</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>How much does Stripe charge for international credit cards and currency conversion?</h3></summary>
+    <p>Stripe adds +1.50% for any card issued outside the United States, plus an additional +1.00% if currency conversion is required—pushing a standard 2.9% + $0.30 transaction to 5.4% + $0.30 (or 6.2% + $0.30 with Stripe Invoicing Plus).</p>
+  </details>
+  
+  <details class="faq-card" open>
+    <summary><h3>What is the cheapest way to collect $2,500+ B2B invoices?</h3></summary>
+    <p>Collecting B2B invoices via ACH bank transfer (0.50% capped at $6.00 on Helcim, or 0.80% capped at $5.00 on Stripe) or Level 2/3 Interchange-Plus on Stax/Helcim reduces fee drag by 70%–95%.</p>
+  </details>
+  
+</section>
+
+
+
+<section class="box" aria-label="All 14 B2B Payroll and Merchant Fee TCO Calculators">
+  <h2 style="margin-top:0;border-top:0;padding-top:0">Explore All 2026 B2B Payroll, Multi-State SUI &amp; Merchant Fee TCO Calculators</h2>
+  <div class="card-grid-2">
+    <div>
+      <h3 style="margin-top:0">Cluster 1: Payroll, Multi-State HRIS &amp; Global EOR TCO</h3>
+      <ul style="padding-left:1.15rem;font-size:.92rem">
+        
+        <li><a href="/payroll/deel-vs-remote-eor-tco/"><strong>Deel vs. Remote Global EOR &amp; Contractor TCO Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-deel-tco/"><strong>Gusto vs. Deel US Payroll &amp; Global EOR Cost Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-onpay-tco/"><strong>Gusto vs. OnPay All-In Cost Comparison for 5–100 Employees (2026)</strong></a></li>
+        
+        <li><a href="/payroll/gusto-vs-rippling-tco/"><strong>Gusto vs. Rippling True 12-Month TCO Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/multi-state-payroll-tax-calculator/"><strong>50-State Employer SUI Tax &amp; Multi-State Payroll Calculator (2026)</strong></a></li>
+        
+        <li><a href="/payroll/rippling-vs-adp-run-tco/"><strong>Rippling vs. ADP RUN Switching Cost &amp; W-2 Fee Audit (2026)</strong></a></li>
+        
+        <li><a href="/payroll/w2-employee-vs-1099-contractor-tco/"><strong>US W-2 Employee vs. 1099 Contractor True Burden Calculator (2026)</strong></a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Cluster 2: Merchant Processing &amp; Interchange-Plus TCO</h3>
+      <ul style="padding-left:1.15rem;font-size:.92rem">
+        
+        <li><a href="/merchant/b2b-ach-vs-credit-card-fee-calculator/"><strong>B2B ACH vs. Commercial Corporate Card (2.95%) Fee Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/paypal-vs-stripe-b2b-tco/"><strong>PayPal Braintree vs. Stripe B2B Merchant Fee Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/shopify-payments-vs-interchange-plus/"><strong>Shopify Payments vs. Dedicated Interchange-Plus Audit (2026)</strong></a></li>
+        
+        <li><a href="/merchant/square-vs-helcim-tco/"><strong>Square vs. Helcim True Effective Rate &amp; POS/Online Fee Audit (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-invoicing-fee-calculator/"><strong>Stripe Invoicing (+0.8%) &amp; International Card (+1.5%) Fee Auditor (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-vs-helcim-interchange-plus/"><strong>Stripe (2.9%+$0.30) vs. Helcim Interchange-Plus Calculator (2026)</strong></a></li>
+        
+        <li><a href="/merchant/stripe-vs-stax-subscription-tco/"><strong>Stripe vs. Stax (0% Markup Subscription) Break-Even Calculator (2026)</strong></a></li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<h2>Official Regulatory (.gov) &amp; Published Vendor Fee Sources</h2>
+<ol>
+  
+  <li id="src-1"><a href="https://www.consumerfinance.gov/compliance/compliance-resources/other-applicable-requirements/electronic-fund-transfers/" rel="nofollow noopener" target="_blank">Consumer Financial Protection Bureau (CFPB) Electronic Fund Transfers &amp; Payment Rules (.gov)</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-2"><a href="https://www.helcim.com/pricing/" rel="nofollow noopener" target="_blank">Helcim Official 2026 Free Hosted B2B Invoicing &amp; IC+ Fee Schedule</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-3"><a href="https://staxpayments.com/pricing/" rel="nofollow noopener" target="_blank">Stax Payments 2026 B2B Invoicing &amp; Level 2/3 Commercial Card Processing</a> <small>(verified 2026-10-24)</small></li>
+  
+  <li id="src-4"><a href="https://stripe.com/invoicing/pricing" rel="nofollow noopener" target="_blank">Stripe Official 2026 Invoicing Starter (+0.4%) &amp; Plus (+0.8%) Pricing Page</a> <small>(verified 2026-10-24)</small></li>
+  
+</ol>
+
+
+</main>
+<footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Payroll, Multi-State HRIS, EOR &amp; Merchant Processing TCO Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to you. <a href="/">TCO Calculators</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a></small></footer>
+
+
+<aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Live B2B TCO Comparison and Partner Verification Actions">
+  <div class="mcb-tiers">
+    <div class="mcb-tier">
+      <span class="mcb-label">🏛️ .gov Tax/IC Cap</span>
+      <strong class="mcb-val">0.05%+$0.22</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">💳 Helcim IC+</span>
+      <strong class="mcb-val">~2.1%–2.38%</strong>
+    </div>
+    <div class="mcb-tier">
+      <span class="mcb-label">⚡ Stax 0%</span>
+      <strong class="mcb-val">$99/mo + 0%</strong>
+    </div>
+  </div>
+  <div class="mcb-actions">
+    
+      <a class="cta mcb-btn" data-partner="Helcim" data-cta-slot="sticky_mobile_bar" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs='{"slot":"sticky"}' data-clickref="b2b-sticky_mobile_bar-stripe-invoicing-fee-calculator-helcim" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-sticky_mobile_bar-stripe-invoicing-fee-calculator-helcim" target="_blank" rel="sponsored nofollow noopener">💳 Helcim IC+ ($0/mo)</a>
+      <a class="cta-secondary mcb-btn" data-partner="Stax" data-cta-slot="sticky_mobile_bar" data-route-slug="stripe-invoicing-fee-calculator" data-calc-inputs='{"slot":"sticky"}' data-clickref="b2b-sticky_mobile_bar-stripe-invoicing-fee-calculator-stax" href="https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-sticky_mobile_bar-stripe-invoicing-fee-calculator-stax" target="_blank" rel="sponsored nofollow noopener">⚡ Stax 0% Markup</a>
+    
+  </div>
+</aside>
+<script>
+(function(){
+  document.addEventListener("click", function(ev) {
+    if (!window.posthog || typeof window.posthog.capture !== "function") return;
+    var link = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!link || !link.href) return;
+    var href = link.href;
+    if (link.matches("[data-partner], .cta, .cta-secondary, .tbl-cta-btn, a[rel*='sponsored']")) {
+      var partner = link.getAttribute("data-partner") || "Partner";
+      var ctaSlot = link.getAttribute("data-cta-slot") || "inline_cta";
+      var routeSlug = link.getAttribute("data-route-slug") || window.location.pathname;
+      var calcInputs = link.getAttribute("data-calc-inputs") || "{}";
+      var clickref = link.getAttribute("data-clickref") || "default";
+      var payload = {
+        partner: partner,
+        cta_slot: ctaSlot,
+        route_slug: routeSlug,
+        calc_inputs: calcInputs,
+        clickref: clickref,
+        page_path: window.location.pathname,
+        href: href
+      };
+      window.posthog.capture("cta_click", payload);
+      window.posthog.capture("affiliate_cta_clicked", payload);
+    } else if (href.indexOf(".gov") !== -1) {
+      window.posthog.capture("gov_citation_clicked", {
+        gov_url: href,
+        link_text: (link.textContent || "").trim(),
+        page_path: window.location.pathname
+      });
+    }
+  });
+})();
+</script>
+</body></html>

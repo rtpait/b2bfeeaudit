@@ -1,0 +1,26 @@
+{
+  "profile": "tabular-data-package",
+  "name": "b2b-payroll-and-merchant-fee-benchmarks-2026",
+  "id": "rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026",
+  "title": "US B2B Payroll, Multi-State HRIS SUI Tax & Credit Card Merchant Interchange-Plus TCO Dataset (2026)",
+  "description": "Primary-source-verified 2026 B2B payroll software fee schedules (Gusto, Rippling, Deel, OnPay, ADP RUN, Paychex Flex), US state unemployment insurance (.gov SUI) wage bases, and credit card processing flat-rate vs. Interchange-Plus benchmarks (Stripe, Square, PayPal vs. Helcim, Stax, CDG Commerce).",
+  "homepage": "https://b2bfeeaudit.com/",
+  "repository": "https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026",
+  "version": "2026.10.24",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "b2b-payroll-and-merchant-fee-benchmarks-2026",
+      "path": "b2b-payroll-and-merchant-fee-benchmarks-2026.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8"
+    }
+  ]
+}

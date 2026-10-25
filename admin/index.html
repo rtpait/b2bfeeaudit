@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>B2B Fee Audit — Principle 1 Ground-Truth Telemetry Console (/admin)</title>
+  <style>
+    :root { --bg:#0b1020; --card:#131b33; --border:#263354; --text:#f1f5f9; --muted:#94a3b8; --green:#10b981; --amber:#f59e0b; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 2rem; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .badge-truth { display:inline-block; background:rgba(16,185,129,0.15); color:var(--green); border:1px solid var(--green); padding:0.25rem 0.65rem; border-radius:999px; font-size:0.78rem; font-weight:700; }
+    .badge-quarantine { display:inline-block; background:rgba(245,158,11,0.15); color:var(--amber); border:1px solid var(--amber); padding:0.25rem 0.65rem; border-radius:999px; font-size:0.78rem; font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1rem; margin:1rem 0 2rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem; }
+    .card h3 { margin:0 0 0.4rem; font-size:0.82rem; color:var(--muted); text-transform:uppercase; }
+    .card .val { font-size:1.55rem; font-weight:800; }
+    .card .sub { font-size:0.78rem; color:var(--muted); margin-top:0.35rem; }
+    .quarantine-box { border:2px dashed var(--amber); border-radius:12px; padding:1.25rem; margin-top:2rem; background:rgba(245,158,11,0.04); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="badge-truth">LIVE_MEASURED_GROUND_TRUTH (PRINCIPLE 1)</span>
+    <h1>b2bfeeaudit.com — Ground-Truth Telemetry Console</h1>
+    <p>Encrypted bundle: <code>/admin/admin-telemetry.enc.json</code> (PBKDF2-HMAC-SHA256 250,000 iterations + AES-256-GCM).</p>
+    <h2>1. Headline Live Measured Actuals (Pre-Deploy Baseline)</h2>
+    <div class="grid">
+      <div class="card"><h3>Live Unique Visitors</h3><div class="val">0</div><div class="sub">0 Pageviews (PostHog)</div></div>
+      <div class="card"><h3>GSC Indexed Routes</h3><div class="val">0 / 16</div><div class="sub">0.0% (4 Cohort-1 routes held)</div></div>
+      <div class="card"><h3>Live Outbound Clicks</h3><div class="val">0</div><div class="sub">0 cta_click events</div></div>
+      <div class="card"><h3>Live Confirmed Revenue</h3><div class="val">$0.00</div><div class="sub">CJ 8108003 / AWIN 3133124 / Rakuten 4767884</div></div>
+    </div>
+    <h2>2. Five Mandatory Principle 1 Operational KPIs (Live Measured)</h2>
+    <div class="grid">
+      <div class="card"><h3>KPI #1: Search CTR (GSC)</h3><div class="val">0.0%</div><div class="sub">0 clicks / 0 impressions</div></div>
+      <div class="card"><h3>KPI #2: Prices-Table CTR</h3><div class="val">0.0%</div><div class="sub">data-cta-slot="price_table_row"</div></div>
+      <div class="card"><h3>KPI #3: GSC Crawl Frequency</h3><div class="val">0 / 16</div><div class="sub">Gate locked until &gt;=12/16 (75%)</div></div>
+      <div class="card"><h3>KPI #4: Live RPV</h3><div class="val">$0.00</div><div class="sub">$0.00 revenue / 0 visitors</div></div>
+      <div class="card"><h3>KPI #5: Mobile vs Desktop Split</h3><div class="val">0% / 0%</div><div class="sub">0 mobile / 0 desktop sessions</div></div>
+    </div>
+    <div class="quarantine-box">
+      <span class="badge-quarantine">HYPOTHESIS / TARGET MODEL — NOT LIVE TELEMETRY</span>
+      <h2>3. Quarantined Target Hypotheses (Variance Tracking Only)</h2>
+      <p>Target 16-Route MVP Model: 4,800 sessions/mo • 5.40% Prices-Table CTR • $75–$250 B2B CPA • $599.20 Target RPM ($2,876/mo). Current Variance: -100.0% across all metrics until DNS cutover and GSC indexation.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+{
+  "schema_version": "2026-03-01",
+  "protocol": "webmcp/1.0",
+  "site": {
+    "name": "B2B Fee Audit",
+    "legal_entity": "Research Triangle Park AI Transformation LLC",
+    "url": "https://b2bfeeaudit.com/",
+    "description": "Deterministic B2B Total Cost of Ownership (TCO) and hidden-fee auditor for Multi-State Payroll/HRIS/EOR (Gusto, Rippling, Deel, OnPay, ADP, Paychex) and Merchant Credit Card Processing (Stripe, Square, PayPal, Shopify vs. Helcim, Stax, CDG Interchange-Plus).",
+    "license": "CC-BY-4.0",
+    "llms_txt": "https://b2bfeeaudit.com/llms.txt",
+    "llms_full_txt": "https://b2bfeeaudit.com/llms-full.txt",
+    "openapi_spec": "https://b2bfeeaudit.com/.well-known/openapi.json",
+    "datasets": [
+      {
+        "id": "b2b-payroll-and-merchant-fee-benchmarks-2026",
+        "format": "csv",
+        "url": "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.csv"
+      },
+      {
+        "id": "b2b-payroll-and-merchant-fee-benchmarks-2026-json",
+        "format": "json",
+        "url": "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"
+      }
+    ]
+  },
+  "tools": [
+    {
+      "name": "calculate_payroll_hris_tco",
+      "title": "Payroll & Multi-State HRIS 12-Month TCO Calculator",
+      "description": "Calculates deterministic 12-month all-in cost across Gusto, OnPay, Rippling, Deel, ADP RUN, and Paychex Flex including base fees, W-2 PEPM, 1099 contractor fees, extra-state tax filing surcharges, year-end W-2/1099 fees, and global EOR FX spreads.",
+      "canonical_route": "https://b2bfeeaudit.com/payroll/gusto-vs-rippling-tco/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "w2_employees",
+          "us_states"
+        ],
+        "properties": {
+          "w2_employees": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500,
+            "default": 18,
+            "description": "Number of US W-2 employees"
+          },
+          "contractors_1099": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 500,
+            "default": 4,
+            "description": "Number of US 1099 contractors paid monthly"
+          },
+          "us_states": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 3,
+            "description": "Number of US states with active W-2 tax withholding/SUI accounts"
+          },
+          "primary_state": {
+            "type": "string",
+            "default": "TX",
+            "description": "Two-letter US state code for primary SUI wage-base lookup"
+          },
+          "eor_employees": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 0,
+            "description": "Number of international Employer-of-Record (EOR) employees"
+          },
+          "current_provider": {
+            "type": "string",
+            "enum": [
+              "adp_run",
+              "paychex_flex",
+              "gusto_simple",
+              "gusto_plus",
+              "rippling",
+              "deel",
+              "onpay",
+              "none"
+            ],
+            "default": "adp_run"
+          }
+        }
+      }
+    },
+    {
+      "name": "audit_merchant_processing_fees",
+      "title": "Stripe & Merchant Processing Interchange-Plus Fee Auditor",
+      "description": "Audits monthly credit card volume, average ticket size, card-present vs. online/invoicing mix, and international percentage to calculate true effective rate and 12-month savings switching from Stripe (2.9%+$0.30), Square, or PayPal to Helcim, Stax, or CDG Interchange-Plus.",
+      "canonical_route": "https://b2bfeeaudit.com/merchant-fees/stripe-vs-helcim-interchange-plus/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthly_volume_usd",
+          "avg_ticket_usd"
+        ],
+        "properties": {
+          "monthly_volume_usd": {
+            "type": "number",
+            "minimum": 1000,
+            "maximum": 10000000,
+            "default": 65000,
+            "description": "Total monthly gross card processing volume in USD"
+          },
+          "avg_ticket_usd": {
+            "type": "number",
+            "minimum": 5,
+            "maximum": 50000,
+            "default": 130,
+            "description": "Average transaction size in USD"
+          },
+          "online_cnp_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 80,
+            "description": "Percentage of volume processed online, keyed, or via B2B invoice"
+          },
+          "international_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 10,
+            "description": "Percentage of volume from non-US cards or requiring currency conversion"
+          },
+          "current_processor": {
+            "type": "string",
+            "enum": [
+              "stripe",
+              "square",
+              "paypal",
+              "shopify_payments",
+              "helcim",
+              "stax"
+            ],
+            "default": "stripe"
+          }
+        }
+      }
+    },
+    {
+      "name": "compare_1099_vs_w2_employer_tax",
+      "title": "US 1099 Contractor vs. W-2 Employee True Employer Tax Load Comparator",
+      "description": "Calculates statutory employer payroll tax load (7.65% FICA + 0.6% FUTA + official 2026 .gov state SUI wage base & rate + Workers Comp + benefits load) versus 1099 independent contractor hourly/annual compensation.",
+      "canonical_route": "https://b2bfeeaudit.com/payroll/1099-vs-w2-employer-tax-calculator/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "annual_base_compensation_usd",
+          "state_code"
+        ],
+        "properties": {
+          "annual_base_compensation_usd": {
+            "type": "number",
+            "minimum": 15000,
+            "maximum": 500000,
+            "default": 85000
+          },
+          "state_code": {
+            "type": "string",
+            "default": "CA",
+            "description": "Two-letter US state code (e.g., CA, NY, TX, FL, NC, WA)"
+          },
+          "benefits_load_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 40,
+            "default": 12
+          }
+        }
+      }
+    },
+    {
+      "name": "calculate_saas_unit_economics_margin",
+      "title": "SaaS & B2B Stack Unit-Economics & Payment/Payroll COGS Auditor",
+      "description": "Calculates per-customer payment processing fee drag, payroll/support COGS per seat, and net SaaS gross margin uplift from optimizing billing & HR infrastructure.",
+      "canonical_route": "https://b2bfeeaudit.com/merchant-fees/credit-card-effective-rate-auditor/",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "mrr_usd",
+          "active_customers"
+        ],
+        "properties": {
+          "mrr_usd": {
+            "type": "number",
+            "minimum": 1000,
+            "maximum": 5000000,
+            "default": 50000
+          },
+          "active_customers": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000,
+            "default": 400
+          },
+          "infra_llm_cogs_monthly_usd": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000,
+            "default": 4200
+          }
+        }
+      }
+    }
+  ]
+}

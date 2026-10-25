@@ -1,0 +1,28 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "US B2B Payroll, Multi-State HRIS SUI Tax & Credit Card Merchant Interchange-Plus TCO Dataset (2026)",
+  "description": "Deterministic 2026 fee benchmark dataset comparing B2B payroll software (Gusto, Rippling, Deel, OnPay, ADP RUN, Paychex Flex), 50-state .gov SUI employer tax wage bases, and credit card processing flat-rate vs. Interchange-Plus costs (Stripe, Square, PayPal vs. Helcim, Stax, CDG).",
+  "url": "https://b2bfeeaudit.com/methodology/",
+  "sameAs": "https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026",
+  "version": "2026.10.24",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "B2B Fee Audit (Research Triangle Park AI Transformation LLC)",
+    "url": "https://b2bfeeaudit.com/"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"
+    }
+  ]
+}

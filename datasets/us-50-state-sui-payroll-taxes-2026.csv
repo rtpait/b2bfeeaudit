@@ -1,0 +1,52 @@
+state_code,state_name,sui_taxable_wage_base_2026_usd,new_employer_sui_rate_pct,min_sui_rate_pct,max_sui_rate_pct,annual_sui_per_employee_new_employer_usd,annual_futa_per_employee_net_usd,total_annual_unemployment_tax_new_emp_usd,state_payroll_registration_fee_usd,agency_name,gov_citation_url
+AL,Alabama,8000,2.7,0.2,5.4,216.0,42.0,258.0,0,Alabama Department of Labor,https://labor.alabama.gov/uc/employer.aspx
+AK,Alaska,51700,1.53,1.0,5.4,791.01,42.0,833.01,0,Alaska Department of Labor and Workforce Development,https://labor.alaska.gov/estax/
+AZ,Arizona,8000,2.0,0.05,18.78,160.0,42.0,202.0,0,Arizona Department of Economic Security,https://des.az.gov/services/employment/unemployment-employer
+AR,Arkansas,7000,2.9,0.1,14.0,203.0,42.0,245.0,0,Arkansas Division of Workforce Services,https://dws.arkansas.gov/employers/
+CA,California,7000,3.4,1.5,6.2,238.0,42.0,280.0,0,California Employment Development Department (EDD),https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/
+CO,Colorado,27200,1.7,0.75,10.39,462.4,42.0,504.4,0,Colorado Department of Labor and Employment (CDLE),https://cdle.colorado.gov/employers/unemployment-insurance-premiums
+CT,Connecticut,26100,2.2,0.1,10.0,574.2,42.0,616.2,0,Connecticut Department of Labor,https://portal.ct.gov/dol/Divisions/Unemployment-Insurance-Tax
+DE,Delaware,12500,1.2,0.1,8.0,150.0,42.0,192.0,75,Delaware Department of Labor — Division of Unemployment Insurance,https://labor.delaware.gov/divisions/unemployment-insurance/
+DC,District of Columbia,9000,2.7,1.9,7.4,243.0,42.0,285.0,0,DC Department of Employment Services (DOES),https://does.dc.gov/service/unemployment-compensation-process-employers
+FL,Florida,7000,2.7,0.1,5.4,189.0,42.0,231.0,0,Florida Department of Revenue — Reemployment Tax,https://floridarevenue.com/taxes/taxesfees/Pages/rt.aspx
+GA,Georgia,9500,2.64,0.04,8.1,250.8,42.0,292.8,0,Georgia Department of Labor,https://dol.georgia.gov/employers/unemployment-insurance-taxes
+HI,Hawaii,62000,3.0,0.2,5.8,1860.0,42.0,1902.0,0,Hawaii Department of Labor and Industrial Relations,https://labor.hawaii.gov/ui/employer-services/
+ID,Idaho,55300,1.0,0.23,5.4,553.0,42.0,595.0,0,Idaho Department of Labor,https://www.labor.idaho.gov/businesses/unemployment-insurance-tax/
+IL,Illinois,13960,3.95,0.85,8.65,551.42,42.0,593.42,0,Illinois Department of Employment Security (IDES),https://ides.illinois.gov/employers/unemployment-insurance-taxes-and-reporting.html
+IN,Indiana,9500,2.5,0.5,7.4,237.5,42.0,279.5,25,Indiana Department of Workforce Development,https://www.in.gov/dwd/business-services/unemployment-insurance/
+IA,Iowa,39600,1.0,0.0,7.0,396.0,42.0,438.0,0,Iowa Workforce Development,https://workforce.iowa.gov/employers/unemployment-insurance
+KS,Kansas,14000,2.7,0.16,6.0,378.0,42.0,420.0,0,Kansas Department of Labor,https://www.dol.ks.gov/employers
+KY,Kentucky,11700,2.7,0.3,9.0,315.9,42.0,357.9,0,Kentucky Office of Unemployment Insurance,https://kcc.ky.gov/employer/Pages/default.aspx
+LA,Louisiana,7700,1.16,0.09,6.2,89.32,42.0,131.32,0,Louisiana Workforce Commission,https://www.laworks.net/UnemploymentInsurance/UI_Employers.asp
+ME,Maine,12000,2.19,0.57,5.52,262.8,42.0,304.8,0,Maine Department of Labor,https://www.maine.gov/labor/unemployment/tax/
+MD,Maryland,8500,2.6,0.3,7.5,221.0,42.0,263.0,0,Maryland Department of Labor — Division of Unemployment Insurance,https://www.dllr.state.md.us/employment/uitax.shtml
+MA,Massachusetts,15000,2.13,0.73,11.13,319.5,42.0,361.5,0,Massachusetts Department of Unemployment Assistance (DUA),https://www.mass.gov/orgs/department-of-unemployment-assistance
+MI,Michigan,9500,2.7,0.06,10.3,256.5,42.0,298.5,0,Michigan Unemployment Insurance Agency (UIA),https://www.michigan.gov/leo/bureaus-agencies/uia/employers
+MN,Minnesota,43000,1.1,0.1,9.0,473.0,42.0,515.0,0,Minnesota Unemployment Insurance Program,https://www.uimn.org/employers/
+MS,Mississippi,14000,1.0,0.2,5.4,140.0,42.0,182.0,0,Mississippi Department of Employment Security,https://mdes.ms.gov/employers/unemployment-tax/
+MO,Missouri,9500,2.37,0.0,6.75,225.15,42.0,267.15,0,Missouri Department of Labor and Industrial Relations,https://labor.mo.gov/des/employers
+MT,Montana,45100,1.18,0.0,6.12,532.18,42.0,574.18,0,Montana Department of Labor & Industry,https://uid.dli.mt.gov/employers/
+NE,Nebraska,9000,1.25,0.0,5.4,112.5,42.0,154.5,0,Nebraska Department of Labor,https://dol.nebraska.gov/UITax
+NV,Nevada,41800,2.95,0.25,5.4,1233.1,42.0,1275.1,50,"Nevada Department of Employment, Training and Rehabilitation",https://detr.nv.gov/Page/Employment_Security_Division_Unemployment_Insurance_Tax
+NH,New Hampshire,14000,1.7,0.1,7.5,238.0,42.0,280.0,0,New Hampshire Employment Security,https://www.nhes.nh.gov/services/employers/
+NJ,New Jersey,43300,2.8,0.5,5.8,1212.4,42.0,1254.4,0,New Jersey Department of Labor and Workforce Development,https://www.nj.gov/labor/ea/employer-services/
+NM,New Mexico,32900,1.0,0.33,5.4,329.0,42.0,371.0,0,New Mexico Department of Workforce Solutions,https://www.dws.state.nm.us/en-us/Businesses/Unemployment-Insurance-Tax
+NY,New York,12800,4.1,2.1,9.9,524.8,42.0,566.8,0,New York State Department of Labor (NYSDOL),https://dol.ny.gov/unemployment-insurance-rate-information
+NC,North Carolina,32600,1.0,0.06,5.76,326.0,42.0,368.0,0,North Carolina Division of Employment Security (DES),https://www.des.nc.gov/employers
+ND,North Dakota,45100,1.09,0.08,9.69,491.59,42.0,533.59,0,Job Service North Dakota,https://www.jobsnd.com/unemployment-business-tax
+OH,Ohio,9000,2.7,0.4,10.1,243.0,42.0,285.0,0,Ohio Department of Job and Family Services,https://jfs.ohio.gov/job-services-and-unemployment/unemployment/for-employers
+OK,Oklahoma,28200,1.5,0.3,7.5,423.0,42.0,465.0,0,Oklahoma Employment Security Commission,https://oklahoma.gov/oesc/employers.html
+OR,Oregon,54300,2.4,0.9,5.4,1303.2,42.0,1345.2,0,Oregon Employment Department,https://unemployment.oregon.gov/employers
+PA,Pennsylvania,10000,3.82,1.42,10.37,382.0,42.0,424.0,0,Pennsylvania Department of Labor & Industry,https://www.pa.gov/en/agencies/dli/programs-services/unemployment/uc-tax.html
+RI,Rhode Island,29800,1.16,0.9,9.4,345.68,42.0,387.68,0,Rhode Island Division of Taxation — Employer Tax,https://tax.ri.gov/tax-sections/employer-tax-section
+SC,South Carolina,14000,0.46,0.06,5.46,64.4,42.0,106.4,0,South Carolina Department of Employment and Workforce,https://dew.sc.gov/employers/tax
+SD,South Dakota,15000,1.2,0.0,9.3,180.0,42.0,222.0,0,South Dakota Department of Labor and Regulation,https://dlr.sd.gov/ra/businesses/default.aspx
+TN,Tennessee,7000,2.7,0.01,10.0,189.0,42.0,231.0,0,Tennessee Department of Labor and Workforce Development,https://www.tn.gov/workforce/employers/tax-and-insurance-redirect/unemployment-insurance-tax.html
+TX,Texas,9000,2.7,0.25,6.25,243.0,42.0,285.0,0,Texas Workforce Commission (TWC),https://www.twc.texas.gov/programs/unemployment-tax
+UT,Utah,48900,1.2,0.2,7.2,586.8,42.0,628.8,0,Utah Department of Workforce Services,https://jobs.utah.gov/ui/employer/index.html
+VT,Vermont,14800,1.0,0.4,5.4,148.0,42.0,190.0,0,Vermont Department of Labor,https://labor.vermont.gov/unemployment-insurance/employers
+VA,Virginia,8000,2.53,0.13,6.23,202.4,42.0,244.4,0,Virginia Employment Commission (VEC),https://www.vec.virginia.gov/employers
+WA,Washington,72800,1.5,0.27,8.15,1092.0,42.0,1134.0,30,Washington Employment Security Department (ESD),https://esd.wa.gov/employer-taxes
+WV,West Virginia,9520,2.7,1.5,8.5,257.04,42.0,299.04,0,WorkForce West Virginia,https://workforcewv.org/employers/unemployment-compensation-tax
+WI,Wisconsin,14000,3.05,0.0,12.0,427.0,42.0,469.0,0,Wisconsin Department of Workforce Development,https://dwd.wisconsin.gov/uitax/
+WY,Wyoming,32400,1.25,0.0,8.5,405.0,42.0,447.0,0,Wyoming Department of Workforce Services,https://dws.wyo.gov/dws-division/unemployment-insurance/employer-resources/

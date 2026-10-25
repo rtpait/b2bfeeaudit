@@ -1,0 +1,47 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "B2B Fee Audit — Payroll, Multi-State HRIS & Merchant Fee TCO API",
+    "version": "2026.10.24",
+    "description": "Stateless deterministic TCO calculation and benchmark lookup endpoints for ChatGPT Plugins, Meta Muse Connectors, Perplexity, Claude, and Grok agents. Returns 12-month all-in vendor costs, .gov SUI payroll tax loads, Visa/Mastercard interchange-plus savings, and tracked partner switch links.",
+    "contact": {
+      "name": "Research Triangle Park AI Transformation LLC",
+      "email": "luke@rtpait.com",
+      "url": "https://b2bfeeaudit.com/"
+    },
+    "license": {
+      "name": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://b2bfeeaudit.com",
+      "description": "Production Static JSON Benchmark & Calculator Manifest Host"
+    }
+  ],
+  "paths": {
+    "/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json": {
+      "get": {
+        "operationId": "getB2BFeeBenchmarks2026",
+        "summary": "Retrieve complete 2026 B2B Payroll/HRIS vendor fee schedules, 50-state .gov SUI tax benchmarks, and Visa/Mastercard Interchange-Plus rate tables.",
+        "responses": {
+          "200": {
+            "description": "Complete 2026 B2B Payroll & Merchant Fee JSON benchmark dataset with deterministic formulas and partner switch URLs."
+          }
+        }
+      }
+    },
+    "/.well-known/webmcp.json": {
+      "get": {
+        "operationId": "getWebMcpManifest",
+        "summary": "Retrieve the WebMCP 1.0 tool manifest and deterministic parameter schemas for the 4 B2B TCO calculators.",
+        "responses": {
+          "200": {
+            "description": "WebMCP 1.0 JSON manifest."
+          }
+        }
+      }
+    }
+  }
+}

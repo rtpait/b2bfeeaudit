@@ -1,0 +1,95 @@
+# b2bfeeaudit.com — Search & Agentic Engine Optimization (SEO + AEO/GEO) Policy
+# Maintained by Research Triangle Park AI Transformation LLC (https://b2bfeeaudit.com/)
+# Explicitly permits traditional search engines AND AI/LLM reasoning & retrieval agents.
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# OpenAI Search & Assistant Crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/webmcp.json
+Allow: /.well-known/openapi.json
+Allow: /.well-known/ai-plugin.json
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+
+# Anthropic Claude Crawlers
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+
+# Perplexity AI Crawlers
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+
+# xAI Grok Crawlers
+User-agent: GrokBot
+Allow: /
+Disallow: /admin/
+
+User-agent: xAI-Bot
+Allow: /
+Disallow: /admin/
+
+# Google Search & Gemini Grounding
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+
+# Meta Muse & Meta AI Crawlers
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin/
+
+User-agent: FacebookBot
+Allow: /
+Disallow: /admin/
+
+# Microsoft Bing & Copilot
+User-agent: bingbot
+Allow: /
+Disallow: /admin/
+
+# Apple Intelligence & DuckDuckGo
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://b2bfeeaudit.com/sitemap.xml
+# Agentic Discovery Endpoints:
+# - LLM Index: https://b2bfeeaudit.com/llms.txt
+# - Full Benchmark Corpus: https://b2bfeeaudit.com/llms-full.txt
+# - WebMCP Tool Manifest: https://b2bfeeaudit.com/.well-known/webmcp.json
+# - OpenAPI 3.1 Spec: https://b2bfeeaudit.com/.well-known/openapi.json
