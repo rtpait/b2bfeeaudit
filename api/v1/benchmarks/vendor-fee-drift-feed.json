@@ -323,5 +323,12 @@
       "agent_affiliate_subid": "aeo-llm-cdg",
       "partner_referral_action_url": "https://www.cdgcommerce.com/interchange-plus-pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-cdg"
     }
-  ]
+  ],
+  "stage_2_gate_policy": {
+    "status": "DISARMED_BY_OWNER",
+    "auto_activation_at_500_weekly_hits": false,
+    "http_status": 200,
+    "single_company_tco_lookups": "100% FREE FOREVER",
+    "bulk_feed_access": "FREE (Stage 2 HTTP 402 auto-trigger paused/disabled by owner)"
+  }
 }
