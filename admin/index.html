@@ -933,11 +933,11 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
           <span class="tile-cta-btn ${!isCurrent ? 'tile-cta-prominent' : ''}">${esc(ctaLabel)}</span>
         </div>
         <div class="tile-stats-row">
-          <span><strong>${fmtNum(pVisits)}</strong> Site Visits</span>
+          <span><strong>${fmtNum(pVisits)}</strong> Clean Human Visits</span>
+          <span>&bull;</span>
+          <span style="color:#fcd34d;"><strong>${fmtNum(pAct.flagged_bot_visits_excluded ?? 0)}</strong> Bots Filtered (of ${fmtNum(pAct.raw_external_site_visits_unfiltered ?? 0)} raw)</span>
           <span>&bull;</span>
           <span><strong>${fmtNum(pLlm)}</strong> LLM Queries</span>
-          <span>&bull;</span>
-          <span class="td-meta">Last Visit: ${esc(pLastVisit)}</span>
         </div>
       </div>
     `;
@@ -978,21 +978,26 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
       <!-- BIG CARD 1: SITE VISITS -->
       <div class="hero-big-card hero-card-visits">
         <div class="hero-card-top">
-          <span class="hero-eyebrow">1. HUMAN TRAFFIC &amp; PAGEVIEWS (${esc(selectedKey)})</span>
-          <span class="pill-green">LIVE POSTHOG ${esc(meta.posthogProjectId)}</span>
+          <span class="hero-eyebrow">1. LIKELY REAL HUMAN EXTERNAL TRAFFIC (${esc(selectedKey)})</span>
+          <span class="pill-green">PERMANENT BOT + OWNER FILTER ACTIVE</span>
         </div>
-        <div class="hero-big-title">Site Visits</div>
+        <div class="hero-big-title">Clean Human Site Visits</div>
         <div class="hero-big-number-row">
           <span class="hero-big-number" id="hero-site-visits-count">${fmtNum(siteVisits)}</span>
-          <span class="hero-big-unit">total visits (${fmtNum(uniqueVisitors)} unique ${uniqueVisitors === 1 ? 'person' : 'people'})</span>
+          <span class="hero-big-unit">verified human visits (${fmtNum(uniqueVisitors)} unique ${uniqueVisitors === 1 ? 'person' : 'people'})</span>
         </div>
         <div class="hero-timestamp-badge">
-          <span class="ts-label">Last Visit:</span>
+          <span class="ts-label">Last Human Visit:</span>
           <strong class="ts-val" id="hero-last-visit-ts">${
-            lastVisitEdt
+            lastVisitEdt && !String(lastVisitEdt).startsWith('No verified')
               ? `${esc(lastVisitEdt)} &mdash; <code>${esc(lastVisitRoute)}</code>`
-              : 'No visits yet'
+              : esc(lastVisitEdt || 'No verified human visits yet')
           }</strong>
+        </div>
+        <div style="margin-bottom:12px;padding:9px 12px;border-radius:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.38);font-size:12.5px;color:#fde68a;">
+          <strong>2-Stage Filter Summary:</strong> Raw External Hits: <strong>${fmtNum(actuals.raw_external_site_visits_unfiltered ?? 0)}</strong> &bull;
+          Flagged Bots/Stateless Excluded: <strong>${fmtNum(actuals.flagged_bot_visits_excluded ?? 0)}</strong> &bull;
+          Clean Human Visits: <strong>${fmtNum(siteVisits)}</strong>
         </div>
         <div class="hero-mini-metrics">
           <div class="mini-stat">
@@ -1130,6 +1135,107 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
           <p class="td-meta">No visits recorded yet.</p>
         `}
       </div>
+    </section>
+
+    <!-- =====================================================================
+         PERMANENT BOT & DATA-CENTER TRAFFIC FILTER (STAGE 2 MULTI-SIGNAL AUDIT)
+         ===================================================================== -->
+    <section class="adm-panel" id="bot-traffic-filter-panel" style="border-color:#f59e0b;">
+      <div class="panel-title-row">
+        <div>
+          <h2>Permanent Bot &amp; Data-Center Traffic Filter — ${esc(selectedKey)}</h2>
+          <p>Runs automatically alongside Stage 1 (Owner iPhone/Windows/Mac in NC &amp; Linux Box exclusion) to filter cloud/datacenter ASNs, headless geometry anomalies, bot/synthetic user-agents, synchronized SERP scrapers, and zero-engagement bounces.</p>
+        </div>
+        <span class="pill-amber">${fmtNum((actuals.bot_traffic_audit && actuals.bot_traffic_audit.flagged_bot_visits_total) ?? actuals.flagged_bot_visits_excluded ?? 0)} Flagged / ${fmtNum(actuals.raw_external_site_visits_unfiltered ?? 0)} Raw External Hits</span>
+      </div>
+
+      ${(() => {
+        const bAudit = actuals.bot_traffic_audit || {};
+        const criteria = bAudit.criteria_used || [];
+        const catCounts = bAudit.signal_category_counts || {};
+        const flaggedLog = bAudit.flagged_visits_log || [];
+        const topProviders = bAudit.top_flagged_providers || [];
+        return `
+          <div class="kpi-grid kpi-grid-5" style="margin-bottom:16px;">
+            <div class="kpi-card">
+              <div class="kpi-label">Clean Human Visits</div>
+              <div class="kpi-value" style="color:#10b981;">${fmtNum(bAudit.likely_human_visits ?? siteVisits)}</div>
+              <div class="kpi-foot">Verified human external visits on <code>${esc(selectedKey)}</code></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Hard Cloud / Headless Bots</div>
+              <div class="kpi-value" style="color:#f59e0b;">${fmtNum(bAudit.flagged_hard_datacenter_or_headless_bots ?? 0)}</div>
+              <div class="kpi-foot">Datacenter ASN, 800x600 headless, synthetic UA, or SERP scraper</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Stateless Zero-Engagement Hits</div>
+              <div class="kpi-value" style="color:#fbbf24;">${fmtNum(bAudit.flagged_stateless_zero_engagement_residential ?? 0)}</div>
+              <div class="kpi-foot">0% scroll, no $pageleave, 0 clicks &amp; ephemeral IDs</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Cloud / Datacenter ASN Hits</div>
+              <div class="kpi-value">${fmtNum(catCounts.datacenter_or_cloud_asn ?? 0)}</div>
+              <div class="kpi-foot">AWS, GCP/Mandiant, Scaleway, LeaseWeb, M247, HostRoyale, Vultr</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Headless &amp; UA Anomalies</div>
+              <div class="kpi-value">${fmtNum(catCounts.headless_or_geometry_anomaly ?? 0)} / ${fmtNum(catCounts.bot_or_synthetic_ua ?? 0)}</div>
+              <div class="kpi-foot">Geometry anomalies / Synthetic or outdated crawler UAs</div>
+            </div>
+          </div>
+
+          <div class="subcard" style="margin-bottom:16px;">
+            <h3>5 Permanent Bot-Detection Criteria Enforced in Pipeline</h3>
+            <div class="kpi-grid" style="margin-top:10px;margin-bottom:0;">
+              ${criteria.map(c => `
+                <div style="background:#111827;border:1px solid #334155;border-radius:8px;padding:10px 12px;">
+                  <div style="font-size:12.5px;font-weight:700;color:#38bdf8;margin-bottom:4px;">${esc(c.name)}</div>
+                  <div style="font-size:11.5px;color:#94a3b8;line-height:1.4;">${esc(c.description)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="subcard">
+            <div class="subcard-head">
+              <h3>Flagged &amp; Excluded External Visits on <code>${esc(selectedKey)}</code> (${fmtNum(flaggedLog.length)} of ${fmtNum(bAudit.total_external_visits_raw ?? 0)} External Visits)</h3>
+              <span class="td-meta">100% excluded from headline Clean Human Site Visits</span>
+            </div>
+            <div class="table-wrap scrollable-table" style="max-height:420px;">
+              <table class="adm-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Timestamp (EDT)</th>
+                    <th>Location &amp; IP</th>
+                    <th>ASN / Network Provider</th>
+                    <th>Route &amp; Referrer</th>
+                    <th>Device / Screen / Engagement</th>
+                    <th>Bot Signals Triggered</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${flaggedLog.map((f, i) => `
+                    <tr>
+                      <td>${i + 1}</td>
+                      <td style="white-space:nowrap;"><strong>${esc(f.timestamp_edt)}</strong></td>
+                      <td><strong>${esc(f.location)}</strong><div class="td-meta"><code>${esc(f.ip)}</code></div></td>
+                      <td><strong>${esc(f.provider)}</strong><div class="td-meta">${esc(f.asn)} &bull; ${esc(f.bot_category)}</div></td>
+                      <td><code>${esc(f.pathname)}</code><div class="td-meta">Ref: ${esc(f.referrer)}</div></td>
+                      <td>${esc(f.device_os_browser)}<div class="td-meta">${esc(f.screen_viewport)} &bull; ${esc(f.engagement)}</div></td>
+                      <td>
+                        <ul style="margin:0;padding-left:16px;color:#fca5a5;font-size:11.5px;">
+                          ${(f.signals_triggered || []).map(sig => `<li>${esc(sig)}</li>`).join('')}
+                        </ul>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      })()}
     </section>
 
     <!-- =====================================================================
