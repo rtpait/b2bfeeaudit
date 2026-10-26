@@ -1,0 +1,25 @@
+{
+  "http_status": 402,
+  "error": "Payment Required \u2014 Stage 2 Agentic Bulk Benchmark Gate Active",
+  "code": "STAGE2_BULK_FEED_API_KEY_REQUIRED",
+  "endpoint": "/api/v1/benchmarks/bulk-50-state-sui.json",
+  "weekly_agentic_hits_observed": 501,
+  "activation_threshold_weekly_hits": 500,
+  "free_tier_policy": {
+    "single_company_tco_lookups": "100% FREE & UNLIMITED (via /.well-known/webmcp.json & /llms.txt)",
+    "bulk_feed_unauthenticated_limit": "10 calls/day"
+  },
+  "upgrade_tier": {
+    "plan_name": "B2B Fee Audit \u2014 Developer & FinOps Bulk Benchmark API Key",
+    "price_usd_monthly": 49.0,
+    "billing_interval": "monthly",
+    "included_feeds": [
+      "https://b2bfeeaudit.com/api/v1/benchmarks/bulk-50-state-sui.json",
+      "https://b2bfeeaudit.com/api/v1/benchmarks/vendor-fee-drift-feed.json",
+      "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"
+    ],
+    "auth_header": "X-B2BFeeAudit-API-Key: b2bfa_live_<key>",
+    "provisioning_contact": "mailto:luke@rtpait.com?subject=B2BFeeAudit%20%2449%2Fmo%20Bulk%20Benchmark%20API%20Key",
+    "documentation_url": "https://b2bfeeaudit.com/.well-known/webmcp.json"
+  }
+}

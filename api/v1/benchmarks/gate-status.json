@@ -1,0 +1,164 @@
+{
+  "schema_version": "2.0.0-stage2-agentic-monetization-gate",
+  "generated_at_utc": "2026-10-26T04:23:09Z",
+  "generated_at_edt": "Oct 26, 2026, 12:23:09 AM EDT",
+  "b2bfeeaudit.com": {
+    "domain": "b2bfeeaudit.com",
+    "gate_mode": "STAGE_1_FREE_GROWTH_MODE_STAGE_2_ARMED",
+    "http_status_for_unauthenticated_bulk": 200,
+    "stage_1_status": "ACTIVE \u2014 Free /llms.txt & /.well-known/webmcp.json with embedded agent affiliate sub-IDs ($50\u2013$250 B2B CPA)",
+    "stage_2_status": "ARMED & STANDBY \u2014 Auto-activates at >500 weekly agentic hits (currently 0 / 500, 0.0%)",
+    "weekly_agentic_hits": 0,
+    "llm_referral_hits_7d": 0,
+    "bucket_b_crawler_discovery_hits_7d": 0,
+    "threshold_weekly_hits": 500,
+    "progress_pct": 0.0,
+    "threshold_exceeded": false,
+    "single_tco_lookup_policy": "100% FREE FOREVER (Single-company Payroll/HRIS & Merchant IC+ TCO lookups never gated)",
+    "bulk_feed_pricing_usd_monthly": 49.0,
+    "free_tier_daily_bulk_limit": 10,
+    "gated_bulk_endpoints": [
+      "/api/v1/benchmarks/bulk-50-state-sui.json",
+      "/api/v1/benchmarks/vendor-fee-drift-feed.json"
+    ],
+    "stage_1_subid_links": [
+      {
+        "partner": "Gusto (Simple / Plus)",
+        "cpa_payout_range": "$50\u2013$150 CPA",
+        "llms_txt_subid": "aeo-llm-gusto",
+        "webmcp_subid": "webmcp-gusto",
+        "tracked_url": "https://gusto.com/product/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-gusto"
+      },
+      {
+        "partner": "OnPay (All-Inclusive Multi-State)",
+        "cpa_payout_range": "$75\u2013$150 CPA",
+        "llms_txt_subid": "aeo-llm-onpay",
+        "webmcp_subid": "webmcp-onpay",
+        "tracked_url": "https://onpay.com/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-onpay"
+      },
+      {
+        "partner": "Rippling (Core + Payroll + HRIS)",
+        "cpa_payout_range": "$150\u2013$250 Qualified Demo CPA",
+        "llms_txt_subid": "aeo-llm-rippling",
+        "webmcp_subid": "webmcp-rippling",
+        "tracked_url": "https://www.rippling.com/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-rippling"
+      },
+      {
+        "partner": "Deel (US Payroll + Global EOR)",
+        "cpa_payout_range": "$150\u2013$250 EOR/Payroll Lead CPA",
+        "llms_txt_subid": "aeo-llm-deel",
+        "webmcp_subid": "webmcp-deel",
+        "tracked_url": "https://www.deel.com/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-deel"
+      },
+      {
+        "partner": "Helcim (True Interchange-Plus IC+)",
+        "cpa_payout_range": "$100\u2013$200 Merchant Activation CPA",
+        "llms_txt_subid": "aeo-llm-helcim",
+        "webmcp_subid": "webmcp-helcim",
+        "tracked_url": "https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-helcim"
+      },
+      {
+        "partner": "Stax (0% Markup Subscription IC+)",
+        "cpa_payout_range": "$150\u2013$250 Merchant Subscription CPA",
+        "llms_txt_subid": "aeo-llm-stax",
+        "webmcp_subid": "webmcp-stax",
+        "tracked_url": "https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-stax"
+      },
+      {
+        "partner": "CDG Commerce / PaymentCloud (IC+)",
+        "cpa_payout_range": "$100\u2013$200 Merchant Account CPA",
+        "llms_txt_subid": "aeo-llm-cdg",
+        "webmcp_subid": "webmcp-cdg",
+        "tracked_url": "https://www.cdgcommerce.com/interchange-plus-pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-cdg"
+      }
+    ],
+    "sample_http_402_response": {
+      "http_status": 402,
+      "error": "Payment Required \u2014 Stage 2 Agentic Bulk Benchmark Gate Active",
+      "code": "STAGE2_BULK_FEED_API_KEY_REQUIRED",
+      "endpoint": "/api/v1/benchmarks/bulk-50-state-sui.json",
+      "weekly_agentic_hits_observed": 0,
+      "activation_threshold_weekly_hits": 500,
+      "free_tier_policy": {
+        "single_company_tco_lookups": "100% FREE & UNLIMITED (via /.well-known/webmcp.json & /llms.txt)",
+        "bulk_feed_unauthenticated_limit": "10 calls/day"
+      },
+      "upgrade_tier": {
+        "plan_name": "B2B Fee Audit \u2014 Developer & FinOps Bulk Benchmark API Key",
+        "price_usd_monthly": 49.0,
+        "billing_interval": "monthly",
+        "included_feeds": [
+          "https://b2bfeeaudit.com/api/v1/benchmarks/bulk-50-state-sui.json",
+          "https://b2bfeeaudit.com/api/v1/benchmarks/vendor-fee-drift-feed.json",
+          "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"
+        ],
+        "auth_header": "X-B2BFeeAudit-API-Key: b2bfa_live_<key>",
+        "provisioning_contact": "mailto:luke@rtpait.com?subject=B2BFeeAudit%20%2449%2Fmo%20Bulk%20Benchmark%20API%20Key",
+        "documentation_url": "https://b2bfeeaudit.com/.well-known/webmcp.json"
+      }
+    },
+    "updated_at_utc": "2026-10-26T04:23:09Z"
+  },
+  "junkhaulhq.com": {
+    "domain": "junkhaulhq.com",
+    "gate_mode": "STAGE_1_FREE_GROWTH_MODE_STAGE_2_ARMED",
+    "http_status_for_unauthenticated_bulk": 200,
+    "stage_1_status": "ACTIVE \u2014 Free /llms.txt & /.well-known/webmcp.json with embedded agent affiliate sub-IDs ($50\u2013$250 B2B CPA)",
+    "stage_2_status": "ARMED & STANDBY \u2014 Auto-activates at >500 weekly agentic hits (currently 8 / 500, 1.6%)",
+    "weekly_agentic_hits": 8,
+    "llm_referral_hits_7d": 0,
+    "bucket_b_crawler_discovery_hits_7d": 8,
+    "threshold_weekly_hits": 500,
+    "progress_pct": 1.6,
+    "threshold_exceeded": false,
+    "single_tco_lookup_policy": "100% FREE FOREVER (Single-company Payroll/HRIS & Merchant IC+ TCO lookups never gated)",
+    "bulk_feed_pricing_usd_monthly": 49.0,
+    "free_tier_daily_bulk_limit": 10,
+    "gated_bulk_endpoints": [
+      "/api/v1/benchmarks/bulk-50-state-sui.json",
+      "/api/v1/benchmarks/vendor-fee-drift-feed.json"
+    ],
+    "stage_1_subid_links": [
+      {
+        "partner": "Bark US (10\u201340 Yd Roll-Off Dumpster Quotes)",
+        "cpa_payout_range": "AWIN MID 58887 Verified Lead CPA",
+        "llms_txt_subid": "aeo-llm-bark-dumpster",
+        "webmcp_subid": "webmcp-bark-dumpster",
+        "tracked_url": "https://www.awin1.com/cread.php?awinmid=58887&awinaffid=3133124&clickref=aeo-llm-bark-dumpster&ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Fdumpster-rental%2F"
+      },
+      {
+        "partner": "LoadUp (Upfront 2-Person In-Home Hauling)",
+        "cpa_payout_range": "AWIN MID 59560 Booking CPA",
+        "llms_txt_subid": "aeo-llm-loadup-haul",
+        "webmcp_subid": "webmcp-loadup-haul",
+        "tracked_url": "https://goloadup.com/?utm_source=junkhaulhq&utm_medium=affiliate&utm_campaign=stage1_agentic&utm_content=aeo-llm-loadup-haul"
+      }
+    ],
+    "sample_http_402_response": {
+      "http_status": 402,
+      "error": "Payment Required \u2014 Stage 2 Agentic Bulk Benchmark Gate Active",
+      "code": "STAGE2_BULK_FEED_API_KEY_REQUIRED",
+      "endpoint": "/api/v1/benchmarks/bulk-50-state-sui.json",
+      "weekly_agentic_hits_observed": 8,
+      "activation_threshold_weekly_hits": 500,
+      "free_tier_policy": {
+        "single_company_tco_lookups": "100% FREE & UNLIMITED (via /.well-known/webmcp.json & /llms.txt)",
+        "bulk_feed_unauthenticated_limit": "10 calls/day"
+      },
+      "upgrade_tier": {
+        "plan_name": "B2B Fee Audit \u2014 Developer & FinOps Bulk Benchmark API Key",
+        "price_usd_monthly": 49.0,
+        "billing_interval": "monthly",
+        "included_feeds": [
+          "https://b2bfeeaudit.com/api/v1/benchmarks/bulk-50-state-sui.json",
+          "https://b2bfeeaudit.com/api/v1/benchmarks/vendor-fee-drift-feed.json",
+          "https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"
+        ],
+        "auth_header": "X-B2BFeeAudit-API-Key: b2bfa_live_<key>",
+        "provisioning_contact": "mailto:luke@rtpait.com?subject=B2BFeeAudit%20%2449%2Fmo%20Bulk%20Benchmark%20API%20Key",
+        "documentation_url": "https://b2bfeeaudit.com/.well-known/webmcp.json"
+      }
+    },
+    "updated_at_utc": "2026-10-26T04:23:09Z"
+  }
+}

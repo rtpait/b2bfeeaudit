@@ -1151,11 +1151,127 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
 
       ${(() => {
         const bAudit = actuals.bot_traffic_audit || {};
+        const tb = bAudit.three_bucket_breakdown || {};
+        const serpRoutes = bAudit.serp_rank_tracker_routes || [];
+        const agGate = actuals.agentic_monetization_gate || {};
+        const subIdLinks = agGate.stage_1_subid_links || [];
         const criteria = bAudit.criteria_used || [];
         const catCounts = bAudit.signal_category_counts || {};
         const flaggedLog = bAudit.flagged_visits_log || [];
         const topProviders = bAudit.top_flagged_providers || [];
         return `
+          <div style="margin-bottom:16px;padding:12px 16px;border-radius:10px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.40);font-size:13px;color:#d1fae5;">
+            <strong>✓ Recommendation #1 Active — Analytics-Layer Filtering Only (Zero Edge Blocking):</strong>
+            ${esc(bAudit.edge_blocking_policy || 'No Cloudflare Turnstile, JS challenges, or data-center ASN blocks at the network edge — preserves 100% WebMCP & llms.txt discovery from AWS Ashburn & GCP.')}
+          </div>
+
+          <div class="subcard" style="margin-bottom:16px;border-color:#38bdf8;">
+            <div class="subcard-head">
+              <h3>3-Bucket Analytics Telemetry Split — ${esc(selectedKey)}</h3>
+              <span class="pill-sky">Bucket A = Sole CVR &amp; RPV Denominator</span>
+            </div>
+            <div class="kpi-grid" style="margin-bottom:0;">
+              <div class="kpi-card" style="border-color:rgba(16,185,129,0.5);">
+                <div class="kpi-label">Bucket A — Verified Human Sessions</div>
+                <div class="kpi-value" style="color:#10b981;">${fmtNum(tb.bucket_a_verified_human_sessions ?? siteVisits)} <span class="kpi-unit">(+ ${fmtNum(tb.bucket_a_passive_residential_bounces ?? 0)} passive bounce)</span></div>
+                <div class="kpi-foot">${esc(tb.bucket_a_description || 'Sole denominator for Conversion Rate (CVR) & Revenue Per Visitor (RPV)')}</div>
+              </div>
+              <div class="kpi-card" style="border-color:rgba(56,189,248,0.5);">
+                <div class="kpi-label">Bucket B — AI &amp; SERP Crawler Velocity</div>
+                <div class="kpi-value" style="color:#38bdf8;">${fmtNum(tb.bucket_b_ai_and_serp_discovery_velocity ?? 0)} <span class="kpi-unit">discovery hits</span></div>
+                <div class="kpi-foot">${esc(tb.bucket_b_description || 'Automated SEO rank-trackers (Ahrefs/DataForSEO pairs), AI RAG crawlers & deep route monitors')}</div>
+              </div>
+              <div class="kpi-card" style="border-color:rgba(245,158,11,0.5);">
+                <div class="kpi-label">Bucket C — SSL CT &amp; Security Scanners</div>
+                <div class="kpi-value" style="color:#f59e0b;">${fmtNum(tb.bucket_c_ssl_ct_security_scanners ?? 0)} <span class="kpi-unit">scanner probes</span></div>
+                <div class="kpi-foot">${esc(tb.bucket_c_description || 'SSL Certificate Transparency (CT) scanners (Mandiant, Scaleway, Qualys Qlfd, IP Volume) triggered by new certs')}</div>
+              </div>
+            </div>
+          </div>
+
+          ${serpRoutes.length > 0 ? `
+          <div class="subcard" style="margin-bottom:16px;border-color:#10b981;">
+            <div class="subcard-head">
+              <h3>Recommendation #2 — 4 Early-Ranking SERP Routes &amp; Sitewide Internal Link Equity Boost (JunkHaulHQ.com)</h3>
+              <span class="pill-green">64-Page Global Link Equity Active</span>
+            </div>
+            <div class="table-wrap">
+              <table class="adm-table">
+                <thead>
+                  <tr>
+                    <th>Commercial Route</th>
+                    <th>Page Title &amp; Offer</th>
+                    <th>Target SERP Cluster</th>
+                    <th>SERP Rank-Tracker Hits</th>
+                    <th>Internal Link Equity Boost Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${serpRoutes.map(sr => `
+                    <tr>
+                      <td><code>${esc(sr.route)}</code></td>
+                      <td><strong>${esc(sr.title)}</strong></td>
+                      <td><span class="td-meta">${esc(sr.target_query)}</span></td>
+                      <td><span class="pill-sky">${fmtNum(sr.serp_rank_tracker_hits)} Paired Hits</span></td>
+                      <td><span class="pill-green">${esc(sr.internal_link_boost)}</span></td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          ` : ''}
+
+          <div class="subcard" style="margin-bottom:16px;border-color:#a855f7;">
+            <div class="subcard-head">
+              <h3>Recommendations #3 &amp; #4 — Stage 1 Agentic Sub-ID Attribution &amp; Stage 2 HTTP 402 Bulk Feed Gate (${esc(selectedKey)})</h3>
+              <span class="pill-amber">${esc(agGate.gate_mode || 'STAGE_1_FREE_GROWTH_MODE_STAGE_2_ARMED')}</span>
+            </div>
+            <div class="kpi-grid" style="margin-bottom:12px;">
+              <div class="kpi-card">
+                <div class="kpi-label">Stage 1 Agentic Monetization</div>
+                <div class="kpi-value" style="font-size:16px;color:#10b981;">ACTIVE (Free RAG + Sub-IDs)</div>
+                <div class="kpi-foot"><code>/llms.txt</code> &amp; <code>/.well-known/webmcp.json</code> embed <code>clickref=aeo-llm-*</code> &amp; <code>clickref=webmcp-*</code> ($50–$250 B2B CPAs)</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label">Stage 2 Gate Progress (500 Hits/Wk)</div>
+                <div class="kpi-value" style="color:#38bdf8;">${fmtNum(agGate.weekly_agentic_hits ?? 0)} / ${fmtNum(agGate.threshold_weekly_hits ?? 500)} <span class="kpi-unit">(${esc(agGate.progress_pct ?? 0)}%)</span></div>
+                <div class="kpi-foot">Weekly agentic hits (${fmtNum(agGate.llm_referral_hits_7d ?? 0)} LLM referrals + ${fmtNum(agGate.bucket_b_crawler_discovery_hits_7d ?? 0)} Bucket B crawler hits)</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label">Stage 2 Bulk Feed Gate ($49/mo)</div>
+                <div class="kpi-value" style="font-size:16px;color:#fcd34d;">HTTP 402 ARMED (&gt;500/wk)</div>
+                <div class="kpi-foot">Gates bulk 50-state SUI &amp; vendor fee-drift JSON feeds at &gt;500 hits/wk; single TCO lookups stay 100% free</div>
+              </div>
+            </div>
+            ${subIdLinks.length > 0 ? `
+            <div class="table-wrap">
+              <table class="adm-table">
+                <thead>
+                  <tr>
+                    <th>Partner Program</th>
+                    <th>CPA Payout Tier</th>
+                    <th>/llms.txt Sub-ID</th>
+                    <th>WebMCP Sub-ID</th>
+                    <th>Embedded Agentic Action URL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${subIdLinks.map(sl => `
+                    <tr>
+                      <td><strong>${esc(sl.partner)}</strong></td>
+                      <td><span class="pill-green">${esc(sl.cpa_payout_range)}</span></td>
+                      <td><code>${esc(sl.llms_txt_subid)}</code></td>
+                      <td><code>${esc(sl.webmcp_subid)}</code></td>
+                      <td><code style="font-size:11px;">${esc(sl.tracked_url)}</code></td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+            ` : ''}
+          </div>
+
           <div class="kpi-grid kpi-grid-5" style="margin-bottom:16px;">
             <div class="kpi-card">
               <div class="kpi-label">Clean Human Visits</div>
