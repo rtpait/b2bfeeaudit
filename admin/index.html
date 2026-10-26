@@ -769,26 +769,84 @@ function fmtUsd(n) {
   return '$' + Number(n || 0).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
+function getOrderedProductKeys(fullPayload) {
+  const productsMap = fullPayload.products || {};
+  if (Array.isArray(fullPayload.product_catalog) && fullPayload.product_catalog.length > 0) {
+    return fullPayload.product_catalog.map(c => c.key).filter(k => productsMap[k]);
+  }
+  if (Array.isArray(fullPayload.available_products) && fullPayload.available_products.length > 0) {
+    return fullPayload.available_products.filter(k => productsMap[k]);
+  }
+  return Object.keys(productsMap);
+}
+
+function getMainDefaultProductKey(fullPayload) {
+  const keys = getOrderedProductKeys(fullPayload);
+  const productsMap = fullPayload.products || {};
+  for (const k of keys) {
+    if (productsMap[k] && productsMap[k].product_meta && productsMap[k].product_meta.is_main_default) {
+      return k;
+    }
+  }
+  return fullPayload.default_product || keys[0] || 'junkhaulhq.com';
+}
+
 function getInitialProductKey(fullPayload) {
+  const keys = getOrderedProductKeys(fullPayload);
+  const mainKey = getMainDefaultProductKey(fullPayload);
   const params = new URLSearchParams(window.location.search);
   const qProd = (params.get('product') || '').toLowerCase().trim();
-  if (qProd.includes('b2b') || qProd.includes('fee')) return 'b2bfeeaudit.com';
-  if (qProd.includes('junk')) return 'junkhaulhq.com';
-  return 'junkhaulhq.com';
+  if (qProd) {
+    const exact = keys.find(k => k.toLowerCase() === qProd);
+    if (exact) return exact;
+    const partial = keys.find(k => k.toLowerCase().includes(qProd) || qProd.includes(k.split('.')[0].toLowerCase()));
+    if (partial) return partial;
+  }
+  return mainKey;
+}
+
+function getProductMeta(prodData, prodKey, mainKey) {
+  const pm = (prodData && prodData.product_meta) || {};
+  const actuals = (prodData && prodData.live_measured_actuals) || {};
+  const isMain = pm.is_main_default !== undefined ? Boolean(pm.is_main_default) : (prodKey === mainKey);
+  const name = pm.name || prodKey;
+  const totalRoutes = pm.total_html_routes ?? actuals.live_gsc_total_html_routes ?? 0;
+  const endpoints = Array.isArray(pm.watched_aeo_endpoints) && pm.watched_aeo_endpoints.length > 0
+    ? pm.watched_aeo_endpoints
+    : ['/llms.txt'];
+  const thirdMetric = pm.third_mini_metric || {
+    label: 'GSC Indexed Pages',
+    value: String(actuals.live_gsc_indexed_display || `0 / ${totalRoutes}`)
+  };
+  return {
+    key: prodKey,
+    name: name,
+    tileTitle: pm.tile_title || `${name} Analytics`,
+    consoleTitle: pm.console_title || `${name} — Live Visitors & LLM Query Console`,
+    subtitle: pm.subtitle || `${name} Telemetry (${totalRoutes} Routes)`,
+    isMain: isMain,
+    posthogProjectId: pm.posthog_project_id || '685354',
+    totalRoutes: totalRoutes,
+    watchedEndpoints: endpoints,
+    guardrailSummary: pm.guardrail_summary || `Active Footprint: ${totalRoutes} HTML Routes. Current GSC Indexed: ${actuals.live_gsc_indexed_display || '0 / ' + totalRoutes}.`,
+    thirdMetric: thirdMetric
+  };
 }
 
 function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
   const productsMap = fullPayload.products || {
-    'junkhaulhq.com': fullPayload
+    [fullPayload.default_product || 'junkhaulhq.com']: fullPayload
   };
-  const selectedKey = forcedProductKey || getInitialProductKey(fullPayload);
+  const orderedKeys = getOrderedProductKeys(fullPayload);
+  const mainKey = getMainDefaultProductKey(fullPayload);
+  const selectedKey = (forcedProductKey && productsMap[forcedProductKey])
+    ? forcedProductKey
+    : getInitialProductKey(fullPayload);
   sessionStorage.setItem('adm_selected_product', selectedKey);
 
   const data = productsMap[selectedKey] || fullPayload;
-  const b2bData = productsMap['b2bfeeaudit.com'] || {};
-  const jhqData = productsMap['junkhaulhq.com'] || {};
-  const b2bActuals = b2bData.live_measured_actuals || {};
-  const jhqActuals = jhqData.live_measured_actuals || {};
+  const meta = getProductMeta(data, selectedKey, mainKey);
+  const mainMeta = getProductMeta(productsMap[mainKey] || data, mainKey, mainKey);
 
   const actuals = data.live_measured_actuals || {};
   const opKpis = actuals.operational_kpis || {};
@@ -809,36 +867,97 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
   const recentVisits = actuals.recent_visits_list || [];
   const calcInteractions = actuals.live_estimator_interactions ?? actuals.live_tco_calculator_interactions ?? 0;
   const partnerClicks = actuals.live_outbound_affiliate_clicks ?? actuals.live_cta_clicks ?? 0;
-  const cfoExports = actuals.live_cfo_report_exports ?? actuals.live_cfo_pdf_csv_exports ?? 0;
 
-  const isB2B = selectedKey === 'b2bfeeaudit.com';
-  const productTitle = isB2B
-    ? 'B2BFeeAudit.com — Live Visitors & LLM Query Console'
-    : 'JunkHaulHQ.com — Live Visitors & LLM Query Console';
-  const productSubtitle = isB2B
-    ? 'B2B Payroll, Multi-State HRIS, EOR & Merchant Interchange-Plus Fee Auditor (16 MVP Routes)'
-    : 'Municipal Bulk Trash, Landfill Tipping Fee, Roll-Off Dumpster & Junk Hauling Guide (64 Routes)';
+  const isViewingMain = selectedKey === mainKey;
+  const secondaryKeys = orderedKeys.filter(k => k !== mainKey);
 
-  document.title = `${isB2B ? 'B2BFeeAudit.com Analytics' : 'JunkHaulHQ.com Analytics (Main)'} — Unified /admin Telemetry`;
+  document.title = `${meta.tileTitle}${isViewingMain ? ' (Main)' : ''} — Unified /admin Telemetry`;
 
-  const otherProdKey = isB2B ? 'junkhaulhq.com' : 'b2bfeeaudit.com';
-  const otherProdBtnLabel = isB2B
-    ? '← Back to JunkHaulHQ.com (Main Page)'
-    : 'Switch to B2B Fee Audit (b2bfeeaudit.com) →';
+  // Header quick-navigation controls:
+  // - When on a secondary product view: prominent "← Back to <Main Product> (Main Page)" button
+  // - When on the main view: quick switch buttons for each secondary product in the registry
+  const headerSwitchControlsHtml = !isViewingMain
+    ? `<button type="button" class="adm-btn adm-btn-switch-hero" data-product-switch="${esc(mainKey)}">&larr; Back to ${esc(mainMeta.name)} (Main Page)</button>`
+    : secondaryKeys.map(secKey => {
+        const secMeta = getProductMeta(productsMap[secKey], secKey, mainKey);
+        return `<button type="button" class="adm-btn adm-btn-switch-hero" data-product-switch="${esc(secKey)}">Switch to ${esc(secMeta.name)} (${esc(secKey)}) &rarr;</button>`;
+      }).join('');
+
+  // Uniform Product Switcher Tiles rendered dynamically from orderedKeys (product_catalog)
+  const productTilesHtml = orderedKeys.map(prodKey => {
+    const pObj = productsMap[prodKey] || {};
+    const pMeta = getProductMeta(pObj, prodKey, mainKey);
+    const pAct = pObj.live_measured_actuals || {};
+    const isCurrent = prodKey === selectedKey;
+    const pVisits = pAct.live_site_visits ?? pAct.live_posthog_pageviews_24h_7d ?? 0;
+    const pLlm = pAct.live_llm_queries ?? 0;
+    const pLastVisit = pAct.last_visit_timestamp_edt || 'None';
+
+    let badgeLabel = '';
+    let badgeClass = '';
+    if (isCurrent && pMeta.isMain) {
+      badgeLabel = '● CURRENT VIEW (MAIN DEFAULT PAGE)';
+      badgeClass = 'tile-badge-active';
+    } else if (isCurrent && !pMeta.isMain) {
+      badgeLabel = '● CURRENT VIEW (PRODUCT ANALYTICS)';
+      badgeClass = 'tile-badge-active';
+    } else if (pMeta.isMain) {
+      badgeLabel = 'MAIN DEFAULT VIEW';
+      badgeClass = 'tile-badge-idle';
+    } else {
+      badgeLabel = 'PRODUCT ANALYTICS VIEW';
+      badgeClass = 'tile-badge-switch';
+    }
+
+    let ctaLabel = '';
+    if (isCurrent) {
+      ctaLabel = 'Viewing Now';
+    } else if (pMeta.isMain) {
+      ctaLabel = `← Back to ${pMeta.name} (Main Page)`;
+    } else {
+      ctaLabel = `Open ${pMeta.name} View →`;
+    }
+
+    const tileClasses = isCurrent
+      ? 'product-nav-tile tile-active'
+      : `product-nav-tile tile-clickable ${!pMeta.isMain ? 'tile-highlight-cta' : ''}`;
+
+    return `
+      <div class="${tileClasses}" data-product-switch="${esc(prodKey)}" tabindex="0" role="button" aria-pressed="${isCurrent}">
+        <div class="tile-top-row">
+          <span class="tile-badge ${badgeClass}">${esc(badgeLabel)}</span>
+          <span class="tile-domain">${esc(prodKey)}</span>
+        </div>
+        <div class="tile-title-row">
+          <div class="tile-title">${esc(pMeta.tileTitle)}</div>
+          <span class="tile-cta-btn ${!isCurrent ? 'tile-cta-prominent' : ''}">${esc(ctaLabel)}</span>
+        </div>
+        <div class="tile-stats-row">
+          <span><strong>${fmtNum(pVisits)}</strong> Site Visits</span>
+          <span>&bull;</span>
+          <span><strong>${fmtNum(pLlm)}</strong> LLM Queries</span>
+          <span>&bull;</span>
+          <span class="td-meta">Last Visit: ${esc(pLastVisit)}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const endpointsCodeHtml = meta.watchedEndpoints.map(ep => `<code>${esc(ep)}</code>`).join(', ');
 
   rootEl.innerHTML = `
     <header class="adm-header">
       <div class="adm-brand">
-        <div class="adm-badge-lock">${isB2B ? 'SEPARATE PRODUCT VIEW &bull; B2BFEEAUDIT.COM' : 'MAIN DEFAULT VIEW &bull; JUNKHAULHQ.COM'}</div>
+        <div class="adm-badge-lock">${isViewingMain ? 'MAIN DEFAULT VIEW &bull; ' + esc(selectedKey.toUpperCase()) : 'PRODUCT VIEW &bull; ' + esc(selectedKey.toUpperCase())}</div>
         <div>
-          <h1>${esc(productTitle)}</h1>
+          <h1>${esc(meta.consoleTitle)}</h1>
           <p class="adm-sub">
-            ${esc(productSubtitle)} &bull; Last Synced: <strong>${esc(data.generated_at_edt || fullPayload.generated_at_edt || data.generated_at_utc)}</strong>
+            ${esc(meta.subtitle)} &bull; PostHog Project <code>${esc(meta.posthogProjectId)}</code> &bull; Last Synced: <strong>${esc(data.generated_at_edt || fullPayload.generated_at_edt || data.generated_at_utc)}</strong>
           </p>
         </div>
       </div>
       <div class="adm-actions">
-        <button type="button" class="adm-btn adm-btn-switch-hero" data-product-switch="${otherProdKey}">${otherProdBtnLabel}</button>
+        ${headerSwitchControlsHtml}
         <span class="adm-user-pill">Signed in as <strong>${esc(authInfo.username || 'wally')}</strong></span>
         <button id="btn-refresh-telemetry" class="adm-btn adm-btn-secondary" title="Pull latest live events from PostHog 685354">↻ Refresh Live Data</button>
         <button id="btn-logout-admin" class="adm-btn adm-btn-danger">Sign Out</button>
@@ -846,46 +965,10 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
     </header>
 
     <!-- =====================================================================
-         PRODUCT NAVIGATION TILES (JUNKHAULHQ.COM MAIN DEFAULT -> B2BFEEAUDIT.COM SEPARATE VIEW)
+         UNIFORM PRODUCT NAVIGATION TILES (DATA-DRIVEN FROM PRODUCT_CATALOG)
          ===================================================================== -->
     <section class="product-nav-tiles-grid" role="navigation" aria-label="Product Analytics Switcher Tiles">
-      <!-- TILE 1: JUNKHAULHQ.COM (MAIN DEFAULT VIEW) -->
-      <div class="product-nav-tile ${!isB2B ? 'tile-active' : 'tile-clickable'}" data-product-switch="junkhaulhq.com" tabindex="0" role="button" aria-pressed="${!isB2B}">
-        <div class="tile-top-row">
-          <span class="tile-badge ${!isB2B ? 'tile-badge-active' : 'tile-badge-idle'}">${!isB2B ? '● CURRENT VIEW (MAIN PAGE)' : 'MAIN DEFAULT PRODUCT'}</span>
-          <span class="tile-domain">junkhaulhq.com</span>
-        </div>
-        <div class="tile-title-row">
-          <div class="tile-title">JunkHaulHQ.com Analytics</div>
-          <span class="tile-cta-btn">${!isB2B ? 'Viewing Now' : '← Switch Back to JunkHaulHQ'}</span>
-        </div>
-        <div class="tile-stats-row">
-          <span><strong>${fmtNum(jhqActuals.live_site_visits ?? 0)}</strong> Site Visits</span>
-          <span>&bull;</span>
-          <span><strong>${fmtNum(jhqActuals.live_llm_queries ?? 0)}</strong> LLM Queries</span>
-          <span>&bull;</span>
-          <span class="td-meta">Last Visit: ${esc(jhqActuals.last_visit_timestamp_edt || 'None')}</span>
-        </div>
-      </div>
-
-      <!-- TILE 2: B2BFEEAUDIT.COM (SEPARATE VIEW SWITCHER TILE) -->
-      <div class="product-nav-tile ${isB2B ? 'tile-active' : 'tile-clickable tile-highlight-cta'}" data-product-switch="b2bfeeaudit.com" tabindex="0" role="button" aria-pressed="${isB2B}">
-        <div class="tile-top-row">
-          <span class="tile-badge ${isB2B ? 'tile-badge-active' : 'tile-badge-switch'}">${isB2B ? '● CURRENT VIEW (SEPARATE PRODUCT)' : 'SEPARATE PRODUCT ANALYTICS'}</span>
-          <span class="tile-domain">b2bfeeaudit.com</span>
-        </div>
-        <div class="tile-title-row">
-          <div class="tile-title">B2B Fee Audit Analytics</div>
-          <span class="tile-cta-btn ${!isB2B ? 'tile-cta-prominent' : ''}">${isB2B ? 'Viewing Now' : 'Open B2B Fee Audit View →'}</span>
-        </div>
-        <div class="tile-stats-row">
-          <span><strong>${fmtNum(b2bActuals.live_site_visits ?? 0)}</strong> Site Visits</span>
-          <span>&bull;</span>
-          <span><strong>${fmtNum(b2bActuals.live_llm_queries ?? 0)}</strong> LLM Queries</span>
-          <span>&bull;</span>
-          <span class="td-meta">Last Visit: ${esc(b2bActuals.last_visit_timestamp_edt || 'None')}</span>
-        </div>
-      </div>
+      ${productTilesHtml}
     </section>
 
     <!-- =====================================================================
@@ -896,7 +979,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
       <div class="hero-big-card hero-card-visits">
         <div class="hero-card-top">
           <span class="hero-eyebrow">1. HUMAN TRAFFIC &amp; PAGEVIEWS (${esc(selectedKey)})</span>
-          <span class="pill-green">LIVE POSTHOG</span>
+          <span class="pill-green">LIVE POSTHOG ${esc(meta.posthogProjectId)}</span>
         </div>
         <div class="hero-big-title">Site Visits</div>
         <div class="hero-big-number-row">
@@ -920,17 +1003,10 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
             <span class="mini-label">Partner Link Clicks:</span>
             <strong>${fmtNum(partnerClicks)}</strong>
           </div>
-          ${isB2B ? `
           <div class="mini-stat">
-            <span class="mini-label">CFO Report Exports:</span>
-            <strong>${fmtNum(cfoExports)}</strong>
+            <span class="mini-label">${esc(meta.thirdMetric.label)}:</span>
+            <strong>${esc(meta.thirdMetric.value)}</strong>
           </div>
-          ` : `
-          <div class="mini-stat">
-            <span class="mini-label">GSC Indexed Pages:</span>
-            <strong>${esc(actuals.live_gsc_indexed_display || '14 / 64 (21.9%)')}</strong>
-          </div>
-          `}
         </div>
       </div>
 
@@ -960,7 +1036,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
           </div>
           <div class="mini-stat">
             <span class="mini-label">Watched AEO Endpoints:</span>
-            <strong><code>/llms.txt</code>${isB2B ? ', <code>/.well-known/webmcp.json</code>' : ', <code>/llms-full.txt</code>'}</strong>
+            <strong>${endpointsCodeHtml}</strong>
           </div>
         </div>
       </div>
@@ -1007,14 +1083,14 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
         <div class="empty-llm-box">
           <div class="empty-llm-headline">No LLM queries have hit <code>${esc(selectedKey)}</code> yet (<strong>0</strong> recorded so far).</div>
           <p class="empty-llm-sub">
-            As soon as someone clicks a citation from <strong>ChatGPT</strong>, <strong>Perplexity</strong>, <strong>Claude</strong>, <strong>Gemini</strong>, or <strong>Copilot</strong>—or an AI agent triggers <code>llm_query</code> / reads your AEO endpoints—each query will appear here in plain English with its exact EDT timestamp and what fee/cost topic it asked about.
+            As soon as someone clicks a citation from <strong>ChatGPT</strong>, <strong>Perplexity</strong>, <strong>Claude</strong>, <strong>Gemini</strong>, or <strong>Copilot</strong>—or an AI agent triggers <code>llm_query</code> / reads your AEO endpoints—each query will appear here in plain English with its exact EDT timestamp and what topic it asked about.
           </p>
           <div class="watched-ai-chips">
             <span class="ai-chip">✓ ChatGPT / OpenAI (<code>chatgpt.com</code>, <code>GPTBot</code>, <code>OAI-SearchBot</code>)</span>
             <span class="ai-chip">✓ Perplexity AI (<code>perplexity.ai</code>, <code>PerplexityBot</code>)</span>
             <span class="ai-chip">✓ Claude / Anthropic (<code>claude.ai</code>, <code>ClaudeBot</code>)</span>
             <span class="ai-chip">✓ Google Gemini (<code>gemini.google.com</code>, <code>Google-Extended</code>)</span>
-            <span class="ai-chip">✓ Endpoints (<code>/llms.txt</code>${isB2B ? ', <code>/.well-known/webmcp.json</code>' : ', <code>/llms-full.txt</code>'})</span>
+            <span class="ai-chip">✓ Endpoints (${endpointsCodeHtml})</span>
           </div>
         </div>
       `}
@@ -1072,10 +1148,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
         <div class="adm-guardrail-banner" style="margin-top:0;margin-bottom:16px;">
           <div>
             <strong>Standing Organic SEO &amp; AEO Pacing Guardrail (Principle 3):</strong>
-            ${isB2B
-              ? `Active Footprint Locked at <strong>16 MVP HTML Pages</strong> (+ 4 Cohort-1 routes held until &ge;12/16 [75%] indexed in GSC). Current GSC Indexed: <strong>${esc(actuals.live_gsc_indexed_display || '0 / 16 (0.0%)')}</strong>.`
-              : `Active Footprint Locked at <strong>64 HTML Pages</strong> (66 core SEO routes + <code>/llms.txt</code> &amp; <code>/llms-full.txt</code>). Current GSC Indexed: <strong>${esc(actuals.live_gsc_indexed_display || '14 / 64 (21.9%)')}</strong> vs. required <strong>48 / 64 (&ge;75.0%)</strong>.`
-            }
+            ${esc(meta.guardrailSummary)}
           </div>
           <span class="status-pill status-locked">${esc((ds.gsc && ds.gsc.drip_gate_status) || 'DRIP_GATE_LOCKED')}</span>
         </div>
@@ -1102,7 +1175,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
             </div>
             <div class="kpi-card">
               <div class="kpi-label">3. GSC Crawl Frequency (<code>gsc_crawl_frequency</code>)</div>
-              <div class="kpi-value">${esc(actuals.live_gsc_indexed_routes ?? 0)} / ${esc(actuals.live_gsc_total_html_routes ?? (isB2B ? 16 : 64))}</div>
+              <div class="kpi-value">${esc(actuals.live_gsc_indexed_routes ?? 0)} / ${esc(meta.totalRoutes)}</div>
               <div class="kpi-foot">${esc((opKpis.gsc_crawl_frequency && opKpis.gsc_crawl_frequency.display) || 'GSC indexation gate tracking')}</div>
             </div>
             <div class="kpi-card">
@@ -1129,7 +1202,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
           <div class="panel-title-row">
             <div>
               <h2>Panel 1 — Live Traffic by Channel, Device Split &amp; Active HTML Routes (${esc(selectedKey)})</h2>
-              <p>Live acquisition breakdown and per-route pageviews pulled from PostHog Project <code>685354</code>.</p>
+              <p>Live acquisition breakdown and per-route pageviews pulled from PostHog Project <code>${esc(meta.posthogProjectId)}</code>.</p>
             </div>
             <span class="panel-tag">Live Telemetry</span>
           </div>
@@ -1230,7 +1303,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
               <h2>Panel 2 — Live On-Page Calculator &amp; UI Macro Telemetry (${esc(selectedKey)})</h2>
               <p>Live custom event counters across instrumented calculators, CTAs, and <code>.gov</code> citations.</p>
             </div>
-            <span class="panel-tag">PostHog Project 685354</span>
+            <span class="panel-tag">PostHog Project ${esc(meta.posthogProjectId)}</span>
           </div>
           <div class="table-wrap">
             <table class="adm-table">
@@ -1337,14 +1410,22 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
     </details>
   `;
 
-  // Wire up Product Switcher buttons
+  // Wire up Product Switcher buttons and tiles (supports click + keyboard Enter/Space)
   rootEl.querySelectorAll('[data-product-switch]').forEach(btn => {
-    btn.addEventListener('click', () => {
+    const activateSwitch = () => {
       const targetProd = btn.getAttribute('data-product-switch');
+      if (!targetProd) return;
       const url = new URL(window.location.href);
       url.searchParams.set('product', targetProd);
       window.history.replaceState({}, '', url.toString());
       renderDashboardInto(rootEl, fullPayload, authInfo, targetProd);
+    };
+    btn.addEventListener('click', activateSwitch);
+    btn.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter' || ev.key === ' ') {
+        ev.preventDefault();
+        activateSwitch();
+      }
     });
   });
 
