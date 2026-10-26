@@ -165,6 +165,114 @@ code {
   border-color: rgba(239, 68, 68, 0.4);
 }
 
+
+.adm-btn-switch-hero {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+.adm-btn-switch-hero:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+}
+.product-nav-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.product-nav-tile {
+  background: #0f172a;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product-nav-tile.tile-clickable:hover {
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.22);
+}
+.product-nav-tile.tile-highlight-cta {
+  border-color: rgba(56, 189, 248, 0.55);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.14) 0%, #0f172a 100%);
+}
+.product-nav-tile.tile-active {
+  border-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.16) 0%, #111827 100%);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.35);
+}
+.tile-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.tile-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+.tile-badge-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+.tile-badge-switch {
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+}
+.tile-badge-idle {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+}
+.tile-domain {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+.tile-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tile-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.tile-cta-btn {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+}
+.tile-cta-prominent {
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid #38bdf8;
+}
+.tile-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
 /* Product Switcher Bar */
 .product-switcher-bar {
   margin-top: 16px;
@@ -664,13 +772,9 @@ function fmtUsd(n) {
 function getInitialProductKey(fullPayload) {
   const params = new URLSearchParams(window.location.search);
   const qProd = (params.get('product') || '').toLowerCase().trim();
-  if (qProd.includes('junk')) return 'junkhaulhq.com';
   if (qProd.includes('b2b') || qProd.includes('fee')) return 'b2bfeeaudit.com';
-  const saved = sessionStorage.getItem('adm_selected_product');
-  if (saved && fullPayload.products && fullPayload.products[saved]) return saved;
-  return (fullPayload.default_product && fullPayload.products && fullPayload.products[fullPayload.default_product])
-    ? fullPayload.default_product
-    : 'b2bfeeaudit.com';
+  if (qProd.includes('junk')) return 'junkhaulhq.com';
+  return 'junkhaulhq.com';
 }
 
 function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
@@ -715,12 +819,17 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
     ? 'B2B Payroll, Multi-State HRIS, EOR & Merchant Interchange-Plus Fee Auditor (16 MVP Routes)'
     : 'Municipal Bulk Trash, Landfill Tipping Fee, Roll-Off Dumpster & Junk Hauling Guide (64 Routes)';
 
-  document.title = `${isB2B ? 'B2BFeeAudit.com' : 'JunkHaulHQ.com'} — Unified /admin Telemetry`;
+  document.title = `${isB2B ? 'B2BFeeAudit.com Analytics' : 'JunkHaulHQ.com Analytics (Main)'} — Unified /admin Telemetry`;
+
+  const otherProdKey = isB2B ? 'junkhaulhq.com' : 'b2bfeeaudit.com';
+  const otherProdBtnLabel = isB2B
+    ? '← Back to JunkHaulHQ.com (Main Page)'
+    : 'Switch to B2B Fee Audit (b2bfeeaudit.com) →';
 
   rootEl.innerHTML = `
     <header class="adm-header">
       <div class="adm-brand">
-        <div class="adm-badge-lock">SHARED /ADMIN &bull; LIVE POSTHOG 685354</div>
+        <div class="adm-badge-lock">${isB2B ? 'SEPARATE PRODUCT VIEW &bull; B2BFEEAUDIT.COM' : 'MAIN DEFAULT VIEW &bull; JUNKHAULHQ.COM'}</div>
         <div>
           <h1>${esc(productTitle)}</h1>
           <p class="adm-sub">
@@ -729,6 +838,7 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
         </div>
       </div>
       <div class="adm-actions">
+        <button type="button" class="adm-btn adm-btn-switch-hero" data-product-switch="${otherProdKey}">${otherProdBtnLabel}</button>
         <span class="adm-user-pill">Signed in as <strong>${esc(authInfo.username || 'wally')}</strong></span>
         <button id="btn-refresh-telemetry" class="adm-btn adm-btn-secondary" title="Pull latest live events from PostHog 685354">↻ Refresh Live Data</button>
         <button id="btn-logout-admin" class="adm-btn adm-btn-danger">Sign Out</button>
@@ -736,26 +846,47 @@ function renderDashboardInto(rootEl, fullPayload, authInfo, forcedProductKey) {
     </header>
 
     <!-- =====================================================================
-         TOP-BAR PRODUCT SWITCHER (B2BFEEAUDIT.COM vs JUNKHAULHQ.COM)
+         PRODUCT NAVIGATION TILES (JUNKHAULHQ.COM MAIN DEFAULT -> B2BFEEAUDIT.COM SEPARATE VIEW)
          ===================================================================== -->
-    <div class="product-switcher-bar" role="navigation" aria-label="Product Switcher">
-      <div class="product-switcher-label">Viewing Product:</div>
-      <div class="product-switcher-pills">
-        <button type="button" class="prod-pill ${isB2B ? 'active' : ''}" data-product-switch="b2bfeeaudit.com">
-          <span class="prod-dot ${isB2B ? 'dot-active' : ''}"></span>
-          <strong>B2BFeeAudit.com</strong>
-          <span class="prod-pill-meta">${fmtNum(b2bActuals.live_site_visits ?? 0)} visits &bull; ${fmtNum(b2bActuals.live_llm_queries ?? 0)} LLM queries</span>
-        </button>
-        <button type="button" class="prod-pill ${!isB2B ? 'active' : ''}" data-product-switch="junkhaulhq.com">
-          <span class="prod-dot ${!isB2B ? 'dot-active' : ''}"></span>
-          <strong>JunkHaulHQ.com</strong>
-          <span class="prod-pill-meta">${fmtNum(jhqActuals.live_site_visits ?? 0)} visits &bull; ${fmtNum(jhqActuals.live_llm_queries ?? 0)} LLM queries</span>
-        </button>
+    <section class="product-nav-tiles-grid" role="navigation" aria-label="Product Analytics Switcher Tiles">
+      <!-- TILE 1: JUNKHAULHQ.COM (MAIN DEFAULT VIEW) -->
+      <div class="product-nav-tile ${!isB2B ? 'tile-active' : 'tile-clickable'}" data-product-switch="junkhaulhq.com" tabindex="0" role="button" aria-pressed="${!isB2B}">
+        <div class="tile-top-row">
+          <span class="tile-badge ${!isB2B ? 'tile-badge-active' : 'tile-badge-idle'}">${!isB2B ? '● CURRENT VIEW (MAIN PAGE)' : 'MAIN DEFAULT PRODUCT'}</span>
+          <span class="tile-domain">junkhaulhq.com</span>
+        </div>
+        <div class="tile-title-row">
+          <div class="tile-title">JunkHaulHQ.com Analytics</div>
+          <span class="tile-cta-btn">${!isB2B ? 'Viewing Now' : '← Switch Back to JunkHaulHQ'}</span>
+        </div>
+        <div class="tile-stats-row">
+          <span><strong>${fmtNum(jhqActuals.live_site_visits ?? 0)}</strong> Site Visits</span>
+          <span>&bull;</span>
+          <span><strong>${fmtNum(jhqActuals.live_llm_queries ?? 0)}</strong> LLM Queries</span>
+          <span>&bull;</span>
+          <span class="td-meta">Last Visit: ${esc(jhqActuals.last_visit_timestamp_edt || 'None')}</span>
+        </div>
       </div>
-      <div class="product-switcher-status">
-        PostHog US Cloud Project <code>685354</code> &bull; Mode: <span class="pill-green">${esc((ds.posthog && ds.posthog.mode) || 'live_posthog_hogql_api')}</span>
+
+      <!-- TILE 2: B2BFEEAUDIT.COM (SEPARATE VIEW SWITCHER TILE) -->
+      <div class="product-nav-tile ${isB2B ? 'tile-active' : 'tile-clickable tile-highlight-cta'}" data-product-switch="b2bfeeaudit.com" tabindex="0" role="button" aria-pressed="${isB2B}">
+        <div class="tile-top-row">
+          <span class="tile-badge ${isB2B ? 'tile-badge-active' : 'tile-badge-switch'}">${isB2B ? '● CURRENT VIEW (SEPARATE PRODUCT)' : 'SEPARATE PRODUCT ANALYTICS'}</span>
+          <span class="tile-domain">b2bfeeaudit.com</span>
+        </div>
+        <div class="tile-title-row">
+          <div class="tile-title">B2B Fee Audit Analytics</div>
+          <span class="tile-cta-btn ${!isB2B ? 'tile-cta-prominent' : ''}">${isB2B ? 'Viewing Now' : 'Open B2B Fee Audit View →'}</span>
+        </div>
+        <div class="tile-stats-row">
+          <span><strong>${fmtNum(b2bActuals.live_site_visits ?? 0)}</strong> Site Visits</span>
+          <span>&bull;</span>
+          <span><strong>${fmtNum(b2bActuals.live_llm_queries ?? 0)}</strong> LLM Queries</span>
+          <span>&bull;</span>
+          <span class="td-meta">Last Visit: ${esc(b2bActuals.last_visit_timestamp_edt || 'None')}</span>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- =====================================================================
          HERO SECTION: TWO MAIN NUMBERS (SITE VISITS & LLM QUERIES)
