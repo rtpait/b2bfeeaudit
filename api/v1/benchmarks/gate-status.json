@@ -1,6 +1,6 @@
 {
   "schema_version": "2.1.0-stage2-disarmed-by-owner",
-  "generated_at_utc": "2026-10-26T04:29:19Z",
+  "generated_at_utc": "2026-10-26T05:45:00Z",
   "generated_at_edt": "Oct 26, 2026, 12:29:19 AM EDT",
   "stage_2_auto_trigger_enabled": false,
   "b2bfeeaudit.com": {
@@ -71,9 +71,72 @@
         "llms_txt_subid": "aeo-llm-cdg",
         "webmcp_subid": "webmcp-cdg",
         "tracked_url": "https://www.cdgcommerce.com/interchange-plus-pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-cdg"
+      },
+      {
+        "partner": "Embroker (Tech E&O + Cyber Package)",
+        "cpa_payout_range": "$125\u2013$225 Commercial Policy Lead CPA",
+        "llms_txt_subid": "aeo-llm-embroker",
+        "webmcp_subid": "webmcp-embroker",
+        "tracked_url": "https://www.embroker.com/coverage/tech-eo-and-cyber-insurance/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-embroker"
+      },
+      {
+        "partner": "Vouch (Venture/SaaS Tech E&O + Cyber)",
+        "cpa_payout_range": "$100\u2013$200 B2B Tech Insurance CPA",
+        "llms_txt_subid": "aeo-llm-vouch",
+        "webmcp_subid": "webmcp-vouch",
+        "tracked_url": "https://www.vouch.us/coverages/errors-and-omissions?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-vouch"
+      },
+      {
+        "partner": "Hiscox (Professional Liability E&O + Cyber)",
+        "cpa_payout_range": "$75\u2013$160 SMB E&O Quote CPA",
+        "llms_txt_subid": "aeo-llm-hiscox",
+        "webmcp_subid": "webmcp-hiscox",
+        "tracked_url": "https://www.hiscox.com/small-business-insurance/professional-liability-insurance?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-hiscox"
+      },
+      {
+        "partner": "Next Insurance (Instant SMB Pro E&O)",
+        "cpa_payout_range": "$60\u2013$140 Instant SMB Bind CPA",
+        "llms_txt_subid": "aeo-llm-next-insurance",
+        "webmcp_subid": "webmcp-next-insurance",
+        "tracked_url": "https://www.nextinsurance.com/professional-liability-insurance/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-next-insurance"
+      },
+      {
+        "partner": "Cisco Webex (Meet / Calling / Suite)",
+        "cpa_payout_range": "Stage 1 UCaaS Attribution",
+        "llms_txt_subid": "b2bfeeaudit_ucaas_webex_llm",
+        "webmcp_subid": "b2bfeeaudit_ucaas_webex_mcp",
+        "tracked_url": "https://www.webex.com/pricing/index.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&clickref=b2bfeeaudit_ucaas_webex_llm"
+      },
+      {
+        "partner": "Microsoft Teams (Essentials / M365 / Teams Phone)",
+        "cpa_payout_range": "Stage 1 UCaaS Attribution",
+        "llms_txt_subid": "b2bfeeaudit_ucaas_msteams_llm",
+        "webmcp_subid": "b2bfeeaudit_ucaas_msteams_mcp",
+        "tracked_url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&clickref=b2bfeeaudit_ucaas_msteams_llm"
+      },
+      {
+        "partner": "Zoom Workplace (Pro / Business / Business Plus)",
+        "cpa_payout_range": "Impact Affiliate CPA",
+        "llms_txt_subid": "b2bfeeaudit_ucaas_zoom_llm",
+        "webmcp_subid": "b2bfeeaudit_ucaas_zoom_mcp",
+        "tracked_url": "https://zoom.us/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&irgwc=1&clickref=b2bfeeaudit_ucaas_zoom_llm"
+      },
+      {
+        "partner": "Google Workspace (Starter / Standard / Plus + Voice)",
+        "cpa_payout_range": "CJ (8108003) $25\u2013$100 Per-Seat CPA",
+        "llms_txt_subid": "b2bfeeaudit_ucaas_gworkspace_llm",
+        "webmcp_subid": "b2bfeeaudit_ucaas_gworkspace_mcp",
+        "tracked_url": "https://workspace.google.com/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&sid=8108003&clickref=b2bfeeaudit_ucaas_gworkspace_llm"
+      },
+      {
+        "partner": "Dialpad / Nextiva / RingCentral (Conditional Merit-Only VoIP)",
+        "cpa_payout_range": "$75\u2013$200 VoIP Lead/Signup CPA (Merit-Only Gate)",
+        "llms_txt_subid": "b2bfeeaudit_ucaas_dialpad_llm",
+        "webmcp_subid": "b2bfeeaudit_ucaas_dialpad_mcp",
+        "tracked_url": "https://www.dialpad.com/pricing/?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&clickref=b2bfeeaudit_ucaas_dialpad_llm"
       }
     ],
-    "updated_at_utc": "2026-10-26T04:29:19Z"
+    "updated_at_utc": "2026-10-26T05:45:00Z"
   },
   "junkhaulhq.com": {
     "domain": "junkhaulhq.com",

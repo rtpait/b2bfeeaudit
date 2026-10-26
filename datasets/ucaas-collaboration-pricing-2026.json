@@ -1,0 +1,506 @@
+{
+  "schema_version": "2026.10.26-ucaas-collaboration-pricing-benchmarks",
+  "generated_at_utc": "2026-10-26T05:40:00Z",
+  "license": "CC-BY-4.0",
+  "methodology_note": "Verified October 2026 against published Cisco Webex, Microsoft 365 / Teams (NCE), Zoom Workplace, Google Workspace, RingCentral, Nextiva, and Dialpad US commercial rate cards plus FCC Universal Service Fund (USF) & Kari's Law / RAY BAUM's Act E911 regulatory recovery schedules.",
+  "merit_only_voip_rule": {
+    "policy": "STRICT_MERIT_ONLY_CONDITIONAL_RECOMMENDATION",
+    "description": "Dedicated VoIP alternatives (Dialpad, Nextiva, RingCentral) are surfaced ONLY when their calculated all-in 12-month TCO is strictly lower than BOTH Cisco Webex and Microsoft Teams for the user's exact configuration. Users are NEVER steered away from Cisco Webex or Microsoft Teams when Webex or Microsoft is the lower-cost or better-fit option (e.g., when M365 Business/Enterprise or Webex Suite is already licensed or cheaper)."
+  },
+  "subpages": [
+    {
+      "url": "/ucaas/",
+      "slug": "ucaas-hub",
+      "navLabel": "UCaaS & Collab Hub",
+      "title": "Webex vs Microsoft Teams vs Zoom vs Google Workspace Pricing (2026 Per-Seat & Hidden Fee Audit)",
+      "h1": "Webex vs. Microsoft Teams vs. Zoom Workplace vs. Google Workspace: 2026 List Pricing, Per-Seat Tiers & Hidden Fee Audit",
+      "summary": "Interactive 4-vendor Unified Communications (UCaaS) Total Cost of Ownership calculator and line-item list price audit comparing Cisco Webex, Microsoft Teams, Zoom Workplace, and Google Workspace across annual vs. monthly NCE markups, PSTN calling add-ons, AI assistants, cloud recording overages, and FCC USF/E911 surcharges."
+    },
+    {
+      "url": "/ucaas/cisco-webex-pricing-audit/",
+      "slug": "cisco-webex-pricing-audit",
+      "navLabel": "Cisco Webex Audit",
+      "title": "Cisco Webex Pricing, Calling & Suite Hidden Fee Audit (2026 Per-Seat Breakdown)",
+      "h1": "Cisco Webex Pricing & Hidden Fee Audit (2026): Webex Meet, Calling, Suite & Enterprise TCO",
+      "summary": "Complete 2026 Cisco Webex per-seat price audit covering Webex Free ($0), Meet ($12/$14.50), Calling ($17/$20), Suite ($22.50/$25), and Enterprise tiers, bundled Webex AI Assistant value, PSTN & FCC E911/USF regulatory surcharges ($3.50-$6.50/line), and head-to-head TCO vs. Teams, Zoom, and Google."
+    },
+    {
+      "url": "/ucaas/microsoft-teams-pricing-audit/",
+      "slug": "microsoft-teams-pricing-audit",
+      "navLabel": "Microsoft Teams Audit",
+      "title": "Microsoft Teams Pricing, Teams Phone & M365 Unbundled Cost Audit (2026)",
+      "h1": "Microsoft Teams & M365 Unbundled Pricing Audit (2026): Essentials, Teams Phone, Premium & Copilot TCO",
+      "summary": "Line-item 2026 Microsoft Teams fee audit covering Teams Essentials ($4/$4.80), M365 Business Basic/Standard/Premium ($6/$12.50/$22), Enterprise unbundled Teams ($5.25), Teams Phone (+$8-$17/seat), Teams Premium (+$10/seat), M365 Copilot (+$30/seat annual lock-in), and the +20% NCE monthly billing surcharge."
+    },
+    {
+      "url": "/ucaas/zoom-workplace-pricing-audit/",
+      "slug": "zoom-workplace-pricing-audit",
+      "navLabel": "Zoom Workplace Audit",
+      "title": "Zoom Workplace & Zoom Phone Pricing Audit: Cloud Storage & Add-On Fees (2026)",
+      "h1": "Zoom Workplace & Zoom Phone Pricing Audit (2026): Pro, Business Plus & Cloud Recording Overage Traps",
+      "summary": "Audit 2026 Zoom Workplace list prices\u2014Pro ($13.33/$15.99), Business ($18.32/$21.99), Business Plus ($22.49/$26.99), and Zoom Phone ($10-$15/seat)\u2014including $0 AI Companion inclusion vs. the $40-$500/mo Cloud Recording storage overage trap, $50-$90 Large Meeting add-ons, and $79+ Webinars."
+    },
+    {
+      "url": "/ucaas/google-workspace-meet-pricing-audit/",
+      "slug": "google-workspace-meet-pricing-audit",
+      "navLabel": "Google Workspace Audit",
+      "title": "Google Workspace, Google Meet & Voice Pricing Audit: Per-Seat & Hidden Fees (2026)",
+      "h1": "Google Workspace, Google Meet & Google Voice Pricing Audit (2026): Starter, Standard, Plus & PSTN Add-Ons",
+      "summary": "2026 Google Workspace collaboration and telephony audit covering Business Starter ($7/$8.40), Standard ($14/$16.80), Plus ($22/$26.40), bundled Gemini AI, the +100% Starter-to-Standard meeting recording upgrade cliff, pooled Drive video storage limits, and Google Voice PSTN add-ons (+$10/$20/$30/seat)."
+    }
+  ],
+  "primary_vendors": [
+    {
+      "id": "webex",
+      "partner": "Cisco Webex",
+      "short_name": "Cisco Webex",
+      "slug": "cisco-webex",
+      "audit_url": "/ucaas/cisco-webex-pricing-audit/",
+      "entry_paid_plan": "Webex Meet ($12.00/mo annual \u00b7 $14.50/mo monthly)",
+      "suite_with_phone_plan": "Webex Suite: Meet + Call ($22.50/mo annual \u00b7 $25.00/mo monthly)",
+      "meet_annual_usd": 12.0,
+      "meet_monthly_usd": 14.5,
+      "calling_only_annual_usd": 17.0,
+      "calling_only_monthly_usd": 20.0,
+      "suite_annual_usd": 22.5,
+      "suite_monthly_usd": 25.0,
+      "enterprise_est_annual_usd": 32.0,
+      "pstn_addon_metered_usd": 5.0,
+      "pstn_addon_unlimited_usd": 10.5,
+      "e911_usf_tax_per_line_usd": 4.5,
+      "ai_assistant_policy": "Included ($0 extra) in Webex Suite & paid Webex Meet/Calling tiers",
+      "ai_addon_monthly_usd": 0.0,
+      "base_cloud_storage": "10 GB per license (Webex Meet / Suite)",
+      "storage_250gb_addon_monthly_usd": 25.0,
+      "storage_1tb_addon_monthly_usd": 85.0,
+      "webinar_500_host_monthly_usd": 55.0,
+      "monthly_billing_markup_pct": "11.1%\u201320.8%",
+      "top_hidden_fee_trap": "E911 & FCC Universal Service Fund (USF) regulatory recovery surcharges ($3.50\u2013$6.50/line/mo) on Webex Calling + $55+/mo Webex Webinars host add-ons.",
+      "best_for": "All-in-one Meetings + Enterprise Cloud PBX Calling (Webex Suite at $22.50/mo includes AI Assistant + Unlimited Domestic Calling)",
+      "cta_label": "Verify Cisco Webex 2026 Pricing \u2192",
+      "cta_url": "https://www.webex.com/pricing/index.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
+      "clickref_base": "b2bfeeaudit_ucaas_webex",
+      "llms_subid": "b2bfeeaudit_ucaas_webex_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_webex_mcp",
+      "tiers": [
+        {
+          "tier_name": "Webex Free",
+          "annual_pepm_usd": "$0.00",
+          "monthly_pepm_usd": "$0.00",
+          "meeting_cap": "40 mins / 100 attendees",
+          "pstn_calling": "Not included",
+          "cloud_storage": "Local recording only",
+          "ai_included": "Basic noise removal only"
+        },
+        {
+          "tier_name": "Webex Meet",
+          "annual_pepm_usd": "$12.00/user/mo",
+          "monthly_pepm_usd": "$14.50/user/mo (+20.8%)",
+          "meeting_cap": "24 hrs / 200 attendees",
+          "pstn_calling": "VoIP app only (No PSTN PBX)",
+          "cloud_storage": "10 GB cloud recording",
+          "ai_included": "Webex AI Assistant included ($0)"
+        },
+        {
+          "tier_name": "Webex Calling (Professional)",
+          "annual_pepm_usd": "$17.00/user/mo",
+          "monthly_pepm_usd": "$20.00/user/mo (+17.6%)",
+          "meeting_cap": "Basic Calling + 40-min Meet",
+          "pstn_calling": "Cloud PBX + Domestic PSTN (+$3.50\u2013$6.50/mo E911/USF)",
+          "cloud_storage": "Call recording options",
+          "ai_included": "AI Call Summaries included ($0)"
+        },
+        {
+          "tier_name": "Webex Suite (Meet + Call)",
+          "annual_pepm_usd": "$22.50/user/mo",
+          "monthly_pepm_usd": "$25.00/user/mo (+11.1%)",
+          "meeting_cap": "24 hrs / 200 attendees + Slido",
+          "pstn_calling": "Full Cloud PBX + Domestic Calling (+$3.50\u2013$6.50/mo E911/USF)",
+          "cloud_storage": "10 GB cloud recording + Vidcast",
+          "ai_included": "Full Webex AI Assistant included ($0)"
+        },
+        {
+          "tier_name": "Webex Enterprise",
+          "annual_pepm_usd": "~$30.00\u2013$38.00/user/mo (Custom)",
+          "monthly_pepm_usd": "Annual EA Contract",
+          "meeting_cap": "24 hrs / 1,000 attendees",
+          "pstn_calling": "Global PSTN / Cisco Calling Plans / Local Gateway",
+          "cloud_storage": "Unlimited / Custom Enterprise Storage",
+          "ai_included": "Full Webex AI + FedRAMP / HIPAA BAA"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-teams",
+      "partner": "Microsoft Teams",
+      "short_name": "Microsoft Teams",
+      "slug": "microsoft-teams",
+      "audit_url": "/ucaas/microsoft-teams-pricing-audit/",
+      "entry_paid_plan": "Teams Essentials ($4.00/mo) or M365 Business Basic ($6.00/mo)",
+      "suite_with_phone_plan": "M365 Basic ($6) + Teams Phone Calling Plan ($15) = $21.00/mo (+$30 Copilot AI)",
+      "meet_annual_usd": 4.0,
+      "meet_monthly_usd": 4.8,
+      "m365_basic_annual_usd": 6.0,
+      "m365_basic_monthly_usd": 7.2,
+      "m365_standard_annual_usd": 12.5,
+      "m365_standard_monthly_usd": 15.0,
+      "m365_premium_annual_usd": 22.0,
+      "m365_premium_monthly_usd": 26.4,
+      "enterprise_standalone_teams_usd": 5.25,
+      "pstn_addon_metered_usd": 8.0,
+      "pstn_addon_unlimited_usd": 15.0,
+      "e911_usf_tax_per_line_usd": 4.5,
+      "ai_assistant_policy": "Requires Teams Premium (+$10/user/mo) for AI recap or M365 Copilot (+$30/user/mo annual lock-in)",
+      "ai_addon_teams_premium_usd": 10.0,
+      "ai_addon_copilot_usd": 30.0,
+      "base_cloud_storage": "10 GB/user (Essentials) or 1 TB/user OneDrive + SharePoint (M365)",
+      "storage_250gb_addon_monthly_usd": 0.0,
+      "storage_1tb_addon_monthly_usd": 0.0,
+      "webinar_500_host_monthly_usd": 10.0,
+      "monthly_billing_markup_pct": "+20.0% (Strict NCE Monthly Surcharge)",
+      "top_hidden_fee_trap": "Unbundled add-on stacking: adding Teams Phone Calling Plan (+$15\u2013$17/mo), Teams Premium (+$10/mo), or M365 Copilot (+$30/mo annual lock-in) plus Microsoft's +20% NCE monthly commitment surcharge.",
+      "best_for": "Lowest-cost Meetings & Chat when already licensed on Microsoft 365 ($0 incremental meeting license) or standalone Teams Essentials ($4/user/mo)",
+      "cta_label": "Verify Microsoft Teams 2026 Pricing \u2192",
+      "cta_url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
+      "clickref_base": "b2bfeeaudit_ucaas_microsoft_teams",
+      "llms_subid": "b2bfeeaudit_ucaas_msteams_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_msteams_mcp",
+      "tiers": [
+        {
+          "tier_name": "Microsoft Teams Essentials",
+          "annual_pepm_usd": "$4.00/user/mo",
+          "monthly_pepm_usd": "$4.80/user/mo (+20% NCE)",
+          "meeting_cap": "30 hrs / 300 attendees",
+          "pstn_calling": "Not included (+$15/mo Teams Phone w/ Calling Plan)",
+          "cloud_storage": "10 GB OneDrive storage/user",
+          "ai_included": "Not included (+$10 Teams Premium or +$30 Copilot)"
+        },
+        {
+          "tier_name": "M365 Business Basic (with Teams)",
+          "annual_pepm_usd": "$6.00/user/mo",
+          "monthly_pepm_usd": "$7.20/user/mo (+20% NCE)",
+          "meeting_cap": "30 hrs / 300 attendees",
+          "pstn_calling": "Not included (+$15\u2013$17/mo Teams Phone add-on)",
+          "cloud_storage": "1 TB OneDrive/user + SharePoint",
+          "ai_included": "Requires +$10 Teams Premium or +$30 M365 Copilot"
+        },
+        {
+          "tier_name": "M365 Business Standard (with Teams)",
+          "annual_pepm_usd": "$12.50/user/mo",
+          "monthly_pepm_usd": "$15.00/user/mo (+20% NCE)",
+          "meeting_cap": "30 hrs / 300 attendees + Webinars",
+          "pstn_calling": "Not included (+$15\u2013$17/mo Teams Phone add-on)",
+          "cloud_storage": "1 TB OneDrive/user + Desktop Office Apps",
+          "ai_included": "Requires +$10 Teams Premium or +$30 M365 Copilot"
+        },
+        {
+          "tier_name": "M365 Business Premium (with Teams)",
+          "annual_pepm_usd": "$22.00/user/mo",
+          "monthly_pepm_usd": "$26.40/user/mo (+20% NCE)",
+          "meeting_cap": "30 hrs / 300 attendees + Entra/Intune",
+          "pstn_calling": "Not included (+$15\u2013$17/mo Teams Phone add-on)",
+          "cloud_storage": "1 TB OneDrive/user + Defender Security",
+          "ai_included": "Requires +$10 Teams Premium or +$30 M365 Copilot"
+        },
+        {
+          "tier_name": "Microsoft Teams Enterprise (Unbundled Add-On)",
+          "annual_pepm_usd": "$5.25/user/mo (on top of E3/E5)",
+          "monthly_pepm_usd": "$6.30/user/mo (+20% NCE)",
+          "meeting_cap": "30 hrs / 300\u20131,000 attendees",
+          "pstn_calling": "E5 includes PBX license ($8 value); Calling Plan +$12\u2013$15/mo",
+          "cloud_storage": "Unlimited / SharePoint Enterprise",
+          "ai_included": "Requires +$10 Teams Premium or +$30 M365 Copilot"
+        }
+      ]
+    },
+    {
+      "id": "zoom",
+      "partner": "Zoom Workplace",
+      "short_name": "Zoom Workplace",
+      "slug": "zoom-workplace",
+      "audit_url": "/ucaas/zoom-workplace-pricing-audit/",
+      "entry_paid_plan": "Zoom Workplace Pro ($13.33/mo annual \u00b7 $15.99/mo monthly)",
+      "suite_with_phone_plan": "Zoom Workplace Business Plus ($22.49/mo annual \u00b7 $26.99/mo monthly)",
+      "meet_annual_usd": 13.33,
+      "meet_monthly_usd": 15.99,
+      "business_annual_usd": 18.32,
+      "business_monthly_usd": 21.99,
+      "suite_annual_usd": 22.49,
+      "suite_monthly_usd": 26.99,
+      "pstn_addon_metered_usd": 10.0,
+      "pstn_addon_unlimited_usd": 9.16,
+      "standalone_phone_unlimited_usd": 15.0,
+      "e911_usf_tax_per_line_usd": 4.5,
+      "ai_assistant_policy": "Zoom AI Companion 2.0 Included ($0 extra) across all paid Pro, Business & Business Plus plans",
+      "ai_addon_monthly_usd": 0.0,
+      "base_cloud_storage": "5 GB (Pro/Business) to 10 GB (Business Plus) per license",
+      "storage_250gb_addon_monthly_usd": 100.0,
+      "storage_1tb_addon_monthly_usd": 200.0,
+      "webinar_500_host_monthly_usd": 79.0,
+      "monthly_billing_markup_pct": "+20.0% ($15.99 vs. $13.33 Pro; $21.99 vs. $18.32 Business)",
+      "top_hidden_fee_trap": "Cloud Recording Storage Overages ($40/mo for 100 GB, $100/mo for 500 GB, $500/mo for 3 TB) because base Pro/Business includes only 5\u201310 GB per license, plus $79/mo per 500-seat Webinar host.",
+      "best_for": "External client video reliability + $0 bundled Zoom AI Companion (watch cloud recording storage caps)",
+      "cta_label": "Compare Zoom Workplace 2026 Plans \u2192",
+      "cta_url": "https://zoom.us/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&irgwc=1",
+      "clickref_base": "b2bfeeaudit_ucaas_zoom",
+      "llms_subid": "b2bfeeaudit_ucaas_zoom_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_zoom_mcp",
+      "tiers": [
+        {
+          "tier_name": "Zoom Workplace Basic",
+          "annual_pepm_usd": "$0.00",
+          "monthly_pepm_usd": "$0.00",
+          "meeting_cap": "40 mins / 100 attendees",
+          "pstn_calling": "Not included",
+          "cloud_storage": "Local recording only (0 GB cloud)",
+          "ai_included": "Not included"
+        },
+        {
+          "tier_name": "Zoom Workplace Pro",
+          "annual_pepm_usd": "$13.33/user/mo",
+          "monthly_pepm_usd": "$15.99/user/mo (+20.0%)",
+          "meeting_cap": "30 hrs / 100 attendees",
+          "pstn_calling": "Add Zoom Phone ($10 Metered / $15 Unlimited)",
+          "cloud_storage": "5 GB\u201310 GB per license (Overage: $40\u2013$500/mo)",
+          "ai_included": "Zoom AI Companion included ($0)"
+        },
+        {
+          "tier_name": "Zoom Workplace Business",
+          "annual_pepm_usd": "$18.32/user/mo",
+          "monthly_pepm_usd": "$21.99/user/mo (+20.0%)",
+          "meeting_cap": "30 hrs / 300 attendees + SSO",
+          "pstn_calling": "Add Zoom Phone (+$10\u2013$15/user/mo)",
+          "cloud_storage": "5 GB\u201310 GB per license (Overage: $40\u2013$500/mo)",
+          "ai_included": "Zoom AI Companion included ($0)"
+        },
+        {
+          "tier_name": "Zoom Workplace Business Plus",
+          "annual_pepm_usd": "$22.49/user/mo",
+          "monthly_pepm_usd": "$26.99/user/mo (+20.0%)",
+          "meeting_cap": "30 hrs / 300 attendees + Translated Captions",
+          "pstn_calling": "Zoom Phone Unlimited Regional Calling Included (+$4.50 E911/USF)",
+          "cloud_storage": "10 GB per license + Visitor Mgmt",
+          "ai_included": "Zoom AI Companion included ($0)"
+        },
+        {
+          "tier_name": "Zoom Workplace Enterprise",
+          "annual_pepm_usd": "~$27.00\u2013$35.00/user/mo (Custom)",
+          "monthly_pepm_usd": "Annual Contract",
+          "meeting_cap": "30 hrs / 500\u20131,000 attendees + Webinars",
+          "pstn_calling": "Zoom Phone Enterprise Global Options",
+          "cloud_storage": "Unlimited Cloud Recording Storage",
+          "ai_included": "Zoom AI Companion included ($0; Custom AI +$12)"
+        }
+      ]
+    },
+    {
+      "id": "google-workspace",
+      "partner": "Google Workspace",
+      "short_name": "Google Workspace (Meet & Voice)",
+      "slug": "google-workspace",
+      "audit_url": "/ucaas/google-workspace-meet-pricing-audit/",
+      "entry_paid_plan": "Business Starter ($7.00/mo) or Business Standard ($14.00/mo w/ Recording)",
+      "suite_with_phone_plan": "Business Standard ($14) + Google Voice Standard ($20) = $34.00/mo",
+      "starter_annual_usd": 7.0,
+      "starter_monthly_usd": 8.4,
+      "meet_annual_usd": 14.0,
+      "meet_monthly_usd": 16.8,
+      "plus_annual_usd": 22.0,
+      "plus_monthly_usd": 26.4,
+      "pstn_addon_metered_usd": 10.0,
+      "pstn_addon_unlimited_usd": 20.0,
+      "voice_premier_usd": 30.0,
+      "e911_usf_tax_per_line_usd": 4.0,
+      "ai_assistant_policy": "Gemini in Workspace integrated into 2025/2026 Business Starter ($7), Standard ($14) & Plus ($22) plans",
+      "ai_addon_monthly_usd": 0.0,
+      "base_cloud_storage": "30 GB/user (Starter \u2014 No Meet Recording) or 2 TB/user Pooled Drive (Standard)",
+      "storage_250gb_addon_monthly_usd": 0.0,
+      "storage_1tb_addon_monthly_usd": 0.0,
+      "webinar_500_host_monthly_usd": 8.0,
+      "monthly_billing_markup_pct": "+20.0% ($8.40 vs. $7.00 Starter; $16.80 vs. $14.00 Standard)",
+      "top_hidden_fee_trap": "Business Starter ($7/mo) blocks meeting recordings completely\u2014forcing a +100% jump to Business Standard ($14/mo)\u2014and Google Voice PSTN phone service is never bundled (+$10 Starter / +$20 Standard / +$30 Premier per seat + telecom taxes).",
+      "best_for": "Cloud-native teams needing Gmail, Docs, 2 TB pooled Drive storage, and Gemini AI + Google Meet without legacy PBX hardware",
+      "cta_label": "Verify Google Workspace 2026 Pricing \u2192",
+      "cta_url": "https://workspace.google.com/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&sid=8108003",
+      "clickref_base": "b2bfeeaudit_ucaas_google_workspace",
+      "llms_subid": "b2bfeeaudit_ucaas_gworkspace_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_gworkspace_mcp",
+      "tiers": [
+        {
+          "tier_name": "Business Starter",
+          "annual_pepm_usd": "$7.00/user/mo",
+          "monthly_pepm_usd": "$8.40/user/mo (+20.0%)",
+          "meeting_cap": "24 hrs / 100 attendees (NO Recording)",
+          "pstn_calling": "Not included (+$10\u2013$30/mo Google Voice add-on)",
+          "cloud_storage": "30 GB pooled storage/user",
+          "ai_included": "Gemini core features included"
+        },
+        {
+          "tier_name": "Business Standard",
+          "annual_pepm_usd": "$14.00/user/mo",
+          "monthly_pepm_usd": "$16.80/user/mo (+20.0%)",
+          "meeting_cap": "24 hrs / 150 attendees + Drive Recording",
+          "pstn_calling": "Not included (+$10 Starter / +$20 Standard Voice)",
+          "cloud_storage": "2 TB pooled Google Drive storage/user",
+          "ai_included": "Gemini in Workspace + Meet AI notes ($0)"
+        },
+        {
+          "tier_name": "Business Plus",
+          "annual_pepm_usd": "$22.00/user/mo",
+          "monthly_pepm_usd": "$26.40/user/mo (+20.0%)",
+          "meeting_cap": "24 hrs / 500 attendees + Attendance Tracking",
+          "pstn_calling": "Not included (+$10\u2013$30/mo Google Voice add-on)",
+          "cloud_storage": "5 TB pooled Google Drive storage/user + Vault",
+          "ai_included": "Gemini in Workspace included ($0)"
+        },
+        {
+          "tier_name": "Enterprise Standard / Plus",
+          "annual_pepm_usd": "~$27.00\u2013$35.00/user/mo",
+          "monthly_pepm_usd": "Annual Commitment",
+          "meeting_cap": "24 hrs / 1,000 attendees + 100k Live Stream",
+          "pstn_calling": "Add Google Voice Standard ($20) or Premier ($30)",
+          "cloud_storage": "5 TB+ pooled (expandable) + DLP Security",
+          "ai_included": "Enterprise Gemini + Security AI"
+        },
+        {
+          "tier_name": "Google Voice Add-On (Starter / Standard / Premier)",
+          "annual_pepm_usd": "+$10.00 / +$20.00 / +$30.00/user/mo",
+          "monthly_pepm_usd": "Billed Monthly (+$3\u2013$5/line E911/USF tax)",
+          "meeting_cap": "Requires active Google Workspace base license",
+          "pstn_calling": "Unlimited US Domestic PSTN (SIP phones on $20 Standard)",
+          "cloud_storage": "Voicemail & call logs in Workspace/BigQuery",
+          "ai_included": "AI voicemail transcription & spam filtering"
+        }
+      ]
+    }
+  ],
+  "conditional_voip_alternatives": [
+    {
+      "id": "dialpad",
+      "partner": "Dialpad",
+      "plan": "Dialpad Connect Standard ($15/mo annual \u00b7 $27/mo monthly)",
+      "annual_pepm_usd": 15.0,
+      "monthly_pepm_usd": 27.0,
+      "e911_usf_tax_per_line_usd": 4.0,
+      "ai_included": true,
+      "pstn_unlimited_included": true,
+      "summary": "Includes Unlimited US/Canada PSTN calling, HD video meetings, SMS/MMS, and built-in DialpadGPT real-time AI call transcription at $15.00/user/mo annual.",
+      "cta_label": "Verify Dialpad Connect ($15/mo Voice + AI) \u2192",
+      "cta_url": "https://www.dialpad.com/pricing/?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
+      "clickref_base": "b2bfeeaudit_ucaas_dialpad",
+      "llms_subid": "b2bfeeaudit_ucaas_dialpad_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_dialpad_mcp"
+    },
+    {
+      "id": "nextiva",
+      "partner": "Nextiva",
+      "plan": "Nextiva Core ($15.00\u2013$20.00/mo annual \u00b7 $25.00/mo monthly)",
+      "annual_pepm_usd": 15.0,
+      "monthly_pepm_usd": 25.0,
+      "e911_usf_tax_per_line_usd": 4.25,
+      "ai_included": true,
+      "pstn_unlimited_included": true,
+      "summary": "Includes Unlimited US/Canada voice calling, video meetings, business SMS, and inbound call routing starting at $15.00/user/mo annual.",
+      "cta_label": "Verify Nextiva Core VoIP Rate ($15/mo) \u2192",
+      "cta_url": "https://www.nextiva.com/nextiva-pricing.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
+      "clickref_base": "b2bfeeaudit_ucaas_nextiva",
+      "llms_subid": "b2bfeeaudit_ucaas_nextiva_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_nextiva_mcp"
+    },
+    {
+      "id": "ringcentral",
+      "partner": "RingCentral",
+      "plan": "RingEX Core ($20.00/mo annual \u00b7 $30.00/mo monthly)",
+      "annual_pepm_usd": 20.0,
+      "monthly_pepm_usd": 30.0,
+      "e911_usf_tax_per_line_usd": 4.5,
+      "ai_included": true,
+      "pstn_unlimited_included": true,
+      "summary": "Enterprise Cloud PBX with Unlimited US/Canada PSTN calling, 99.999% SLA, SMS, video meetings, and RingSense AI call notes at $20.00/user/mo annual.",
+      "cta_label": "Verify RingCentral RingEX Rate ($20/mo) \u2192",
+      "cta_url": "https://www.ringcentral.com/office/plansandpricing.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
+      "clickref_base": "b2bfeeaudit_ucaas_ringcentral",
+      "llms_subid": "b2bfeeaudit_ucaas_ringcentral_llm",
+      "webmcp_subid": "b2bfeeaudit_ucaas_ringcentral_mcp"
+    }
+  ],
+  "scenario_benchmarks_25_seats_2026": [
+    {
+      "scenario_id": "meetings_plus_ai_no_pstn_annual",
+      "scenario_name": "25 Seats \u00b7 Video Meetings + Cloud Recording + AI Notes (No PSTN Phone, Annual Commit)",
+      "webex_12mo_usd": 3600,
+      "webex_note": "Webex Meet ($12/seat \u00b7 AI & 10 GB included)",
+      "msteams_12mo_usd": 4200,
+      "msteams_note": "Teams Essentials ($4) + Teams Premium AI Recap ($10) = $14/seat ($1,200/yr without AI)",
+      "zoom_12mo_usd": 3999,
+      "zoom_note": "Zoom Pro ($13.33/seat \u00b7 AI Companion included)",
+      "google_12mo_usd": 4200,
+      "google_note": "Workspace Business Standard ($14/seat \u00b7 Meet Recording + Gemini + 2 TB Drive)",
+      "lowest_tco_winner": "Cisco Webex ($3,600/yr with AI) or Microsoft Teams ($1,200/yr without AI / $0 if M365 bundled)"
+    },
+    {
+      "scenario_id": "full_ucaas_unlimited_pstn_plus_ai_annual",
+      "scenario_name": "25 Seats \u00b7 Full UCaaS (Meetings + Unlimited US/CA PSTN Phone + AI Assistant + E911/USF Taxes, Annual)",
+      "webex_12mo_usd": 8100,
+      "webex_note": "Webex Suite ($22.50/seat) + $4.50 E911/USF = $27.00/seat/mo",
+      "msteams_12mo_usd": 10050,
+      "msteams_note": "Teams Essentials ($4) + Teams Phone ($15) + Teams Premium AI ($10) + $4.50 tax = $33.50/seat ($19,050/yr w/ $30 Copilot)",
+      "zoom_12mo_usd": 8097,
+      "zoom_note": "Zoom Business Plus ($22.49/seat) + $4.50 E911/USF = $26.99/seat/mo",
+      "google_12mo_usd": 11400,
+      "google_note": "Workspace Standard ($14) + Google Voice Standard ($20) + $4.00 E911/USF = $38.00/seat/mo",
+      "lowest_tco_winner": "Zoom Business Plus ($8,097/yr) & Cisco Webex Suite ($8,100/yr) among Big 4; Dialpad Connect ($5,700/yr @ $15+$4 tax) qualifies under Merit-Only VoIP Rule for greenfield voice-heavy teams"
+    },
+    {
+      "scenario_id": "m365_bundled_incremental_pstn",
+      "scenario_name": "25 Seats \u00b7 Existing Microsoft 365 Business Standard/E3 Customer Adding Unlimited PSTN Phone",
+      "webex_12mo_usd": 6450,
+      "webex_note": "Webex Calling Standalone ($17.00 + $4.50 E911/USF = $21.50/seat/mo)",
+      "msteams_12mo_usd": 5850,
+      "msteams_note": "Incremental Teams Phone w/ Domestic Calling Plan ($15.00 + $4.50 E911/USF = $19.50/seat/mo; $0 base Teams)",
+      "zoom_12mo_usd": 5850,
+      "zoom_note": "Zoom Phone Unlimited Standalone ($15.00 + $4.50 E911/USF = $19.50/seat/mo)",
+      "google_12mo_usd": 11400,
+      "google_note": "Requires Workspace base license + Google Voice Standard ($20 + $4 tax)",
+      "lowest_tco_winner": "Microsoft Teams Phone ($5,850/yr incremental \u2014 Merit Rule keeps user on Microsoft Teams)"
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "title": "Federal Communications Commission (FCC) \u2014 Universal Service Fund (USF) Contribution Factor & Interconnected VoIP Rules (.gov)",
+      "url": "https://www.fcc.gov/general/contribution-factor-quarterly-filings-universal-service-fund-usf-management-support",
+      "accessed": "2026-10-26"
+    },
+    {
+      "id": 2,
+      "title": "FCC Multi-Line Telephone Systems (MLTS) \u2014 Kari's Law & RAY BAUM's Act Dispatchable Location E911 Mandate (.gov)",
+      "url": "https://www.fcc.gov/mlts-911-requirements",
+      "accessed": "2026-10-26"
+    },
+    {
+      "id": 3,
+      "title": "Cisco Webex Published Commercial Plans & Pricing (Webex Free, Meet, Calling, Suite & Enterprise \u2014 2026)",
+      "url": "https://www.webex.com/pricing/index.html",
+      "accessed": "2026-10-26"
+    },
+    {
+      "id": 4,
+      "title": "Microsoft Teams, Teams Phone, Teams Premium & Microsoft 365 Copilot Published Commercial Licensing Schedule (2026)",
+      "url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options",
+      "accessed": "2026-10-26"
+    },
+    {
+      "id": 5,
+      "title": "Zoom Workplace (Pro, Business, Business Plus), Zoom Phone & Cloud Recording Storage Add-On Pricing (2026)",
+      "url": "https://zoom.us/pricing",
+      "accessed": "2026-10-26"
+    },
+    {
+      "id": 6,
+      "title": "Google Workspace (Business Starter, Standard, Plus) & Google Voice Commercial Rate Card (2026)",
+      "url": "https://workspace.google.com/pricing",
+      "accessed": "2026-10-26"
+    }
+  ]
+}
