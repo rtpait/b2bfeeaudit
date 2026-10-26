@@ -1,4 +1,5 @@
 
+
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>B2B Payroll, HRIS &amp; Merchant Fee TCO Calculator (2026 .gov)</title>
 <meta name="description" content="Audit 2026 B2B payroll (Gusto, Rippling, Deel, OnPay, ADP) + 50-state .gov SUI taxes and merchant fees (Stripe 2.9% vs. Helcim &amp; Stax Interchange-Plus).">
@@ -23,10 +24,12 @@
 <meta name="twitter:image" content="https://b2bfeeaudit.com/og-image.svg">
 <link rel="preload" href="/style.css?v=20261024" as="style">
 <link rel="stylesheet" href="/style.css?v=20261024">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"description":"Deterministic B2B Payroll, Multi-State HRIS, Global EOR, and Merchant Processing Interchange-Plus TCO Auditor backed by official 2026 .gov state SUI tax schedules and Federal Reserve Reg II debit benchmarks.","url":"https://b2bfeeaudit.com","logo":"https://b2bfeeaudit.com/logo-mark.svg","image":"https://b2bfeeaudit.com/og-image.svg","areaServed":{"@type":"Country","name":"United States"},"knowsAbout":["B2B Payroll & Multi-State HRIS Total Cost of Ownership","50-State Employer SUI Tax Wage Bases (.gov)","International Employer of Record (EOR) FX Spreads","Credit Card Interchange-Plus vs Flat-Rate Merchant Processing","Federal Reserve Regulation II Regulated Debit Interchange"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://b2bfeeaudit.com/#website","name":"B2B Fee Audit","alternateName":["B2BFeeAudit","B2BFeeAudit.com","B2B Stack & Fee Auditor"],"sameAs":["https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026"],"url":"https://b2bfeeaudit.com","publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"B2B Payroll, Multi-State HRIS & Merchant Fee TCO Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web, WebMCP, OpenAPI 3.1","url":"https://b2bfeeaudit.com/","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD","description":"Free deterministic TCO calculator (3 free CFO CSV/PDF exports; $29/mo Pro unlimited)"},"publisher":{"@type":"Organization","@id":"https://b2bfeeaudit.com/#organization","name":"B2B Fee Audit"}}</script>
+
 
 
 
@@ -37,17 +40,20 @@
 
 <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});try{posthog.register({is_headless_or_webdriver:Boolean(navigator.webdriver||(window.screen&&window.screen.width===800&&window.screen.height===600)),analytics_filter_policy:"3_bucket_analytics_only_no_edge_block"});}catch(e){}(function(){try{var r=(document.referrer||"").toLowerCase(),u=(navigator.userAgent||"").toLowerCase(),q=new URLSearchParams(window.location.search),s=((q.get("utm_source")||"")+" "+(q.get("utm_medium")||"")).toLowerCase(),b=r+" "+u+" "+s,m=null;if(b.indexOf("gptbot")!==-1||b.indexOf("oai-searchbot")!==-1||b.indexOf("chatgpt")!==-1||b.indexOf("openai")!==-1)m="ChatGPT / OpenAI";else if(b.indexOf("perplexitybot")!==-1||b.indexOf("perplexity")!==-1)m="Perplexity AI";else if(b.indexOf("claudebot")!==-1||b.indexOf("claude")!==-1||b.indexOf("anthropic")!==-1)m="Claude / Anthropic";else if(b.indexOf("gemini")!==-1||b.indexOf("google-extended")!==-1)m="Google Gemini";else if(b.indexOf("copilot")!==-1)m="Microsoft Copilot";if(m&&window.posthog&&typeof window.posthog.capture==="function"){window.posthog.capture("llm_query",{ai_source:m,topic:document.title,route_slug:window.location.pathname,query_url:window.location.href,referrer:document.referrer||"$direct"});}}catch(e){}})();</script>
 </head><body>
+
 <header>
   <a href="/" style="font-size:1.15rem"><img src="/logo-mark.svg" alt="B2B Fee Audit logo — Payroll, HRIS & Merchant Fee TCO Auditor" width="24" height="24" decoding="async" style="vertical-align:-5px;margin-right:7px"><strong>B2B Fee Audit</strong></a>
   <nav class="nav-links" aria-label="Main navigation">
     <a href="/#payroll-tco-calc">Payroll &amp; SUI Calculator</a>
     <a href="/#merchant-fee-calc">Merchant &amp; IC+ Calculator</a>
+    <a href="/eo-insurance/">E&amp;O &amp; Cyber Insurance</a>
     <a href="/payroll/gusto-vs-rippling-tco/">Gusto vs. Rippling</a>
     <a href="/merchant/stripe-vs-helcim-interchange-plus/">Stripe vs. Helcim</a>
     <a href="/methodology/">2026 Methodology (.gov)</a>
     <a href="/.well-known/webmcp.json">WebMCP Spec</a>
   </nav>
 </header>
+
 <main>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"DataCatalog","@id":"https://b2bfeeaudit.com/#datacatalog","name":"B2B Fee Audit 2026 Open Benchmark Datasets","url":"https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json","dataset":[{"@type":"Dataset","name":"2026 US B2B Payroll, 50-State SUI Tax & Merchant Interchange-Plus Benchmarks","description":"CC-BY-4.0 machine-readable dataset of 2026 B2B payroll PEPM fees, 15-state .gov SUI taxable wage bases, and Visa/Mastercard/Reg II interchange benchmarks.","license":"https://creativecommons.org/licenses/by/4.0/","url":"https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json","sameAs":"https://github.com/rtpait/b2b-payroll-and-merchant-fee-benchmarks-2026","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://b2bfeeaudit.com/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.csv"}]}]}</script>
@@ -1119,6 +1125,40 @@
 </section>
 
 
+<section class="tco-calc-box" id="eo-insurance-subdivision" aria-label="E&O and Cyber Liability Insurance Comparison Subdivision">
+  <span class="verified-gov-badge">🛡️ NEW SUBDIVISION · COMMERCIAL E&amp;O &amp; CYBER LIABILITY COMPLIANCE</span>
+  <h2 style="margin:.4rem 0 .25rem;border-top:0;padding-top:0"><a href="/eo-insurance/" style="color:#0f172a;text-decoration:none">Errors &amp; Omissions (E&amp;O) &amp; Cyber Insurance Comparison Subdivision (<code>/eo-insurance/</code>)</a></h2>
+  <p style="margin:0 0 .85rem;font-size:.94rem;color:#334155">Enterprise procurement teams require verified <strong>Tech E&amp;O ($1M/$2M to $5M/$5M)</strong>, <strong>First- &amp; Third-Party Cyber Liability</strong>, and compliant <strong>ACORD 25 Certificates of Insurance (COIs)</strong> before signing B2B SaaS, AI, FinTech, Healthcare BAA, and IT consulting contracts. Explore our 4 dedicated search-intent tools:</p>
+  <div class="card-grid-2">
+    <div class="calc-vendor-card vendor-best">
+      <small>Flagship Tool · NAIC &amp; Carrier Rate Filings</small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/eo-insurance/cyber-eo-premium-estimator/">1. Cyber Insurance Cost Calculator &amp; Professional Liability Cost by Industry</a></h3>
+      <p style="margin:0 0 .6rem;font-size:.86rem;color:#334155">Estimate 2026 premiums across SaaS/AI ($1,882/yr avg), Healthcare ($1,395/yr), FinTech ($1,365/yr), Consulting ($1,197/yr), and SMBs ($999/yr cyber / $675/yr 1–4 emp E&amp;O) with MFA/EDR/Backup control credits.</p>
+      <a class="cta tbl-cta-btn" href="/eo-insurance/cyber-eo-premium-estimator/">Launch Cyber &amp; E&amp;O Calculator →</a>
+    </div>
+    <div class="calc-vendor-card vendor-best">
+      <small>Contract-Driven Buyer Guide · SOC 2 &amp; HIPAA</small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/eo-insurance/industry-policy-requirements/">2. Tech E&amp;O &amp; Cyber Insurance Policy Requirements by Industry</a></h3>
+      <p style="margin:0 0 .6rem;font-size:.86rem;color:#334155">Unblock enterprise MSA Insurance Exhibits: First-Party vs. Third-Party Cyber, Retroactive Dates, 80/20 Soft Hammer Clauses, $250k+ Social Engineering sublimits, and same-day COI binding.</p>
+      <a class="cta-secondary tbl-cta-btn" href="/eo-insurance/industry-policy-requirements/">Audit MSA Policy Requirements →</a>
+    </div>
+    <div class="calc-vendor-card">
+      <small>Instant ACORD 25 Verification &amp; Gap Remediation</small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/eo-insurance/coi-compliance-checker/">3. Certificate of Insurance Requirements &amp; ACORD 25 COI Checker</a></h3>
+      <p style="margin:0 0 .6rem;font-size:.86rem;color:#334155">Paste an ACORD 25 COI to flag limit or endorsement gaps against $1M/$1M, $2M/$2M SOC 2, or $5M/$5M HIPAA MSAs—with direct vendor fix-gap quotes and 1-click procurement notices.</p>
+      <a class="cta-secondary tbl-cta-btn" href="/eo-insurance/coi-compliance-checker/">Run Free ACORD 25 COI Checker →</a>
+    </div>
+    <div class="calc-vendor-card">
+      <small>50-State + DC Statutory vs. Contractual Table</small>
+      <h3 style="margin:.25rem 0 .35rem"><a href="/eo-insurance/state-minimum-liability-limits/">4. State-by-State E&amp;O Minimum Liability Limits Matrix</a></h3>
+      <p style="margin:0 0 .6rem;font-size:.86rem;color:#334155">Single supporting authority table covering the 12 mandatory Real Estate E&amp;O states, OR producer/attorney statutes, state cyber tort safe-harbor laws (OH, UT, CT, TN), and state IT contract floors.</p>
+      <a class="cta-secondary tbl-cta-btn" href="/eo-insurance/state-minimum-liability-limits/">View 50-State Limits Matrix →</a>
+    </div>
+  </div>
+  <p style="margin:.65rem 0 0;font-size:.85rem"><a href="/eo-insurance/"><strong>Open the E&amp;O &amp; Cyber Insurance Subdivision Hub (`/eo-insurance/`) →</strong></a> · <a href="/datasets/eo-cyber-insurance-benchmarks-2026.json">Download 2026 E&amp;O &amp; Cyber Benchmark Dataset (JSON)</a></p>
+</section>
+
+
 <section class="box" id="agentic-open-data">
   <span class="badge-agent">🤖 AGENTIC ENGINE OPTIMIZATION (WEBMCP + OPENAPI 3.1 + LLMS.TXT)</span>
   <h2 style="margin-top:.35rem;border-top:0;padding-top:0">Machine-Readable Endpoints for AI Agents &amp; Financial Analysts</h2>
@@ -1176,10 +1216,13 @@
 
 
 </main>
-<footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Payroll, Multi-State HRIS, EOR &amp; Merchant Processing TCO Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to you. <a href="/">TCO Calculators</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a></small></footer>
+
+<footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Payroll, Multi-State HRIS, EOR, Merchant Processing &amp; E&amp;O/Cyber Insurance Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI, NAIC &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to you. <a href="/">TCO Calculators</a> · <a href="/eo-insurance/">E&amp;O &amp; Cyber Insurance Hub</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a></small></footer>
 
 
-<aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Live B2B TCO Comparison and Partner Verification Actions">
+
+<aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Live Comparison and Partner Verification Actions">
+  
   <div class="mcb-tiers">
     <div class="mcb-tier">
       <span class="mcb-label">🏛️ .gov Tax/IC Cap</span>
@@ -1200,6 +1243,7 @@
       <a class="cta-secondary mcb-btn" data-partner="OnPay" data-cta-slot="sticky_mobile_bar" data-route-slug="hub" data-calc-inputs='{"slot":"sticky"}' data-clickref="b2b-sticky_mobile_bar-hub-onpay" href="https://onpay.com/pricing?utm_source=b2bfeeaudit&amp;utm_medium=affiliate&amp;clickref=b2b-sticky_mobile_bar-hub-onpay" target="_blank" rel="sponsored nofollow noopener">🏛️ OnPay ($0 State Fee)</a>
     
   </div>
+  
 </aside>
 <script>
 (function(){
