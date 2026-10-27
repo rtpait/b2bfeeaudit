@@ -79,3 +79,8 @@ details.faq-card p{margin:.45rem 0 .25rem}
   .mcb-actions{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
   .mcb-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;text-align:center;font-size:.82rem;padding:.5rem .4rem;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
 }
+
+.family-top-bar{background:#0f172a;color:#e2e8f0;font-size:.8rem;padding:.45rem .9rem;border-radius:8px;margin-bottom:.65rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem}
+.family-top-bar a{color:#7dd3fc !important;text-decoration:none;font-weight:600;padding:.15rem .45rem;border-radius:5px}
+.family-top-bar a:hover{background:#1e293b;text-decoration:underline}
+.family-top-bar a.active-family-domain{background:#0284c7;color:#fff !important}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "6.1.0-b2b-family-unified-admin",
+  "generated_at_utc": "2026-10-27T13:52:27Z",
+  "generated_at_edt": "Oct 27, 2026, 09:52:27 AM EDT",
+  "posthog_project_id": 685354,
+  "encrypted_bundle_path": "/admin/admin-telemetry.enc.json",
+  "b2b_family_leader_chasing_parity": {
+    "rule_id": "CHASE_CURRENT_FAMILY_LEADER",
+    "current_family_leader": "b2bfeeaudit.com",
+    "leader_stage": "STAGE_2",
+    "leader_version": "v1.5.0",
+    "four_axis_affiliate_taxonomy": "ACTIVE_ACROSS_ALL_4_DOMAINS",
+    "cross_family_traffic_funnel": "ACTIVE"
+  },
+  "product_catalog": [
+    {
+      "key": "junkhaulhq.com",
+      "name": "JunkHaulHQ.com",
+      "tile_title": "JunkHaulHQ.com Analytics",
+      "console_title": "JunkHaulHQ.com \u2014 Live Visitors & LLM Query Console",
+      "subtitle": "Municipal Bulk Trash, Landfill Tipping Fee, Roll-Off Dumpster & Junk Hauling Guide (64 Routes)",
+      "is_main_default": true,
+      "posthog_project_id": "685354",
+      "total_html_routes": 64,
+      "watched_aeo_endpoints": [
+        "/llms.txt",
+        "/llms-full.txt"
+      ],
+      "guardrail_summary": "Active Footprint Locked at 64 HTML Pages (66 core SEO routes + /llms.txt & /llms-full.txt). Current GSC Indexed: 14 / 64 (21.9%) vs. required 48 / 64 (>=75.0%).",
+      "third_mini_metric": {
+        "label": "GSC Indexed Pages",
+        "value": "14 / 64 (21.9%)"
+      }
+    },
+    {
+      "key": "b2bfeeaudit.com",
+      "name": "B2B Fee Audit (B2B_FEES Leader)",
+      "tile_title": "B2BFeeAudit.com Analytics",
+      "console_title": "B2B Fee Audit (B2B_FEES Leader) \u2014 Live Visitors & LLM Query Console",
+      "subtitle": "B2B Payment Processing IC+, Wire/FX Spreads & Statutory Filing Fees (16 Canonical + 10 Redirects)",
+      "is_main_default": false,
+      "posthog_project_id": "685354",
+      "total_html_routes": 26,
+      "watched_aeo_endpoints": [
+        "/llms.txt",
+        "/.well-known/webmcp.json"
+      ],
+      "guardrail_summary": "Current B2B Family Leader (STAGE_2, v1.5.0, 26 HTML endpoints). Current GSC Indexed: 0 / 26 (0.0% \u2014 Cohort 1 locked until >=12/16).",
+      "third_mini_metric": {
+        "label": "CFO Report Exports",
+        "value": "0"
+      }
+    },
+    {
+      "key": "b2bcostaudit.com",
+      "name": "B2B Cost Audit (B2B_COSTS)",
+      "tile_title": "B2BCostAudit.com Analytics",
+      "console_title": "B2B Cost Audit (B2B_COSTS) \u2014 Live Visitors & LLM Query Console",
+      "subtitle": "Commercial Tech E&O / Cyber Liability Insurance, ACORD 25 COI & W-2/1099 Labor Burden (11 Routes)",
+      "is_main_default": false,
+      "posthog_project_id": "685354",
+      "total_html_routes": 11,
+      "watched_aeo_endpoints": [
+        "/llms.txt",
+        "/.well-known/webmcp.json"
+      ],
+      "guardrail_summary": "Active Footprint: 11 HTML Pages (/eo-insurance/* + /labor-burden/*). Chasing Family Leader b2bfeeaudit.com. Current GSC Indexed: 0 / 11 (0.0%).",
+      "third_mini_metric": {
+        "label": "GSC Indexed Pages",
+        "value": "0 / 11 (0.0%)"
+      }
+    },
+    {
+      "key": "saascostaudit.com",
+      "name": "SaaS Cost Audit (SAAS_COSTS)",
+      "tile_title": "SaaSCostAudit.com Analytics",
+      "console_title": "SaaS Cost Audit (SAAS_COSTS) \u2014 Live Visitors & LLM Query Console",
+      "subtitle": "Per-Seat B2B SaaS, UCaaS (Webex, Teams, Zoom, Google Workspace) & HRIS PEPM Tiers (11 Routes)",
+      "is_main_default": false,
+      "posthog_project_id": "685354",
+      "total_html_routes": 11,
+      "watched_aeo_endpoints": [
+        "/llms.txt",
+        "/.well-known/webmcp.json"
+      ],
+      "guardrail_summary": "Active Footprint: 11 HTML Pages (/ucaas/* + /payroll/* PEPM). Chasing Family Leader b2bfeeaudit.com. Current GSC Indexed: 0 / 11 (0.0%).",
+      "third_mini_metric": {
+        "label": "GSC Indexed Pages",
+        "value": "0 / 11 (0.0%)"
+      }
+    },
+    {
+      "key": "apicostaudit.com",
+      "name": "API Cost Audit (API_COSTS)",
+      "tile_title": "APICostAudit.com Analytics",
+      "console_title": "API Cost Audit (API_COSTS) \u2014 Live Visitors & LLM Query Console",
+      "subtitle": "Metered LLM Token APIs, Prompt Caching, Voice AI Per-Minute, Serverless GPU, Vector DB & B2B APIs (17 Routes)",
+      "is_main_default": false,
+      "posthog_project_id": "685354",
+      "total_html_routes": 17,
+      "watched_aeo_endpoints": [
+        "/llms.txt",
+        "/.well-known/webmcp.json"
+      ],
+      "guardrail_summary": "Active Footprint: 17 HTML Pages (/llm-api/*, /voice-video-api/*, /ai-infra-gpu/*, /b2b-apis/*). Chasing Family Leader b2bfeeaudit.com. Current GSC Indexed: 0 / 17 (0.0%).",
+      "third_mini_metric": {
+        "label": "GSC Indexed Pages",
+        "value": "0 / 17 (0.0%)"
+      }
+    }
+  ],
+  "available_products": [
+    "junkhaulhq.com",
+    "b2bfeeaudit.com",
+    "b2bcostaudit.com",
+    "saascostaudit.com",
+    "apicostaudit.com"
+  ]
+}
