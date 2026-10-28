@@ -39,8 +39,9 @@ details.faq-card p{margin:.45rem 0 .25rem}
 .verdict-header strong{font-size:1.04rem;color:#0f172a}
 .verdict-pill{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;padding:.2rem .55rem;border-radius:999px}
 .verdict-list{list-style:none;padding:0;margin:0 0 .9rem;display:grid;gap:.6rem}
-.verdict-item{display:grid;grid-template-columns:195px 1fr;gap:.75rem;align-items:start;font-size:.92rem;line-height:1.45;padding:.5rem .65rem;border-radius:7px;background:#f8fafc;border:1px solid #e2e8f0}
-.verdict-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.03em;padding:.22rem .5rem;border-radius:5px;text-transform:uppercase;white-space:nowrap}
+.verdict-item{display:grid;grid-template-columns:minmax(220px,285px) minmax(0,1fr);gap:.9rem;align-items:start;font-size:.92rem;line-height:1.45;padding:.55rem .7rem;border-radius:7px;background:#f8fafc;border:1px solid #e2e8f0}
+.verdict-item > *{min-width:0;overflow-wrap:break-word}
+.verdict-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.03em;line-height:1.35;padding:.25rem .55rem;border-radius:5px;text-transform:uppercase;white-space:normal;overflow-wrap:break-word;word-break:break-word;max-width:100%;box-sizing:border-box;justify-self:start}
 .tag-winner{background:#d1fae5;color:#065f46}
 .tag-trap{background:#fef3c7;color:#92400e}
 .tag-action{background:#e0f2fe;color:#075985}
