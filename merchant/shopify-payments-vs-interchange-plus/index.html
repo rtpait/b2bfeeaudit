@@ -148,6 +148,11 @@
     <span class="badge-merchant">💳 DETERMINISTIC MERCHANT PROCESSING &amp; INTERCHANGE-PLUS AUDITOR</span>
     <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Compare Flat-Rate (Stripe 2.9%+$0.30 / Square / PayPal) vs. Interchange-Plus (Helcim / Stax)</h2>
     <p style="margin:0;font-size:.93rem;color:#334155">Enter your monthly card volume, average ticket size, online/invoiced mix, and international share to calculate exact effective rates and 12-month savings:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CFO Merchant Volume Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="mfc-preset-btn" data-vol="25000" data-ticket="65" data-cnp="50" data-intl="5" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🛍️ $25k/mo Retail &amp; POS ($65 Ticket)</button>
+      <button type="button" class="mfc-preset-btn" data-vol="65000" data-ticket="130" data-cnp="80" data-intl="10" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">💳 $65k/mo B2B SaaS &amp; Invoicing ($130 Ticket)</button>
+      <button type="button" class="mfc-preset-btn" data-vol="250000" data-ticket="450" data-cnp="90" data-intl="15" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏦 $250k/mo High-Volume Wholesale ($450 Ticket)</button>
+    </div>
   </div>
   <div class="calc-controls-grid">
     <div class="calc-field">
@@ -201,6 +206,9 @@
       <small>PayPal Checkout (3.49%+$0.49)</small>
       <strong class="calc-big" id="mfc-paypal-yr">$33,150/yr</strong>
       <span class="calc-sub" id="mfc-paypal-eff">Effective Rate: 4.25% · Digital wallet &amp; invoicing drag</span>
+      <div style="margin-top:.55rem">
+        <a class="cta-secondary tbl-cta-btn" id="mfc-cta-bark" data-partner="Bark US" data-cta-slot="merchant_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_merchant_calc_shopify-payments-vs-interchange-plus:B2B_FEES.merchant_processing:mid_content" data-route-slug="shopify-payments-vs-interchange-plus" data-calc-inputs='{"volume":110000,"ticket":140}' data-clickref="b2bfeeaudit_merchant_calc_shopify-payments-vs-interchange-plus_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=b2bfeeaudit_merchant_calc_shopify-payments-vs-interchange-plus_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Faccounting%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 Merchant/CFO Quotes (Bark US) →</a>
+      </div>
     </div>
   </div>
 
@@ -247,15 +255,20 @@
     var wholesalePct = (cnpPct * 0.0188 + cpPct * 0.0152) + 0.0014;
     var wholesalePerTx = cnpPct * 0.10 + cpPct * 0.07;
 
-    // 1. Helcim IC+: volume-tiered markup (0.40% under 50k, 0.35% 50k-100k, 0.30% 100k+) + $0.08/tx
-    var helcimMarkupPct = vol >= 100000 ? 0.0030 : (vol >= 50000 ? 0.0035 : 0.0040);
-    var helcimMo = vol * (wholesalePct + helcimMarkupPct + intlPct * 0.0065) + txCount * (wholesalePerTx + 0.08);
+    // 1. Helcim IC+: 5-tier markup ($0-$50k: 0.40%+$0.08 CP / 0.50%+$0.25 CNP; tiers at $50k, $100k, $500k, $1M)
+    var helcimCpMarkup = vol >= 100000 ? 0.0025 : (vol >= 50000 ? 0.0030 : 0.0040);
+    var helcimCnpMarkup = vol >= 100000 ? 0.0030 : (vol >= 50000 ? 0.0040 : 0.0050);
+    var helcimMarkupPct = cnpPct * helcimCnpMarkup + cpPct * helcimCpMarkup;
+    var helcimPerTx = cnpPct * (vol >= 50000 ? 0.20 : 0.25) + cpPct * (vol >= 50000 ? 0.07 : 0.08);
+    var helcimMo = vol * (wholesalePct + helcimMarkupPct + intlPct * 0.0050) + txCount * (wholesalePerTx + helcimPerTx);
     var helcimYr = helcimMo * 12;
     var helcimEff = (helcimMo / vol) * 100;
 
-    // 2. Stax 0% markup: $99/mo (or $199 over $150k) + wholesale + $0.12 blended tx
-    var staxSub = vol > 150000 ? 199 : 99;
-    var staxMo = staxSub + vol * (wholesalePct + intlPct * 0.0065) + txCount * (wholesalePerTx + 0.12);
+    // 2. Stax 0% markup: $99/mo (<=$150k/yr), $139/mo ($150k-$250k/yr), $199/mo (>$250k/yr) + wholesale + $0.08 CP / $0.15 CNP
+    var annualVol = vol * 12;
+    var staxSub = annualVol > 250000 ? 199 : (annualVol > 150000 ? 139 : 99);
+    var staxPerTx = cnpPct * 0.15 + cpPct * 0.08;
+    var staxMo = staxSub + vol * (wholesalePct + intlPct * 0.0050) + txCount * (wholesalePerTx + staxPerTx);
     var staxYr = staxMo * 12;
     var staxEff = (staxMo / vol) * 100;
 
@@ -312,6 +325,16 @@
   [ticketEl, cnpEl, intlEl].forEach(function(el){
     if (el) el.addEventListener("change", function(){ compute(true); });
     if (el) el.addEventListener("input", function(){ compute(true); });
+  });
+  box.querySelectorAll(".mfc-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (volEl) volEl.value = btn.getAttribute("data-vol") || "65000";
+      if (volRange && volEl) volRange.value = volEl.value;
+      if (ticketEl) ticketEl.value = btn.getAttribute("data-ticket") || "85";
+      if (cnpEl) cnpEl.value = btn.getAttribute("data-cnp") || "80";
+      if (intlEl) intlEl.value = btn.getAttribute("data-intl") || "10";
+      compute(true);
+    });
   });
 
   var expBtn = document.getElementById("mfc-export-btn");
@@ -546,6 +569,12 @@
   
 </ol>
 
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Audit Shopify Payments vs. Dedicated Interchange-Plus Audit (2026)","description":"Audit Shopify Payments (2.9%+$0.30 + 1%–2% 3rd-party gateway fee) vs. dedicated Interchange-Plus (Helcim, Stax, PaymentCloud) for B2B & high-volume stores.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"B2B Fee Audit Deterministic 2026 TCO Calculator"},{"@type":"HowToTool","name":"Official IRS Pub 15 & Federal Reserve Regulation II (.gov) Benchmarks"}],"step":[{"@type":"HowToStep","position":1,"name":"Select a CFO Preset or Enter Volume & Headcount","text":"Enter your monthly card processing volume, average ticket size, and online/international share (or click a 1-click volume preset)."},{"@type":"HowToStep","position":2,"name":"Benchmark Against Official 2026 .gov Statutory Caps","text":"Compare your processor's effective rate against the Federal Reserve Regulation II regulated debit cap (0.05% + $0.22) and wholesale Visa/MC interchange."},{"@type":"HowToStep","position":3,"name":"Expose Hidden Add-On & Surcharge Traps","text":"Audit +0.4% to +0.8% Stripe Invoicing fees, +0.7% recurring billing surcharges, and +1.5% cross-border card markups against $0/mo Helcim IC+ and Stax 0% markup."},{"@type":"HowToStep","position":4,"name":"Export Board-Ready CSV or Lock In Verified Partner Rate","text":"Download the line-item 12-month CFO CSV audit report or click through to verify published 2026 partner rates."}]}</script>
 
 </main>
 <footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Merchant Processing Interchange-Plus, ACH vs. Card, Invoicing Surcharge, EOR Foreign Exchange (FX) Spread &amp; Statutory Tax Filing Fee Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), Rakuten (<code>4767884</code>), or Impact at zero extra cost to you. <a href="/">Fee Calculators</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a> · <strong>Sister B2B Audit Family (Single-Home Canonical Network):</strong> <a href="https://b2bfeeaudit.com/" rel="noopener">B2BFeeAudit.com (Payment &amp; Filing Fees)</a> · <a href="https://b2bcostaudit.com/eo-insurance/" rel="noopener" data-sister-referral="true">B2BCostAudit.com (E&amp;O/Cyber &amp; Labor Burden)</a> · <a href="https://saascostaudit.com/ucaas/" rel="noopener" data-sister-referral="true">SaaSCostAudit.com (UCaaS &amp; Per-Seat SaaS)</a> · <a href="https://apicostaudit.com/llm-api/" rel="noopener" data-sister-referral="true">APICostAudit.com (API &amp; Token Costs)</a></small></footer>

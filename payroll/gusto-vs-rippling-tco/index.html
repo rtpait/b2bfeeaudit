@@ -149,6 +149,11 @@
     <span class="badge-payroll">🧮 DETERMINISTIC PAYROLL, MULTI-STATE SUI &amp; EOR TCO CALCULATOR</span>
     <h2 style="margin:.35rem 0 .2rem;border-top:0;padding-top:0">Calculate Your 12-Month All-In Payroll, Multi-State Tax &amp; EOR Cost</h2>
     <p style="margin:0;font-size:.93rem;color:#334155">Adjust W-2 headcount, primary <code>.gov</code> SUI tax state, multi-state registrations, 1099 contractors, and international EOR seats to compare true 12-month TCO:</p>
+    <div class="calc-preset-bar" role="group" aria-label="One-Click CFO Payroll Scenario Presets" style="display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem">
+      <button type="button" class="ptc-preset-btn" data-w2="10" data-states="2" data-1099="2" data-eor="0" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">⚡ 10 W-2 · 2 States (Seed)</button>
+      <button type="button" class="ptc-preset-btn" data-w2="25" data-states="4" data-1099="5" data-eor="1" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🏢 25 W-2 · 4 States + 1 EOR (Growth)</button>
+      <button type="button" class="ptc-preset-btn" data-w2="75" data-states="8" data-1099="12" data-eor="3" style="font-size:.78rem;padding:.28rem .6rem;border-radius:4px;border:1px solid #cbd5e1;background:#f8fafc;cursor:pointer;font-weight:600;color:#1e293b">🌐 75 W-2 · 8 States + 3 EOR (Scale)</button>
+    </div>
   </div>
   <div class="calc-controls-grid">
     <div class="calc-field">
@@ -598,7 +603,7 @@
     <div class="calc-vendor-card vendor-best" id="ptc-card-onpay">
       <small>OnPay (Flat 50-State Tier)</small>
       <strong class="calc-big" id="ptc-onpay-yr">$2,112/yr</strong>
-      <span class="calc-sub" id="ptc-onpay-sub">$40 base + $6/seat · $0 extra state or W-2 fees</span>
+      <span class="calc-sub" id="ptc-onpay-sub">$49 base + $6/seat · $0 extra state or W-2 fees</span>
       <div style="margin-top:.55rem">
         <a class="cta tbl-cta-btn" id="ptc-cta-onpay" data-partner="Helcim ACH" data-cta-slot="payroll_calc" data-funnel-role="mid_content" data-4axis-key="direct_partner:payroll_calc_mid_gusto-vs-rippling-tco:B2B_FEES.merchant_processing:mid_content" data-route-slug="gusto-vs-rippling-tco" data-calc-inputs='{"w2":18,"states":3}' data-clickref="b2b-payroll_calc-gusto-vs-rippling-tco-onpay" href="https://www.helcim.com/pricing/?utm_source=b2bfeeaudit.com&amp;utm_medium=affiliate&amp;clickref=b2b-payroll_calc-gusto-vs-rippling-tco-helcim-ach" target="_blank" rel="sponsored nofollow noopener">Lock In OnPay Rate →</a>
       </div>
@@ -612,7 +617,7 @@
       </div>
     </div>
     <div class="calc-vendor-card" id="ptc-card-rippling">
-      <small>Rippling Core + Payroll + IT</small>
+      <small>Rippling Core + Payroll [Quote-Only · Modeled]</small>
       <strong class="calc-big" id="ptc-rippling-yr">$5,496/yr</strong>
       <span class="calc-sub" id="ptc-rippling-sub">$85 base + $16/W-2 + $20/mo per extra state</span>
       <div style="margin-top:.55rem">
@@ -628,11 +633,12 @@
       </div>
     </div>
     <div class="calc-vendor-card" id="ptc-card-adp">
-      <small>ADP RUN Legacy Benchmark</small>
+      <small>ADP RUN Benchmark [Quote-Only · Modeled]</small>
       <strong class="calc-big" id="ptc-adp-yr">$4,685/yr</strong>
       <span class="calc-sub" id="ptc-adp-sub">Incl. $32/extra state + $7.50/form W-2 fee</span>
       <div style="margin-top:.55rem">
-        <span style="display:inline-block;font-size:.78rem;font-weight:700;color:#991b1b" id="ptc-savings-callout">Switch to Gusto/OnPay &amp; save $2,033+/yr</span>
+        <span style="display:inline-block;font-size:.78rem;font-weight:700;color:#991b1b;margin-bottom:.35rem" id="ptc-savings-callout">Switch to Gusto/OnPay &amp; save $2,033+/yr</span><br>
+        <a class="cta-secondary tbl-cta-btn" id="ptc-cta-bark" data-partner="Bark US" data-cta-slot="payroll_calc" data-funnel-role="mid_content" data-4axis-key="awin:awin_3133124_bark_58887_payroll_calc_gusto-vs-rippling-tco:B2B_FEES.payroll_filing_fx_fees:mid_content" data-route-slug="gusto-vs-rippling-tco" data-calc-inputs='{"w2":18,"states":3}' data-clickref="b2bfeeaudit_payroll_calc_gusto-vs-rippling-tco_bark_58887" href="https://www.awin1.com/cread.php?awinmid=58887&amp;awinaffid=3133124&amp;clickref=b2bfeeaudit_payroll_calc_gusto-vs-rippling-tco_bark_58887&amp;ued=https%3A%2F%2Fwww.bark.com%2Fen%2Fus%2Faccounting%2F" target="_blank" rel="sponsored nofollow noopener">Compare 3 CPA/Payroll Quotes (Bark US) →</a>
       </div>
     </div>
   </div>
@@ -689,7 +695,7 @@
     var stdFxAnnual = eor * 80000 * 0.02;
 
     // 1. OnPay: $40 base + $6*(w2 + c1099), $0 multi-state fee, + EOR
-    var onpayYr = (40 + 6 * (w2 + c1099)) * 12 + eorSeatAnnual + stdFxAnnual;
+    var onpayYr = (49 + 6 * (w2 + c1099)) * 12 + eorSeatAnnual + stdFxAnnual;
     // 2. Gusto: $49 base + $6*(w2 + c1099) + $12/mo per extra state + EOR
     var gustoYr = (49 + 6 * (w2 + c1099) + 12 * extraStates) * 12 + eorSeatAnnual + stdFxAnnual;
     // 3. Rippling: $85 base + $16*w2 + $8*c1099 + $20/mo per extra state + (incYearEnd ? $150*extraStates state reg : 0) + EOR
@@ -743,6 +749,16 @@
   [stEl, stCountEl, c1099El, eorEl, yrEndEl].forEach(function(el){
     if (el) el.addEventListener("change", function(){ compute(true); });
     if (el && el.tagName === "INPUT") el.addEventListener("input", function(){ compute(true); });
+  });
+  box.querySelectorAll(".ptc-preset-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (w2El) w2El.value = btn.getAttribute("data-w2") || "18";
+      if (w2Range && w2El) w2Range.value = w2El.value;
+      if (stCountEl) stCountEl.value = btn.getAttribute("data-states") || "3";
+      if (c1099El) c1099El.value = btn.getAttribute("data-1099") || "4";
+      if (eorEl) eorEl.value = btn.getAttribute("data-eor") || "0";
+      compute(true);
+    });
   });
 
   var expBtn = document.getElementById("ptc-export-btn");
@@ -977,6 +993,12 @@
   
 </ol>
 
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Audit Gusto vs. Rippling True 12-Month TCO Calculator (2026)","description":"Compare Gusto ($49+$6/emp) vs. Rippling ($85+$16/emp + $20/state) true 12-month TCO. Calculate multi-state SUI taxes, W-2 fees & save $1,840–$4,620/yr.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"B2B Fee Audit Deterministic 2026 TCO Calculator"},{"@type":"HowToTool","name":"Official IRS Pub 15 & Federal Reserve Regulation II (.gov) Benchmarks"}],"step":[{"@type":"HowToStep","position":1,"name":"Select a CFO Preset or Enter Volume & Headcount","text":"Enter your US W-2 headcount, primary .gov SUI state, active tax states, 1099 contractors, and EOR seats (or click a 1-click headcount preset)."},{"@type":"HowToStep","position":2,"name":"Benchmark Against Official 2026 .gov Statutory Caps","text":"Verify your state Department of Labor SUI taxable wage base, new-employer rate, and $42/employee IRS FUTA baseline."},{"@type":"HowToStep","position":3,"name":"Expose Hidden Add-On & Surcharge Traps","text":"Expose per-extra-state monthly tax filing surcharges ($12-$35/state), January W-2/1099 form fees ($65 + $7.50/form), and EOR FX spreads."},{"@type":"HowToStep","position":4,"name":"Export Board-Ready CSV or Lock In Verified Partner Rate","text":"Download the line-item 12-month CFO CSV audit report or click through to verify published 2026 partner rates."}]}</script>
 
 </main>
 <footer><hr><small><strong>B2B Fee Audit</strong> (b2bfeeaudit.com) · Independent B2B Merchant Processing Interchange-Plus, ACH vs. Card, Invoicing Surcharge, EOR Foreign Exchange (FX) Spread &amp; Statutory Tax Filing Fee Auditor · Verified Oct 2026 against official <code>.gov</code> IRS Pub 15, State DOL SUI &amp; Federal Reserve Reg II schedules.<br>Commercial links may earn a referral commission via CJ (<code>8108003</code>), AWIN (<code>3133124</code>), Rakuten (<code>4767884</code>), or Impact at zero extra cost to you. <a href="/">Fee Calculators</a> · <a href="/methodology/">Methodology &amp; Disclosure</a> · <a href="/llms.txt">llms.txt</a> · <a href="/.well-known/webmcp.json">WebMCP</a> · <a href="/datasets/b2b-payroll-and-merchant-fee-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a> · <strong>Sister B2B Audit Family (Single-Home Canonical Network):</strong> <a href="https://b2bfeeaudit.com/" rel="noopener">B2BFeeAudit.com (Payment &amp; Filing Fees)</a> · <a href="https://b2bcostaudit.com/eo-insurance/" rel="noopener" data-sister-referral="true">B2BCostAudit.com (E&amp;O/Cyber &amp; Labor Burden)</a> · <a href="https://saascostaudit.com/ucaas/" rel="noopener" data-sister-referral="true">SaaSCostAudit.com (UCaaS &amp; Per-Seat SaaS)</a> · <a href="https://apicostaudit.com/llm-api/" rel="noopener" data-sister-referral="true">APICostAudit.com (API &amp; Token Costs)</a></small></footer>

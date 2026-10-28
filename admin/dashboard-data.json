@@ -1,7 +1,7 @@
 {
   "schema_version": "6.1.0-b2b-family-unified-admin",
-  "generated_at_utc": "2026-10-27T13:52:27Z",
-  "generated_at_edt": "Oct 27, 2026, 09:52:27 AM EDT",
+  "generated_at_utc": "2026-10-28T12:50:15Z",
+  "generated_at_edt": "Oct 28, 2026, 08:50:15 AM EDT",
   "posthog_project_id": 685354,
   "encrypted_bundle_path": "/admin/admin-telemetry.enc.json",
   "b2b_family_leader_chasing_parity": {
