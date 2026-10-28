@@ -6,7 +6,7 @@
   "vendors": {
     "schema_version": "2026.10.24-deterministic-b2b-vendors",
     "generated_at_utc": "2026-10-24T22:26:00Z",
-    "corporate_entity": "Research Triangle Park AI Transformation LLC (EIN 42-3641177)",
+    "corporate_entity": "Research Triangle Park AI Transformation LLC",
     "domain": "b2bfeeaudit.com",
     "license": "CC-BY-4.0",
     "payroll": [
