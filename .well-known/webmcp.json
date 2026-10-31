@@ -1,5 +1,5 @@
 {
-  "schema_version": "2026-10-28-v1.8.0",
+  "schema_version": "2026-10-28-v1.13.0",
   "protocol": "webmcp/1.0",
   "site": {
     "name": "B2B Fee Audit",
@@ -35,7 +35,7 @@
     "bulk_sui_feed_url": "https://b2bfeeaudit.com/api/v1/benchmarks/bulk-50-state-sui.json",
     "vendor_fee_drift_feed_url": "https://b2bfeeaudit.com/api/v1/benchmarks/vendor-fee-drift-feed.json",
     "stage2_gate_status_url": "https://b2bfeeaudit.com/api/v1/benchmarks/gate-status.json",
-    "version": "v1.8.0",
+    "version": "v1.13.0",
     "updated_at": "2026-10-28"
   },
   "tools": [
