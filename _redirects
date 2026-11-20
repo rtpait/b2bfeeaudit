@@ -1,0 +1,21 @@
+# b2bfeeaudit: real 301s replacing HTTP-200 "Moved" stubs (meta refresh + JS + canonical). Added 2026-11-19 (GSC fixes).
+/eo-insurance/ https://b2bcostaudit.com/eo-insurance/ 301
+/eo-insurance https://b2bcostaudit.com/eo-insurance/ 301
+/eo-insurance/coi-compliance-checker/ https://b2bcostaudit.com/eo-insurance/coi-compliance-checker/ 301
+/eo-insurance/coi-compliance-checker https://b2bcostaudit.com/eo-insurance/coi-compliance-checker/ 301
+/eo-insurance/cyber-eo-premium-estimator/ https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/ 301
+/eo-insurance/cyber-eo-premium-estimator https://b2bcostaudit.com/eo-insurance/cyber-eo-premium-estimator/ 301
+/eo-insurance/industry-policy-requirements/ https://b2bcostaudit.com/eo-insurance/industry-policy-requirements/ 301
+/eo-insurance/industry-policy-requirements https://b2bcostaudit.com/eo-insurance/industry-policy-requirements/ 301
+/eo-insurance/state-minimum-liability-limits/ https://b2bcostaudit.com/eo-insurance/state-minimum-liability-limits/ 301
+/eo-insurance/state-minimum-liability-limits https://b2bcostaudit.com/eo-insurance/state-minimum-liability-limits/ 301
+/ucaas/ https://saascostaudit.com/ucaas/ 301
+/ucaas https://saascostaudit.com/ucaas/ 301
+/ucaas/cisco-webex-pricing-audit/ https://saascostaudit.com/ucaas/cisco-webex-pricing-audit/ 301
+/ucaas/cisco-webex-pricing-audit https://saascostaudit.com/ucaas/cisco-webex-pricing-audit/ 301
+/ucaas/google-workspace-meet-pricing-audit/ https://saascostaudit.com/ucaas/google-workspace-meet-pricing-audit/ 301
+/ucaas/google-workspace-meet-pricing-audit https://saascostaudit.com/ucaas/google-workspace-meet-pricing-audit/ 301
+/ucaas/microsoft-teams-pricing-audit/ https://saascostaudit.com/ucaas/microsoft-teams-pricing-audit/ 301
+/ucaas/microsoft-teams-pricing-audit https://saascostaudit.com/ucaas/microsoft-teams-pricing-audit/ 301
+/ucaas/zoom-workplace-pricing-audit/ https://saascostaudit.com/ucaas/zoom-workplace-pricing-audit/ 301
+/ucaas/zoom-workplace-pricing-audit https://saascostaudit.com/ucaas/zoom-workplace-pricing-audit/ 301
