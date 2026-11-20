@@ -56,9 +56,7 @@
       "ransomware_social_eng_sublimit": "Full Limit Ransomware; $250k Social Engineering; 80/20 Soft Hammer Clause",
       "best_for": "B2B SaaS, AI/LLM Startups, FinTech & SOC 2 Enterprise MSAs",
       "cta_label": "Quote Tech E&O + Cyber on Embroker \u2192",
-      "cta_url": "https://www.embroker.com/coverage/tech-eo-and-cyber-insurance/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-embroker",
-      "webmcp_subid": "webmcp-embroker",
+      "cta_url": "https://www.embroker.com/coverage/tech-eo-and-cyber-insurance/",
       "cpa_range": "$125\u2013$225 Commercial Policy Lead CPA"
     },
     {
@@ -72,9 +70,7 @@
       "ransomware_social_eng_sublimit": "AI/IP Media Carve-In; $250k Funds Transfer Fraud; Unlimited Blanket Additional Insured COI",
       "best_for": "Y Combinator / VC-Backed SaaS, DevTools & Digital Health BAs",
       "cta_label": "Check Vouch Tech E&O + Cyber Rate \u2192",
-      "cta_url": "https://www.vouch.us/coverages/errors-and-omissions?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-vouch",
-      "webmcp_subid": "webmcp-vouch",
+      "cta_url": "https://www.vouch.us/coverages/errors-and-omissions",
       "cpa_range": "$100\u2013$200 B2B Tech Insurance CPA"
     },
     {
@@ -88,9 +84,7 @@
       "ransomware_social_eng_sublimit": "Full Prior Acts Retroactive Date; Instant ACORD-25 COI PDF; $100k\u2013$250k Cyber Extortion",
       "best_for": "IT Consultants, Management/Marketing Agencies, MSPs & 1099 Contractors",
       "cta_label": "Get Instant Hiscox E&O Quote ($45/mo) \u2192",
-      "cta_url": "https://www.hiscox.com/small-business-insurance/professional-liability-insurance?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-hiscox",
-      "webmcp_subid": "webmcp-hiscox",
+      "cta_url": "https://www.hiscox.com/small-business-insurance/professional-liability-insurance",
       "cpa_range": "$75\u2013$160 SMB E&O Quote CPA"
     },
     {
@@ -104,9 +98,7 @@
       "ransomware_social_eng_sublimit": "Pay-on-Behalf Ransomware Resolution; $250k\u2013$500k Funds Transfer Fraud; $0 Deductible Incident Response",
       "best_for": "High-Compliance Cloud, Healthcare HIPAA BAs, FinTech & Enterprise Vendors",
       "cta_label": "Run Coalition Active Cyber & E&O Scan \u2192",
-      "cta_url": "https://www.coalitioninc.com/cyber-insurance?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-coalition",
-      "webmcp_subid": "webmcp-coalition",
+      "cta_url": "https://www.coalitioninc.com/cyber-insurance",
       "cpa_range": "$125\u2013$250 Cyber/E&O Policy CPA"
     },
     {
@@ -120,9 +112,7 @@
       "ransomware_social_eng_sublimit": "Unlimited Free Live COIs & Blanket Additional Insured; First-Party Cyber Breach Response",
       "best_for": "SMB Consultants, Bookkeepers, Real Estate, Architects/Engineers & Contractors",
       "cta_label": "Compare Next Insurance E&O ($40/mo) \u2192",
-      "cta_url": "https://www.nextinsurance.com/professional-liability-insurance/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-next-insurance",
-      "webmcp_subid": "webmcp-next-insurance",
+      "cta_url": "https://www.nextinsurance.com/professional-liability-insurance/",
       "cpa_range": "$60\u2013$140 Instant SMB Bind CPA"
     },
     {
@@ -136,9 +126,7 @@
       "ransomware_social_eng_sublimit": "Global Multinational Admitted Paper; Full Incident Response Retainer; $500k+ Cyber Crime",
       "best_for": "Late-Stage Enterprise SaaS, Fortune 500 Suppliers & Multinational MSAs",
       "cta_label": "Compare Enterprise Tech E&O via Embroker / Chubb \u2192",
-      "cta_url": "https://www.embroker.com/coverage/tech-eo-and-cyber-insurance/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic",
-      "llms_subid": "aeo-llm-embroker",
-      "webmcp_subid": "webmcp-embroker",
+      "cta_url": "https://www.embroker.com/coverage/tech-eo-and-cyber-insurance/",
       "cpa_range": "$125\u2013$225 Commercial Policy Lead CPA"
     }
   ],

@@ -32,8 +32,7 @@
       "annual_savings_vs_incumbent_usd": "5004.0",
       "primary_gov_or_network_source_url": "https://onpay.com/payroll/software/costs-pricing/",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/gusto-vs-onpay-tco/",
-      "agent_affiliate_subid": "aeo-llm-onpay",
-      "partner_referral_action_url": "https://onpay.com/payroll/software/costs-pricing/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-onpay"
+      "partner_referral_action_url": "https://onpay.com/payroll/software/costs-pricing/"
     },
     {
       "record_id": "payroll-gusto-simple-2026",
@@ -56,8 +55,7 @@
       "annual_savings_vs_incumbent_usd": "5004.0",
       "primary_gov_or_network_source_url": "https://www.twc.texas.gov/programs/unemployment-tax/tax-rates",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/gusto-vs-rippling-tco/",
-      "agent_affiliate_subid": "aeo-llm-gusto-simple",
-      "partner_referral_action_url": "https://gusto.com/product/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-gusto-simple"
+      "partner_referral_action_url": "https://gusto.com/product/pricing"
     },
     {
       "record_id": "payroll-gusto-plus-2026",
@@ -80,8 +78,7 @@
       "annual_savings_vs_incumbent_usd": "2832.0",
       "primary_gov_or_network_source_url": "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/gusto-vs-rippling-tco/",
-      "agent_affiliate_subid": "aeo-llm-gusto-plus",
-      "partner_referral_action_url": "https://gusto.com/product/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-gusto-plus"
+      "partner_referral_action_url": "https://gusto.com/product/pricing"
     },
     {
       "record_id": "payroll-rippling-core-2026",
@@ -104,8 +101,7 @@
       "annual_savings_vs_incumbent_usd": "1044.0",
       "primary_gov_or_network_source_url": "https://dol.ny.gov/unemployment-insurance-rate-information",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/gusto-vs-rippling-tco/",
-      "agent_affiliate_subid": "aeo-llm-rippling",
-      "partner_referral_action_url": "https://www.rippling.com/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-rippling"
+      "partner_referral_action_url": "https://www.rippling.com/pricing"
     },
     {
       "record_id": "payroll-deel-us-eor-2026",
@@ -128,8 +124,7 @@
       "annual_savings_vs_incumbent_usd": "0.0",
       "primary_gov_or_network_source_url": "https://www.des.nc.gov/employers/uitaxrates",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/rippling-vs-deel-eor-cost/",
-      "agent_affiliate_subid": "aeo-llm-deel",
-      "partner_referral_action_url": "https://www.deel.com/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-deel"
+      "partner_referral_action_url": "https://www.deel.com/pricing"
     },
     {
       "record_id": "payroll-adp-run-2026",
@@ -152,7 +147,6 @@
       "annual_savings_vs_incumbent_usd": "0.0",
       "primary_gov_or_network_source_url": "https://www.irs.gov/publications/p15",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/gusto-vs-adp-run-cost/",
-      "agent_affiliate_subid": "aeo-llm-adp-audit",
       "partner_referral_action_url": "https://b2bfeeaudit.com/payroll/gusto-vs-adp-run-cost/?utm_source=ai_agent&clickref=aeo-llm-adp-audit"
     },
     {
@@ -176,7 +170,6 @@
       "annual_savings_vs_incumbent_usd": "730.75",
       "primary_gov_or_network_source_url": "https://floridarevenue.com/taxes/taxesfees/Pages/rt_rate.aspx",
       "canonical_calculator_url": "https://b2bfeeaudit.com/payroll/paychex-vs-gusto-switching-roi/",
-      "agent_affiliate_subid": "aeo-llm-paychex-audit",
       "partner_referral_action_url": "https://b2bfeeaudit.com/payroll/paychex-vs-gusto-switching-roi/?utm_source=ai_agent&clickref=aeo-llm-paychex-audit"
     },
     {
@@ -200,7 +193,6 @@
       "annual_savings_vs_incumbent_usd": "0.0",
       "primary_gov_or_network_source_url": "https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/stripe-vs-helcim-interchange-plus/",
-      "agent_affiliate_subid": "aeo-llm-stripe-audit",
       "partner_referral_action_url": "https://b2bfeeaudit.com/merchant/stripe-vs-helcim-interchange-plus/?utm_source=ai_agent&clickref=aeo-llm-stripe-audit"
     },
     {
@@ -224,8 +216,7 @@
       "annual_savings_vs_incumbent_usd": "7722.0",
       "primary_gov_or_network_source_url": "https://usa.visa.com/support/small-business/regulations-fees.html",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/stripe-vs-helcim-interchange-plus/",
-      "agent_affiliate_subid": "aeo-llm-helcim",
-      "partner_referral_action_url": "https://www.helcim.com/pricing/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-helcim"
+      "partner_referral_action_url": "https://www.helcim.com/pricing/"
     },
     {
       "record_id": "merchant-stax-subscription-2026",
@@ -248,8 +239,7 @@
       "annual_savings_vs_incumbent_usd": "8988.0",
       "primary_gov_or_network_source_url": "https://www.mastercard.us/en-us/business/overview/support/merchant-interchange-rates.html",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/stripe-vs-stax-break-even/",
-      "agent_affiliate_subid": "aeo-llm-stax",
-      "partner_referral_action_url": "https://staxpayments.com/pricing/?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-stax"
+      "partner_referral_action_url": "https://staxpayments.com/pricing/"
     },
     {
       "record_id": "merchant-square-flat-2026",
@@ -272,8 +262,7 @@
       "annual_savings_vs_incumbent_usd": "1482.0",
       "primary_gov_or_network_source_url": "https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/square-vs-helcim-fee-audit/",
-      "agent_affiliate_subid": "aeo-llm-square",
-      "partner_referral_action_url": "https://squareup.com/us/en/pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-square"
+      "partner_referral_action_url": "https://squareup.com/us/en/pricing"
     },
     {
       "record_id": "merchant-paypal-checkout-2026",
@@ -296,7 +285,6 @@
       "annual_savings_vs_incumbent_usd": "-2418.0",
       "primary_gov_or_network_source_url": "https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/paypal-vs-stripe-vs-interchange-plus/",
-      "agent_affiliate_subid": "aeo-llm-paypal-audit",
       "partner_referral_action_url": "https://b2bfeeaudit.com/merchant/paypal-vs-stripe-vs-interchange-plus/?utm_source=ai_agent&clickref=aeo-llm-paypal-audit"
     },
     {
@@ -320,8 +308,7 @@
       "annual_savings_vs_incumbent_usd": "8892.0",
       "primary_gov_or_network_source_url": "https://usa.visa.com/support/small-business/regulations-fees.html",
       "canonical_calculator_url": "https://b2bfeeaudit.com/merchant-fees/credit-card-effective-rate-auditor/",
-      "agent_affiliate_subid": "aeo-llm-cdg",
-      "partner_referral_action_url": "https://www.cdgcommerce.com/interchange-plus-pricing?utm_source=b2bfeeaudit&utm_medium=affiliate&utm_campaign=stage1_agentic&clickref=aeo-llm-cdg"
+      "partner_referral_action_url": "https://www.cdgcommerce.com/interchange-plus-pricing"
     }
   ],
   "stage_2_gate_policy": {

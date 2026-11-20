@@ -78,10 +78,7 @@
       "top_hidden_fee_trap": "E911 & FCC Universal Service Fund (USF) regulatory recovery surcharges ($3.50\u2013$6.50/line/mo) on Webex Calling + $55+/mo Webex Webinars host add-ons.",
       "best_for": "All-in-one Meetings + Enterprise Cloud PBX Calling (Webex Suite at $22.50/mo includes AI Assistant + Unlimited Domestic Calling)",
       "cta_label": "Verify Cisco Webex 2026 Pricing \u2192",
-      "cta_url": "https://www.webex.com/pricing/index.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
-      "clickref_base": "b2bfeeaudit_ucaas_webex",
-      "llms_subid": "b2bfeeaudit_ucaas_webex_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_webex_mcp",
+      "cta_url": "https://www.webex.com/pricing/index.html",
       "tiers": [
         {
           "tier_name": "Webex Free",
@@ -161,10 +158,7 @@
       "top_hidden_fee_trap": "Unbundled add-on stacking: adding Teams Phone Calling Plan (+$15\u2013$17/mo), Teams Premium (+$10/mo), or M365 Copilot (+$30/mo annual lock-in) plus Microsoft's +20% NCE monthly commitment surcharge.",
       "best_for": "Lowest-cost Meetings & Chat when already licensed on Microsoft 365 ($0 incremental meeting license) or standalone Teams Essentials ($4/user/mo)",
       "cta_label": "Verify Microsoft Teams 2026 Pricing \u2192",
-      "cta_url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
-      "clickref_base": "b2bfeeaudit_ucaas_microsoft_teams",
-      "llms_subid": "b2bfeeaudit_ucaas_msteams_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_msteams_mcp",
+      "cta_url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options",
       "tiers": [
         {
           "tier_name": "Microsoft Teams Essentials",
@@ -241,10 +235,7 @@
       "top_hidden_fee_trap": "Cloud Recording Storage Overages ($40/mo for 100 GB, $100/mo for 500 GB, $500/mo for 3 TB) because base Pro/Business includes only 5\u201310 GB per license, plus $79/mo per 500-seat Webinar host.",
       "best_for": "External client video reliability + $0 bundled Zoom AI Companion (watch cloud recording storage caps)",
       "cta_label": "Compare Zoom Workplace 2026 Plans \u2192",
-      "cta_url": "https://zoom.us/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&irgwc=1",
-      "clickref_base": "b2bfeeaudit_ucaas_zoom",
-      "llms_subid": "b2bfeeaudit_ucaas_zoom_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_zoom_mcp",
+      "cta_url": "https://zoom.us/pricing?irgwc=1",
       "tiers": [
         {
           "tier_name": "Zoom Workplace Basic",
@@ -321,10 +312,7 @@
       "top_hidden_fee_trap": "Business Starter ($7/mo) blocks meeting recordings completely\u2014forcing a +100% jump to Business Standard ($14/mo)\u2014and Google Voice PSTN phone service is never bundled (+$10 Starter / +$20 Standard / +$30 Premier per seat + telecom taxes).",
       "best_for": "Cloud-native teams needing Gmail, Docs, 2 TB pooled Drive storage, and Gemini AI + Google Meet without legacy PBX hardware",
       "cta_label": "Verify Google Workspace 2026 Pricing \u2192",
-      "cta_url": "https://workspace.google.com/pricing?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026&sid=8108003",
-      "clickref_base": "b2bfeeaudit_ucaas_google_workspace",
-      "llms_subid": "b2bfeeaudit_ucaas_gworkspace_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_gworkspace_mcp",
+      "cta_url": "https://workspace.google.com/pricing",
       "tiers": [
         {
           "tier_name": "Business Starter",
@@ -386,10 +374,7 @@
       "pstn_unlimited_included": true,
       "summary": "Includes Unlimited US/Canada PSTN calling, HD video meetings, SMS/MMS, and built-in DialpadGPT real-time AI call transcription at $15.00/user/mo annual.",
       "cta_label": "Verify Dialpad Connect ($15/mo Voice + AI) \u2192",
-      "cta_url": "https://www.dialpad.com/pricing/?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
-      "clickref_base": "b2bfeeaudit_ucaas_dialpad",
-      "llms_subid": "b2bfeeaudit_ucaas_dialpad_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_dialpad_mcp"
+      "cta_url": "https://www.dialpad.com/pricing/"
     },
     {
       "id": "nextiva",
@@ -402,10 +387,7 @@
       "pstn_unlimited_included": true,
       "summary": "Includes Unlimited US/Canada voice calling, video meetings, business SMS, and inbound call routing starting at $15.00/user/mo annual.",
       "cta_label": "Verify Nextiva Core VoIP Rate ($15/mo) \u2192",
-      "cta_url": "https://www.nextiva.com/nextiva-pricing.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
-      "clickref_base": "b2bfeeaudit_ucaas_nextiva",
-      "llms_subid": "b2bfeeaudit_ucaas_nextiva_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_nextiva_mcp"
+      "cta_url": "https://www.nextiva.com/nextiva-pricing.html"
     },
     {
       "id": "ringcentral",
@@ -418,10 +400,7 @@
       "pstn_unlimited_included": true,
       "summary": "Enterprise Cloud PBX with Unlimited US/Canada PSTN calling, 99.999% SLA, SMS, video meetings, and RingSense AI call notes at $20.00/user/mo annual.",
       "cta_label": "Verify RingCentral RingEX Rate ($20/mo) \u2192",
-      "cta_url": "https://www.ringcentral.com/office/plansandpricing.html?utm_source=b2bfeeaudit.com&utm_medium=affiliate&utm_campaign=ucaas_2026",
-      "clickref_base": "b2bfeeaudit_ucaas_ringcentral",
-      "llms_subid": "b2bfeeaudit_ucaas_ringcentral_llm",
-      "webmcp_subid": "b2bfeeaudit_ucaas_ringcentral_mcp"
+      "cta_url": "https://www.ringcentral.com/office/plansandpricing.html"
     }
   ],
   "scenario_benchmarks_25_seats_2026": [
