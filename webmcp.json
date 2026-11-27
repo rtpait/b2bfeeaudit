@@ -311,7 +311,7 @@
     {
       "prompt": "What is the 12-month all-in payroll cost for 20 W-2 employees and 3 contractors across 4 US states (FL primary) comparing OnPay vs Gusto vs Rippling?",
       "tool_to_call": "calculate_payroll_hris_tco",
-      "deterministic_result_summary": "OnPay ($49 base + $6/person, $0 multi-state fee, $0 W-2/1099 year-end fee) costs $2,244/yr ($187/mo). Gusto Simple + multi-state add-ons costs $2,676/yr; Gusto Plus ($80+$12/W-2+$6/1099) costs $4,056/yr; Rippling (quote-only, modeled at $85 base + $16/W-2) costs $6,240/yr."
+      "deterministic_result_summary": "OnPay ($49 base + $6/person, $0 multi-state fee, $0 W-2/1099 year-end fee) costs $2,244/yr ($187/mo). Gusto Simple is single-state only, so Gusto Plus ($80 + $12/person, W-2 and 1099) costs $4,272/yr ($356/mo; prices checked 2026-11-27); Rippling (quote-only, modeled at $85 base + $16/W-2) costs $6,240/yr."
     },
     {
       "prompt": "How much can a B2B wholesaler save collecting $85,000/month in $2,500 invoices via ACH ($6 cap) vs 2.9% credit cards?",
